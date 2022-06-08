@@ -6,11 +6,14 @@ import 'jquery/dist/jquery.min.js';
 import './Public/Styles/style.css';
 import HomeCarousel from "./Components/homeCarousel";
 import { Fragment } from "react";
+import { ConfigProvider } from "antd";
 const App = () => {
   return (
     <Fragment >
-      <AppRouter />
-      <HomeCarousel />
+      <ConfigProvider direction="rtl" csp={{ nonce: 'YourNonceCode' }}>
+        <AppRouter />
+        {/* <HomeCarousel /> */}
+      </ConfigProvider>
     </Fragment>
 
   );

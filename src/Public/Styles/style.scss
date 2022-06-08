@@ -1,46 +1,126 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 body {
@@ -48,24 +128,33 @@ body {
     font-family: sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+}
 
-        
 
 
-.navbar-container{
-    display:flex;
+.top-line {
+    background-color: rgb(255, 145, 0);
+    width: 100%;
+    height: 5px;
+}
+
+.navbar-container {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    .navbar-caption{
-        a{
+    .navbar-caption {
+        a {
             font-size: 20px;
             font-weight: bold;
-            padding:12px;
+            padding: 12px;
             color: black;
             text-decoration: none;
-            &:hover{
+
+            &:hover {
                 color: rgb(254, 116, 11);
                 background-color: rgb(231, 231, 231);
                 border-radius: 20px;
@@ -74,15 +163,160 @@ body {
         }
     }
 
-    .navbar-icons{
-        .nav-icon{
+    .navbar-icons {
+        .nav-icon {
             cursor: pointer;
-            &:hover{
-                color:rgb(89, 88, 88); 
+
+            &:hover {
+                color: rgb(89, 88, 88);
                 transition: color 0.3s;
-        
+
+            }
+        }
+
+    }
+
+
+}
+
+.header-drawer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .search-icon {
+        color: rgb(128, 128, 128);
+    }
+
+    h5 {
+        color: rgb(128, 128, 128);
+        font-weight: bold;
+    }
+}
+
+// .submenu-container {
+
+//     background-color: #f3f3f3;
+
+//     .submenu-items {
+//         display: flex;
+//         flex-direction: row-reverse;
+//         justify-content: space-around;
+//         padding: 15px;
+
+//     }
+// }
+
+// * {
+// 	padding: 0;
+// 	margin: 0;
+// }
+
+// body {
+//   list-style: none;
+//   font: 16px/1.2 'Montserrat', sans-serif;
+// }
+//.........................................................
+// sub_menu =>
+
+.submenu-container {
+    width: 100%;
+    background: rgb(235, 234, 234);
+    height: 50px;
+    display: flex;
+    align-items: center;
+
+    .submenu-nav {
+        width: 100%;
+        height: 100%;
+
+        .submenu-items {
+            display: flex;
+            flex-direction: row-reverse;
+            height: 100%;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+
+            li {
+                // flex-basis: 15%;
+                text-align: center;
+                height: 100%;
+                display: flex;
+
+                &:hover .fw-dropdown {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    padding-right: 100px;
+                
+                    // flex-shrink: 15%;
+                }
+            }
+
+            .fw-dropdown {
+                position: absolute;
+                top: 129px;
+
+                left: 0;
+                display: none;
+                width: 100%;
+                padding: 2em 0;
+                background: rgb(255, 255, 255);
+                border-bottom: 1px solid rgb(221, 221, 221);
+                // justify-content: space-around;
+
+                ul {
+                    flex-basis: 15%;
+                }
+
+                li {
+                    height: auto;
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    font-size: 18px;
+                    float: right;
+
+                    &:hover a {
+                        color: rgb(100, 100, 100);
+                    }
+                }
+            }
+
+            .submenu-title{
+                &:hover .title-link{
+                    color: #ff9b0f;  
+                }
             }
         }
     }
 }
+
+
+
+a {
+    color: rgb(59, 59, 59);
+    margin: auto;
+    /* center the links horizontally and vertically */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+.submenu-container .submenu-items li:hover a {
+    color: black;
+    text-decoration: none;
+}
+
+
 
