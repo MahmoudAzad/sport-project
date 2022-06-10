@@ -34,8 +34,8 @@ const Navbar = () => {
             </div>
         <div className="navbar-container container mt-3 mb-3">
             <div className="navbar-caption">
-                <a href="#">گیشا مگ </a>
                 <a href="#">پیگیری سفارش </a>
+                <a href="#">گیشا مگ </a>
             </div>
             <div className="navbar-logo">
                 <img src="Gisha-Logotype-200.png" width="150" height="40" />

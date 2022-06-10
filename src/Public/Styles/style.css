@@ -136,7 +136,7 @@ body {
 .top-line {
   background-color: #ff9100;
   width: 100%;
-  height: 5px;
+  height: 4px;
 }
 
 .navbar-container {
@@ -156,7 +156,7 @@ body {
 }
 
 .navbar-container .navbar-caption a {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: bold;
   padding: 12px;
   color: black;
@@ -264,6 +264,8 @@ body {
 .submenu-container .submenu-nav .submenu-items .fw-dropdown {
   position: absolute;
   top: 129px;
+  -webkit-transition: all 4s;
+  transition: all 4s;
   left: 0;
   display: none;
   width: 100%;
@@ -285,8 +287,12 @@ body {
   float: right;
 }
 
+.submenu-container .submenu-nav .submenu-items .fw-dropdown li a {
+  color: #444444;
+}
+
 .submenu-container .submenu-nav .submenu-items .fw-dropdown li:hover a {
-  color: #646464;
+  color: gray;
 }
 
 .submenu-container .submenu-nav .submenu-items .submenu-title:hover .title-link {
@@ -296,7 +302,6 @@ body {
 a {
   color: #3b3b3b;
   margin: auto;
-  /* center the links horizontally and vertically */
   text-decoration: none;
   font-weight: bold;
 }
@@ -304,5 +309,91 @@ a {
 .submenu-container .submenu-items li:hover a {
   color: black;
   text-decoration: none;
+}
+
+.foodCarousel-container {
+  background-image: linear-gradient(210deg, #FFA223 0%, #FF783A 100%);
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.foodCarousel-container .foodCarousel-swiper {
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  border-radius: 20px;
+}
+
+.foodCarousel-container .foodCarousel-swiper .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: center;
+}
+
+.foodCarousel-container .foodCarousel-swiper .swiper-slide:hover .overlay-container {
+  opacity: 1;
+}
+
+.foodCarousel-container .foodCarousel-swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.foodCarousel-container .foodCarousel-swiper .swiper-slide .overlay-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.foodCarousel-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+}
+
+.foodCarousel-price .food-price {
+  color: #fe5304;
+  font-weight: bold;
+}
+
+.foodCarousel-price .food-linedPrice {
+  color: #9a9999;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
