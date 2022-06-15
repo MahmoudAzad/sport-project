@@ -1,8 +1,9 @@
 import { Fragment } from "react";
-import SubMenu from "../Components/submenu";
-import Navbar from "../Components/navbar";
-import AdverticePhoto from "../Components/adverticePhoto";
+import SubMenu from "../Components/HomeComponents/submenu";
+import Navbar from "../Components/HomeComponents/navbar";
+import AdverticePhoto from "../Components/HomeComponents/adverticePhoto";
 import FoodCarousel from "../Components/Carousel/foodCarousel";
+import ShowProducts from "../Components/HomeComponents/showProducts";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <SubMenu />
       <AdverticePhoto />
       <FoodCarousel />
+      <ShowProducts />
     </Fragment>
 
 

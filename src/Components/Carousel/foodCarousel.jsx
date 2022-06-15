@@ -7,9 +7,9 @@ import { Pagination, Navigation } from "swiper";
 
 const FoodCarousel = () => {
 
-    const [foodData , setFoodData] = useState("")
+    const [foodData, setFoodData] = useState("")
 
-    useEffect(()=>{
+    useEffect(() => {
 
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -22,14 +22,14 @@ const FoodCarousel = () => {
             redirect: 'follow'
         };
 
-       fetch("http://localhost:1337/food-carousel-swipers" , requestOptions)
-      .then(response => response.json())
-       .then(result => {setFoodData(result) });
-    },[])
+        fetch("http://localhost:1337/food-carousel-swipers", requestOptions)
+            .then(response => response.json())
+            .then(result => { setFoodData(result) });
+    }, [])
 
 
-    if(!foodData){return <p>please wait...</p>}
-    console.log("food data =>" , foodData);
+    if (!foodData) { return <p>please wait...</p> }
+    console.log("food data =>", foodData);
 
     return (
         <div className="foodCarousel-container">
@@ -46,23 +46,23 @@ const FoodCarousel = () => {
                 className="foodCarousel-swiper container"
             >
 
-                {foodData.map((food) =>(
+                {foodData.map((food) => (
 
-               
-                <SwiperSlide className="swiper-slide">
-                         <img className="orginal-img" src={`http://localhost:1337${food.orgImg.url}`} />
-                    <div class="overlay-container">
-                         <img className="overlay-img" src={`http://localhost:1337${food.hoverImg.url}`} />
-                        <p className="mt-5">{food.title}</p>
-                    </div>
-                    <h5 className="mt-3 font-weight-bold">{food.title}</h5>
-                    <div className="foodCarousel-price ">
-                        <h5 className="food-price mr-3">{food.orginalPrice}</h5>
-                        <h5 className="food-linedPrice"><strike className="mb-3">{food.linedPrice}</strike></h5>
-                    </div>
-                </SwiperSlide>
 
-))}
+                    <SwiperSlide className="swiper-slide">
+                        <img className="orginal-img" src={`http://localhost:1337${food.orgImg.url}`} />
+                        <div class="overlay-container">
+                            <img className="overlay-img" src={`http://localhost:1337${food.hoverImg.url}`} />
+                            <p className="mt-5">{food.title}</p>
+                        </div>
+                        <p className="mt-3 ">{food.title}</p>
+                        <div className="foodCarousel-price ">
+                            <p className="food-price mr-3">{food.orginalPrice}</p>
+                            <p className="food-linedPrice"><strike className="mb-3">{food.linedPrice}</strike></p>
+                        </div>
+                    </SwiperSlide>
+
+                ))}
 
             </Swiper>
         </div>
