@@ -6,6 +6,8 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 
 const HomeCarouselHelper = ({products , title}) => {
+
+    console.log("pro Heelp =>" , products);
     
     return (
         <div className="mt-4">
@@ -36,7 +38,7 @@ const HomeCarouselHelper = ({products , title}) => {
                     <SwiperSlide className="swiper-slide">
                         <img className="orginal-img" src={`http://localhost:1337${p.img.url}`}  />
                         <div class="overlay-container">
-                            <img className="overlay-img" src={`http://localhost:1337${p.hoverImg[0].url}`} />
+                            <img className="overlay-img" src={`http://localhost:1337${p.hoverImg.url ||p.hoverImg[0].url  }`} />
                             <p className="mt-5">{p.title}</p>
                         </div>
                         <p className="mt-3 ">{p.title}</p>

@@ -5,6 +5,7 @@ import AdverticePhoto from "../Components/HomeComponents/adverticePhoto";
 import FoodCarousel from "../Components/Carousel/foodCarousel";
 import ShowProducts from "../Components/HomeComponents/showProducts";
 import MensSportwearCarousel from "../Components/Carousel/MensSportswearCarousel";
+import AccessoriesCarousel from "../Components/Carousel/accessoriesCarousel";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <FoodCarousel />
       <ShowProducts />
       <MensSportwearCarousel />
+      <AccessoriesCarousel />
     </Fragment>
 
 
