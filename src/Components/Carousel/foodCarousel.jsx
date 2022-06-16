@@ -34,6 +34,9 @@ const FoodCarousel = () => {
     return (
         <div className="foodCarousel-container">
             <Swiper
+                   style={{
+                    "--swiper-pagination-color": "black",
+                  }}
                 slidesPerView={4}
                 spaceBetween={30}
                 slidesPerGroup={4}
@@ -43,7 +46,7 @@ const FoodCarousel = () => {
                     clickable: true,
                 }}
                 modules={[Pagination, Navigation]}
-                className="foodCarousel-swiper container"
+                className="carousel-swiper container"
             >
 
                 {foodData.map((food) => (
@@ -56,9 +59,9 @@ const FoodCarousel = () => {
                             <p className="mt-5">{food.title}</p>
                         </div>
                         <p className="mt-3 ">{food.title}</p>
-                        <div className="foodCarousel-price ">
-                            <p className="food-price mr-3">{food.orginalPrice}</p>
-                            <p className="food-linedPrice"><strike className="mb-3">{food.linedPrice}</strike></p>
+                        <div className="carousel-price ">
+                            <p className="carousel-orgPrice mr-3">{food.orginalPrice}</p>
+                            <p className="carousel-linedPrice"><strike className="mb-3">{food.linedPrice}</strike></p>
                         </div>
                     </SwiperSlide>
 

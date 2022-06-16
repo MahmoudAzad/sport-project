@@ -321,14 +321,20 @@ a {
   margin-top: 30px;
 }
 
-.foodCarousel-container .foodCarousel-swiper {
+.swiper-container-title {
+  text-align: center;
+  border-bottom: 2px solid #cecece;
+  font-weight: bold;
+}
+
+.carousel-swiper {
   background-color: white;
   padding-top: 20px;
   padding-bottom: 50px;
   border-radius: 20px;
 }
 
-.foodCarousel-container .foodCarousel-swiper .swiper-slide {
+.carousel-swiper .swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -342,11 +348,11 @@ a {
   text-align: center;
 }
 
-.foodCarousel-container .foodCarousel-swiper .swiper-slide:hover .overlay-container {
+.carousel-swiper .swiper-slide:hover .overlay-container {
   opacity: 1;
 }
 
-.foodCarousel-container .foodCarousel-swiper .swiper-slide img {
+.carousel-swiper .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
@@ -354,7 +360,7 @@ a {
      object-fit: cover;
 }
 
-.foodCarousel-container .foodCarousel-swiper .swiper-slide .overlay-container {
+.carousel-swiper .swiper-slide .overlay-container {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -381,7 +387,7 @@ a {
   text-align: center;
 }
 
-.foodCarousel-price {
+.carousel-price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -391,12 +397,12 @@ a {
   margin-top: 10px;
 }
 
-.foodCarousel-price .food-price {
+.carousel-price .carousel-orgPrice {
   color: #fe5304;
   font-weight: bold;
 }
 
-.foodCarousel-price .food-linedPrice {
+.carousel-price .carousel-linedPrice {
   color: #9a9999;
   font-weight: bold;
 }

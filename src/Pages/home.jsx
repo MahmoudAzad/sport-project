@@ -4,6 +4,7 @@ import Navbar from "../Components/HomeComponents/navbar";
 import AdverticePhoto from "../Components/HomeComponents/adverticePhoto";
 import FoodCarousel from "../Components/Carousel/foodCarousel";
 import ShowProducts from "../Components/HomeComponents/showProducts";
+import MensSportwearCarousel from "../Components/Carousel/MensSportswearCarousel";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <AdverticePhoto />
       <FoodCarousel />
       <ShowProducts />
+      <MensSportwearCarousel />
     </Fragment>
 
 
