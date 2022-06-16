@@ -428,3 +428,15 @@ a {
 
 
 }
+
+.AdverticePhoto-container{
+    width: 100%;
+    display :flex;
+    flex-direction: row;
+    justify-content:space-between;
+
+    img{
+        margin :10px;
+        border-radius: 20px;
+    }
+}
