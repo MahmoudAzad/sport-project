@@ -13,158 +13,164 @@ const SubMenu = () => {
 
           <li className="submenu-title"><a className="title-link" href="">همه محصولات</a></li>
 
-          <li className="submenu-title"><a className="title-link" href=""><DownOutlined style={{ fontSize: "10px" }} /> لباس ورزشی مردانه </a>
+          <li className="submenu-title"><a className="title-link" href=""> لباس ورزشی مردانه <DownOutlined style={{ fontSize: "10px" }} /></a>
             <div class="fw-dropdown ">
-              <ul>
-                <li><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /><a href="">تمام محصولات این دسته</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />رکابی بدنسازی مردانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />تیشرت و بلوز مردانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />هودی و سوییشرت مردانه</a></li>
-              </ul>
-              <ul>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />لگ ورزشی مردانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />شلوارک ورزشی مردانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />شلوار مردانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />ست ورزشی مردانه</a></li>
-              </ul>
-              <ul>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />نیم لگ و کشاله بند  مردانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />کفش ورزشی مردانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />جوراب ورزشی مردانه</a></li>
-              </ul>
-
               <div className="dropdown-img">
                 <img src="/images\dropdown-menu\shirt-sport.jpg" width="600px" height="300px" alt="لباس ورزشی مردانه" />
               </div>
 
-            </div>
-          </li>
-          <li className="submenu-title"><a className="title-link" href=""><DownOutlined style={{ fontSize: "10px" }} /> لباس ورزشی زنانه</a>
-            <div class="fw-dropdown">
               <ul>
-                <li><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /><a href="">تمام محصولات این دسته</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />تاپ و نیم تنه ورزشی زنانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />تیشرت ورزشی زنانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />هودی و سوییشرت زنانه</a></li>
+                <li><a href="">نیم لگ و کشاله بند  مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">کفش ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">جوراب ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
               </ul>
               <ul>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />لگ ورزشی زنانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />شلوارک ورزشی زنانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />شلوار زنانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />دامن ورزشی مردانه</a></li>
+                <li><a href="">لگ ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">شلوارک ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">شلوار مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">ست ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
               </ul>
               <ul>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />ست ورزشی زنانه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />جوراب ورزشی زنانه</a></li>
+                <li><a href="">تمام محصولات این دسته</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">رکابی بدنسازی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">تیشرت و بلوز مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">هودی و سوییشرت مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
               </ul>
 
+            </div>
+          </li>
+          <li className="submenu-title"><a className="title-link" href=""> لباس ورزشی زنانه<DownOutlined style={{ fontSize: "10px" }} /></a>
+            <div class="fw-dropdown">
               <div className="dropdown-img">
                 <img src="/images\dropdown-menu\www.jpg" width="500px" height="300px" alt="لباس ورزشی زنانه" />
               </div>
+
+              <ul>
+                <li><a href="">ست ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">جوراب ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+              </ul>
+              <ul>
+                <li><a href="">لگ ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">شلوارک ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">شلوار زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">دامن ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+              </ul>
+              <ul>
+                <li><a href="">تمام محصولات این دسته</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">تاپ و نیم تنه ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">تیشرت ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">هودی و سوییشرت زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+              </ul>
             </div>
           </li>
 
-          <li className="submenu-title"><a className="title-link" href=""><DownOutlined style={{ fontSize: "10px" }} /> لوازم ورزشی</a>
+          <li className="submenu-title"><a className="title-link" href=""> لوازم ورزشی <DownOutlined style={{ fontSize: "10px" }} /></a>
             <div class="fw-dropdown">
-              <ul>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />تمام محصولات</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />کش بدنسازی</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />دستکش بدنسازی</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />مچ بند و بند لیفت</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />ماساژوز</a></li>
-              </ul>
-              <ul>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />زانوبند بدنسازی</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />کمربند بدنسازی</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />کیف و ساک ورزشی</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />کوله و شوزبک ورزشی</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />وزنه و دمبل</a></li>
-              </ul>
-              <ul>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />  لوازم بدنسازی </a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />ظرف غذا</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />جاپودر و جاقرصی</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />لوازم کاربردی ورزشی</a></li>
-              </ul>
 
               <div className="dropdown-img">
                 <img src="/images\dropdown-menu\sport.jpg" width="500px" height="300px" alt="sport-shirt-mens" />
               </div>
+
+              <ul>
+                <li><a href="">  لوازم بدنسازی </a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href=""> ظرف غذا</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">جاپودر و جاقرصی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">لوازم کاربردی ورزشی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+              </ul>
+              <ul>
+                <li><a href="">زانوبند بدنسازی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">کمربند بدنسازی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">کیف و ساک ورزشی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">کوله و شوزبک ورزشی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">وزنه و دمبل</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+              </ul>
+              <ul>
+                <li><a href="">تمام محصولات</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">کش بدنسازی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">دستکش بدنسازی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">مچ بند و بند لیفت</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">ماساژوز</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+              </ul>
+
             </div>
           </li>
 
-          <li className="submenu-title"><a className="title-link" href=""><DownOutlined style={{ fontSize: "10px" }} /> قمقمه و شیکر</a>
+          <li className="submenu-title"><a className="title-link" href=""> قمقمه و شیکر<DownOutlined style={{ fontSize: "10px" }} /></a>
             <div class="fw-dropdown">
-              <ul class="dropdown-column-list">
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />تمام محصولات این دسته</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />    جاک واتر</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" , marginLeft: "3px" }} />قمقمه ورزشی   </a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /> فلاسک ورزشی</a></li>
-
-              </ul>
-              <ul>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />تمام شیکرهای بدنسازی</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />شیکر برقی ورزشی</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />شیکر استیل</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />شیکر دو مخزنه</a></li>
-
-              </ul>
-              <ul>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />شیکر یک تکه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />شیکر دو تکه</a></li>
-                <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />شیکر سه تکه</a></li>
-
-              </ul>
-
               <div className="dropdown-img">
                 <img src="/images\dropdown-menu\shaker.jpg" width="500px" height="300px" alt="sport-shirt-mens" />
               </div>
 
+              <ul>
+                <li><a href="">شیکر یک تکه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">شیکر دو تکه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">شیکر سه تکه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+
+              </ul>
+              <ul>
+                <li><a href="">تمام شیکرهای بدنسازی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">شیکر برقی ورزشی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">شیکر استیل</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">شیکر دو مخزنه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+
+              </ul>
+              <ul class="dropdown-column-list">
+                <li><a href="">تمام محصولات این دسته</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">   جاک واتر</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /> </li>
+                <li><a href="">قمقمه ورزشی   </a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px", marginLeft: "3px" }} /></li>
+                <li><a href="">فلاسک ورزشی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /> </li>
+
+              </ul>
+
             </div>
           </li>
 
-          <li className="submenu-title"><a className="title-link" href=""><DownOutlined style={{ fontSize: "10px" }} /> اکسسوری</a>
+          <li className="submenu-title"><a className="title-link" href="">اکسسوری<DownOutlined style={{ fontSize: "10px" }} /></a>
             <div class="fw-dropdown">
-              <ul class="dropdown-column-list">
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />تمام محصولات این دسته</a></li>
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />جوراب ورزشی مردانه</a></li>
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />جوراب ورزشی زنانه</a></li>
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />ساق دست ورزشی</a></li>
-
-              </ul>
-              <ul>
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />کلاه ورزشی اسپرت</a></li>
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />اسکارف و دستمال سر</a></li>
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />گردنبند</a></li>
-
-              </ul>
-              <ul>
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />جاکلیدی ورزشی</a></li>
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />اکشن فیگور</a></li>
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />سایر اکسسوری</a></li>
-
-              </ul>
               <div className="dropdown-img">
                 <img src="/images\dropdown-menu\bag-sport.jpg" width="500px" height="300px" alt="sport-shirt-mens" />
               </div>
+
+              <ul class="dropdown-column-list">
+                <li><a href="">تمام محصولات این دسته</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">جوراب ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">جوراب ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">ساق دست ورزشی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+
+              </ul>
+              <ul>
+                <li><a href="">کلاه ورزشی اسپرت</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">اسکارف و دستمال سر</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">گردنبند</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+
+              </ul>
+              <ul>
+                <li><a href="">جاکلیدی ورزشی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">اکشن فیگور</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">سایر اکسسوری</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+
+              </ul>
+
             </div>
           </li>
           <li className="submenu-title"><a className="title-link" href="">ست و پکیج</a></li>
 
-          <li className="submenu-title"><a className="title-link" href=""><DownOutlined style={{ fontSize: "10px" }} /> تغذیه رژیمی</a>
+          <li className="submenu-title"><a className="title-link" href=""> تغذیه رژیمی<DownOutlined style={{ fontSize: "10px" }} /></a>
             <div class="fw-dropdown">
-              <ul class="dropdown-column-list">
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />تمام محصولات این دسته</a></li>
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />گرانولا</a></li>
-
-              </ul>
-              <ul>
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />شکلات پروتیین بار</a></li>
-              <li><a href=""><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} />رایس کیک</a></li>
-              </ul>
               <div className="dropdown-img">
                 <img src="/images\dropdown-menu\food.jpg" width="500px" height="300px" alt="sport-shirt-mens" />
               </div>
+
+              <ul>
+                <li><a href="">شکلات پروتیین بار</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">رایس کیک</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+              </ul>
+              <ul class="dropdown-column-list">
+                <li><a href="">تمام محصولات این دسته</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">گرانولا</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+
+              </ul>
+
             </div>
           </li>
 

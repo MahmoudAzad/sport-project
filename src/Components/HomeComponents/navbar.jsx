@@ -29,22 +29,15 @@ const Navbar = () => {
 
     return (
         <Fragment>
-            <div className="top-line">
+            <div className="top-line"></div>
 
-            </div>
+            
         <div className="navbar-container container mt-3 mb-3">
-            <div className="navbar-caption">
-                <a href="#">پیگیری سفارش </a>
-                <a href="#">گیشا مگ </a>
-            </div>
-            <div className="navbar-logo">
-                <img src="Gisha-Logotype-200.png" width="150" height="40" />
-            </div>
-            <div className="navbar-icons">
-                <SearchOutlined style={{ fontSize: 20 }} className="p-1 nav-icon" />
-                <ShoppingCartOutlined style={{ fontSize: 20 }} className="p-1 nav-icon" />
-                <UserOutlined style={{ fontSize: 20 }} className="p-1 nav-icon" />
+        <div className="navbar-icons">
                 <UnorderedListOutlined style={{ fontSize: 20 }} className="p-1 nav-icon" onClick={showDrawer} />
+                <UserOutlined style={{ fontSize: 20 }} className="p-1 nav-icon" />
+                <ShoppingCartOutlined style={{ fontSize: 20 }} className="p-1 nav-icon" />
+                <SearchOutlined style={{ fontSize: 20 }} className="p-1 nav-icon" />
                 <Drawer placement="right" onClose={onClose} visible={visible} closable={false} width="358px" >
                     <div className="header-drawer">
                         <h5>جستجوی محصولات</h5>
@@ -96,7 +89,15 @@ const Navbar = () => {
                 </Drawer>
             </div>
 
-
+   
+            <div className="navbar-logo">
+                <img src="Gisha-Logotype-200.png" width="150" height="40" />
+            </div>
+          
+            <div className="navbar-caption">
+                <a href="#">پیگیری سفارش </a>
+                <a href="#">گیشا مگ </a>
+            </div>
         </div>
         </Fragment>
 

@@ -9,6 +9,7 @@ import AccessoriesCarousel from "../Components/Carousel/accessoriesCarousel";
 import AdvertisePhotos from "../Components/HomeComponents/advertisePhotos";
 import WomensSportwearCarousel from "../Components/Carousel/womensSportwearCarousel";
 import ShakerCarousel from "../Components/Carousel/shakerCarousel";
+import Footer from "../Components/HomeComponents/footer";
 
 const Home = () => {
   return (
@@ -23,9 +24,8 @@ const Home = () => {
       <AdvertisePhotos />
       <WomensSportwearCarousel />
       <ShakerCarousel />
+      <Footer />
     </Fragment>
-
-
   );
 }
 
