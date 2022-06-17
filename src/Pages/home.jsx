@@ -7,6 +7,7 @@ import ShowProducts from "../Components/HomeComponents/showProducts";
 import MensSportwearCarousel from "../Components/Carousel/MensSportswearCarousel";
 import AccessoriesCarousel from "../Components/Carousel/accessoriesCarousel";
 import AdvertisePhotos from "../Components/HomeComponents/advertisePhotos";
+import WomensSportwearCarousel from "../Components/Carousel/womensSportwearCarousel";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <MensSportwearCarousel />
       <AccessoriesCarousel />
       <AdvertisePhotos />
+      <WomensSportwearCarousel />
     </Fragment>
 
 
