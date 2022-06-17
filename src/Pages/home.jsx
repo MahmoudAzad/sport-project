@@ -8,6 +8,7 @@ import MensSportwearCarousel from "../Components/Carousel/MensSportswearCarousel
 import AccessoriesCarousel from "../Components/Carousel/accessoriesCarousel";
 import AdvertisePhotos from "../Components/HomeComponents/advertisePhotos";
 import WomensSportwearCarousel from "../Components/Carousel/womensSportwearCarousel";
+import ShakerCarousel from "../Components/Carousel/shakerCarousel";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <AccessoriesCarousel />
       <AdvertisePhotos />
       <WomensSportwearCarousel />
+      <ShakerCarousel />
     </Fragment>
 
 
