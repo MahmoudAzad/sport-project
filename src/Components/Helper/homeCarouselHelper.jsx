@@ -11,7 +11,7 @@ const HomeCarouselHelper = ({products , title}) => {
     
     return (
         <div className="mt-4">
-            <h5 className="swiper-container-title container p-2">{title}</h5>
+            <h5 className="swiper-container-title container p-2 ">{title}</h5>
             <Swiper
                style={{
                 "--swiper-navigation-color": "black",
