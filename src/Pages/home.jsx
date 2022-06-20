@@ -10,8 +10,24 @@ import AdvertisePhotos from "../Components/HomeComponents/advertisePhotos";
 import WomensSportwearCarousel from "../Components/Carousel/womensSportwearCarousel";
 import ShakerCarousel from "../Components/Carousel/shakerCarousel";
 import Footer from "../Components/HomeComponents/footer";
+import { BackTop } from 'antd';
+import { UpOutlined } from "@ant-design/icons";
 
 const Home = () => {
+
+  const style = {
+    height: 55,
+    width: 55,
+    lineHeight: '60px',
+    borderRadius: 50,
+    color: 'black',
+    textAlign: 'center',
+    fontSize: 20,
+    boxShadow: "2px 2px 2px 2px #9E9E9E",
+
+  };
+
+
   return (
     <Fragment>
       <Navbar />
@@ -25,6 +41,12 @@ const Home = () => {
       <WomensSportwearCarousel />
       <ShakerCarousel />
       <Footer />
+
+      <div>
+        <BackTop>
+          <div style={style}><UpOutlined /></div>
+        </BackTop>
+      </div>
     </Fragment>
   );
 }
