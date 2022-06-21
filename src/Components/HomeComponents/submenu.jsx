@@ -1,12 +1,14 @@
 import { DownOutlined, LeftOutlined } from '@ant-design/icons';
-import { Dropdown, Menu, Space } from 'antd';
+import { Affix} from 'antd';
 import React from 'react';
 
 
 
 const SubMenu = () => {
+ 
   return (
 
+    <Affix offsetTop={0}>
     <header className="submenu-container">
       <nav className="submenu-nav container">
         <ul className="submenu-items">
@@ -179,6 +181,9 @@ const SubMenu = () => {
         </ul>
       </nav>
     </header>
+    </Affix>
+
+
 
   );
 }

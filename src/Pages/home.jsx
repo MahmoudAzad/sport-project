@@ -42,7 +42,7 @@ const Home = () => {
       <ShakerCarousel />
       <Footer />
 
-      <div>
+      <div>     
         <BackTop>
           <div style={style}><UpOutlined /></div>
         </BackTop>
