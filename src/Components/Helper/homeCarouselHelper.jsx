@@ -5,19 +5,19 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 
-const HomeCarouselHelper = ({products , title}) => {
+const HomeCarouselHelper = ({ products, title }) => {
 
-    console.log("pro Heelp =>" , products);
-    
+    console.log("pro Heelp =>", products);
+
     return (
         <div className="mt-4">
             <h5 className="swiper-container-title container p-2 ">{title}</h5>
             <Swiper
-               style={{
-                "--swiper-navigation-color": "black",
-                "--swiper-pagination-color": "black",
-                "--swiper-navigation-size": "20px",
-              }}
+                style={{
+                    "--swiper-navigation-color": "black",
+                    "--swiper-pagination-color": "black",
+                    "--swiper-navigation-size": "20px",
+                }}
                 slidesPerView={5}
                 spaceBetween={10}
                 slidesPerGroup={4}
@@ -36,15 +36,29 @@ const HomeCarouselHelper = ({products , title}) => {
 
 
                     <SwiperSlide className="swiper-slide">
-                        <img className="orginal-img" src={`http://localhost:1337${p.img.url}`}  />
-                        <div class="overlay-container">
-                            <img className="overlay-img" src={`http://localhost:1337${p.hoverImg.url ||p.hoverImg[0].url  }`} />
-                            <p className="mt-5">{p.title}</p>
+
+
+
+                        <div class="slide-images">
+                            <img src={`http://localhost:1337${p.img.url}`} alt="cat 1" class="slide-orgImg" />
+                            <img  src={`http://localhost:1337${p.hoverImg.url || p.hoverImg[0].url}`} alt="cat 2" class="slide-hoverImg" />
                         </div>
                         <p className="mt-3 ">{p.title}</p>
                         <div className="carousel-price ">
                             <p className="carousel-orgPrice mr-3">{p.price}</p>
                         </div>
+
+
+{/* 
+                        <img className="orginal-img" src={`http://localhost:1337${p.img.url}`} />
+                        <div class="overlay-container">
+                            <img className="overlay-img" src={`http://localhost:1337${p.hoverImg.url || p.hoverImg[0].url}`} />
+                            <p className="mt-5">{p.title}</p>
+                        </div>
+                        <p className="mt-3 ">{p.title}</p>
+                        <div className="carousel-price ">
+                            <p className="carousel-orgPrice mr-3">{p.price}</p>
+                        </div> */}
                     </SwiperSlide>
 
                 ))}

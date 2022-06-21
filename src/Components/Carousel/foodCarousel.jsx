@@ -34,9 +34,9 @@ const FoodCarousel = () => {
     return (
         <div className="foodCarousel-container">
             <Swiper
-                   style={{
+                style={{
                     "--swiper-pagination-color": "black",
-                  }}
+                }}
                 slidesPerView={4}
                 spaceBetween={30}
                 slidesPerGroup={4}
@@ -53,16 +53,47 @@ const FoodCarousel = () => {
 
 
                     <SwiperSlide className="swiper-slide">
-                        <img className="orginal-img" src={`http://localhost:1337${food.orgImg.url}`} />
-                        <div class="overlay-container">
+
+
+                        <div class="slide-images">
+                            <img src={`http://localhost:1337${food.orgImg.url}`} alt="cat 1" class="slide-orgImg" />
+                            <img src={`http://localhost:1337${food.hoverImg.url}`} alt="cat 2" class="slide-hoverImg" />
+                        </div>
+                        <p className="mt-3 ">{food.title}</p>
+
+                        <div className="carousel-price ">
+                            <p className="carousel-orgPrice mr-3">{food.orginalPrice}</p>
+                            <p className="carousel-linedPrice"><strike className="mb-3">{food.linedPrice}</strike></p>
+                        </div>
+
+
+
+                        {/* <div className="swiper-images">
+                            <img className="orginal-img" src={`http://localhost:1337${food.orgImg.url}`} />
                             <img className="overlay-img" src={`http://localhost:1337${food.hoverImg.url}`} />
-                            <p className="mt-5">{food.title}</p>
                         </div>
                         <p className="mt-3 ">{food.title}</p>
                         <div className="carousel-price ">
                             <p className="carousel-orgPrice mr-3">{food.orginalPrice}</p>
                             <p className="carousel-linedPrice"><strike className="mb-3">{food.linedPrice}</strike></p>
+                        </div> */}
+
+
+
+                        {/* <img className="orginal-img" src={`http://localhost:1337${food.orgImg.url}`} />
+                        <div class="overlay-container">
+                            <img className="overlay-img" src={`http://localhost:1337${food.hoverImg.url}`} />
+                            <p className="mt-3 ">{food.title}</p>
+                            <div className="carousel-price ">
+                            <p className="carousel-orgPrice mr-3">{food.orginalPrice}</p>
+                            <p className="carousel-linedPrice"><strike className="mb-3">{food.linedPrice}</strike></p>
                         </div>
+                        </div>
+                        <p className="mt-3 ">{food.title}</p>
+                        <div className="carousel-price ">
+                            <p className="carousel-orgPrice mr-3">{food.orginalPrice}</p>
+                            <p className="carousel-linedPrice"><strike className="mb-3">{food.linedPrice}</strike></p>
+                        </div> */}
                     </SwiperSlide>
 
                 ))}
