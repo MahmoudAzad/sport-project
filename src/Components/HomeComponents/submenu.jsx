@@ -1,6 +1,7 @@
 import { DownOutlined, LeftOutlined } from '@ant-design/icons';
 import { Affix} from 'antd';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -24,7 +25,7 @@ const SubMenu = () => {
               <ul>
                 <li><a href="">نیم لگ و کشاله بند  مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                 <li><a href="">کفش ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                <li><a href="">جوراب ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><Link to={"/showProducts"}   >جوراب ورزشی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
               </ul>
               <ul>
                 <li><a href="">لگ ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
@@ -34,9 +35,9 @@ const SubMenu = () => {
               </ul>
               <ul>
                 <li><a href="">تمام محصولات این دسته</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                <li><a href="">رکابی بدنسازی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                <li><a href="">تیشرت و بلوز مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                <li><a href="">هودی و سوییشرت مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><Link to={"/ringSleeves"}   >رکابی بدنسازی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><Link to={"/tshirts"}>تیشرت و بلوز مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><Link to="/sweatshirts">هودی و سوییشرت مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
               </ul>
 
             </div>
@@ -133,11 +134,10 @@ const SubMenu = () => {
                 <img src="/images\dropdown-menu\bag-sport.jpg" width="500px" height="300px" alt="sport-shirt-mens" />
               </div>
 
-              <ul class="dropdown-column-list">
-                <li><a href="">تمام محصولات این دسته</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                <li><a href="">جوراب ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                <li><a href="">جوراب ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                <li><a href="">ساق دست ورزشی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+              <ul>
+                <li><a href="">جاکلیدی ورزشی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">اکشن فیگور</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">سایر اکسسوری</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
 
               </ul>
               <ul>
@@ -146,10 +146,11 @@ const SubMenu = () => {
                 <li><a href="">گردنبند</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
 
               </ul>
-              <ul>
-                <li><a href="">جاکلیدی ورزشی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                <li><a href="">اکشن فیگور</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                <li><a href="">سایر اکسسوری</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+              <ul class="dropdown-column-list">
+                <li><a href="">تمام محصولات این دسته</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">جوراب ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">جوراب ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                <li><a href="">ساق دست ورزشی</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
 
               </ul>
 

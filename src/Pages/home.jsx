@@ -1,6 +1,4 @@
 import { Fragment } from "react";
-import SubMenu from "../Components/HomeComponents/submenu";
-import Navbar from "../Components/HomeComponents/navbar";
 import HeaderPhoto from "../Components/HomeComponents/headerPhoto";
 import FoodCarousel from "../Components/Carousel/foodCarousel";
 import ShowProducts from "../Components/HomeComponents/showProducts";
@@ -9,7 +7,6 @@ import AccessoriesCarousel from "../Components/Carousel/accessoriesCarousel";
 import AdvertisePhotos from "../Components/HomeComponents/advertisePhotos";
 import WomensSportwearCarousel from "../Components/Carousel/womensSportwearCarousel";
 import ShakerCarousel from "../Components/Carousel/shakerCarousel";
-import Footer from "../Components/HomeComponents/footer";
 import { BackTop } from 'antd';
 import { UpOutlined } from "@ant-design/icons";
 
@@ -30,8 +27,6 @@ const Home = () => {
 
   return (
     <Fragment>
-      <Navbar />
-      <SubMenu />
       <HeaderPhoto />
       <FoodCarousel />
       <ShowProducts />
@@ -40,7 +35,6 @@ const Home = () => {
       <AdvertisePhotos />
       <WomensSportwearCarousel />
       <ShakerCarousel />
-      <Footer />
 
       <div>     
         <BackTop>

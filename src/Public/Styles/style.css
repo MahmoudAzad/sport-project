@@ -39,8 +39,6 @@ dl,
 dt,
 dd,
 ol,
-ul,
-li,
 fieldset,
 form,
 label,
@@ -98,11 +96,6 @@ section {
 
 body {
   line-height: 1;
-}
-
-ol,
-ul {
-  list-style: none;
 }
 
 blockquote,
@@ -264,6 +257,7 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   padding-right: 100px;
+  z-index: 100;
 }
 
 .submenu-container .submenu-nav .submenu-items .fw-dropdown {
@@ -288,7 +282,7 @@ body {
   height: auto;
   padding: 10px;
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 14px;
   float: right;
 }
 
@@ -298,6 +292,10 @@ body {
 
 .submenu-container .submenu-nav .submenu-items .fw-dropdown li:hover a {
   color: gray;
+}
+
+.submenu-container .submenu-nav .submenu-items .submenu-title .title-link {
+  font-size: 14px;
 }
 
 .submenu-container .submenu-nav .submenu-items .submenu-title:hover .title-link {
@@ -410,12 +408,16 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: opacity .3s, -webkit-transform 1.5s;
+  transition: opacity .3s, -webkit-transform 1.5s;
+  transition: transform 1.5s, opacity .3s;
+  transition: transform 1.5s, opacity .3s, -webkit-transform 1.5s;
 }
 
 .slide-images:hover .slide-hoverImg {
   opacity: 1;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .carousel-price {
@@ -686,5 +688,136 @@ a {
 
 .nav-tab-ul .nav-tab-li {
   width: 50%;
+}
+
+.ShowProductsHelper-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+}
+
+.show-detail-pro-helper-container {
+  margin: 50px 20px 0 20px;
+}
+
+.show-detail-pro-helper-container .showproductshelper-price {
+  color: #fe5304;
+  font-weight: bold;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.show-products-helper-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  margin: 0 auto;
+}
+
+.show-products-helper-container .show-products-helper-item {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px;
+}
+
+.show-products-helper-container .show-products-helper-item .show-products-helper-title {
+  cursor: pointer;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.show-products-helper-container .show-products-helper-item .show-products-helper-title:hover {
+  color: #817f7f;
+}
+
+.show-products-helper-container .show-products-helper-item .show-products-helper-price {
+  color: #fe5304;
+  font-weight: bold;
+  text-align: center;
+}
+
+.show-products-helper-images {
+  position: relative;
+  cursor: pointer;
+}
+
+.org-img-showpro-helper {
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: opacity .3s, -webkit-transform 1.5s;
+  transition: opacity .3s, -webkit-transform 1.5s;
+  transition: transform 1.5s, opacity .3s;
+  transition: transform 1.5s, opacity .3s, -webkit-transform 1.5s;
+}
+
+.show-products-helper-images:hover .overlay {
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+  opacity: 1;
+}
+
+.hover-img-showpro-helper {
+  position: absolute;
+}
+
+.milad {
+  position: relative;
+}
+
+.test {
+  position: absolute;
+  right: 200;
+  top: 100;
+  float: left;
+  background-color: red;
+  padding: 10px;
 }
 /*# sourceMappingURL=style.css.map */
