@@ -11,6 +11,7 @@ import SubMenu from "./Components/HomeComponents/submenu";
 import RingSleeves from "./Components/Products/Mens_sport/ringSleeves";
 import Sweatshirts from "./Components/Products/Mens_sport/sweatshirts";
 import Tshirts from "./Components/Products/Mens_sport/tshirts";
+import ContactUS from "./Pages/contactUs";
 import Home from "./Pages/home";
 
 const AppRouter = () => {
@@ -26,7 +27,7 @@ const AppRouter = () => {
                 <Route path="/tshirts" element={<Tshirts />} />
                 <Route path="/sweatshirts" element={<Sweatshirts />} />
                 <Route path="/showDetailProductsHelper" element={<ShowDetailProductsHelper />} />
-
+                <Route path="/contactus" element={<ContactUS />} />
 
             </Routes>
 

@@ -820,4 +820,110 @@ a {
   background-color: red;
   padding: 10px;
 }
+
+.contact-us-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: 3px solid #f0920f;
+  border-right: none;
+  border-radius: 20px;
+  margin-right: 80px;
+  margin-left: 80px;
+  height: 700px;
+}
+
+.contact-us-container .contact-us-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 30px;
+  padding-right: 30px;
+  background-color: #f0920f;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.contact-us-container .contact-us-information .contactus-icons {
+  font-size: 30px;
+  color: white;
+  margin: 50px 30px 150px 30px;
+}
+
+.contact-us-container .contact-us-information .contactus-icons:hover {
+  background-color: #646464;
+  padding: 10px;
+  border-radius: 100px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.contact-us-container .contact-us-form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: white !important;
+  padding-top: 30px;
+}
+
+.contact-us-container .contact-us-form-container label {
+  color: black;
+  font-weight: bold;
+}
+
+.contact-us-container .contact-us-form-container input {
+  border: 2px solid #d1d1d1 !important;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.contact-us-container .contact-us-form-container input:focus {
+  outline: none;
+}
+
+.contact-us-container .contact-us-form-container textarea {
+  border: 2px solid #d1d1d1 !important;
+  border-radius: 5px;
+  padding: 10px 10px 0 0;
+}
+
+.contact-us-container .contact-us-form-container textarea:focus {
+  outline: none;
+}
+
+.contact-us-container .contact-us-form-container button {
+  padding: 10px 20px;
+  border: none;
+  margin-top: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-us-container .contact-us-form-container button:hover {
+  background-color: #d5d5d5;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
 /*# sourceMappingURL=style.css.map */
