@@ -80,6 +80,11 @@ video {
     vertical-align: baseline;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -843,6 +848,12 @@ a {
 
     }
 
+
+
+   
+
+
+
     .contact-us-form-container {
         display: flex;
         flex-direction: column;
@@ -850,21 +861,38 @@ a {
         background-color: white !important;
         padding-top: 30px;
 
-        label {
-            color: black;
-            // font-size:18px;
-            font-weight: bold;
-        }
-
-        input {
+        .field-input {
             border: 2px solid rgb(209, 209, 209) !important;
             border-radius: 5px;
             padding: 5px;
-
+    
             &:focus {
                 outline: none;
             }
         }
+    
+    
+        label {
+            color: black;
+            // font-size:18px;
+            font-weight: bold;
+  
+        }
+    
+    
+        button{
+            padding: 10px 20px;
+            border: none;
+            margin-top: 30px;
+            font-weight: bold;
+            cursor: pointer;
+    
+            &:hover{
+                background-color:rgb(213, 213, 213);
+                transition:.5s;
+            }
+        }
+
 
         textarea {
             border: 2px solid rgb(209, 209, 209) !important;
@@ -876,17 +904,9 @@ a {
             }
         }
 
-        button{
-            padding: 10px 20px;
-            border: none;
-            margin-top: 30px;
-            font-weight: bold;
-            cursor: pointer;
-
-            &:hover{
-                background-color:rgb(213, 213, 213);
-                transition:.5s;
-            }
-        }
+       
     }
 }
+
+
+

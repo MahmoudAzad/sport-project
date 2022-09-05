@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { Drawer, Tabs, Collapse } from 'antd';
 import { LeftOutlined, SearchOutlined, ShoppingCartOutlined, UnorderedListOutlined, UserOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const { TabPane } = Tabs;
 const { Panel } = Collapse;
@@ -154,7 +155,7 @@ const Navbar = () => {
 
                                 <div className="navbar-caption">
                                     <a href="#">پیگیری سفارش </a>
-                                    <a href="#">گیشا مگ </a>
+                                    <Link to="/contactus">تماس با ما</Link>
                                 </div>
                         </div>
                     </Fragment>

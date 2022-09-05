@@ -79,6 +79,11 @@ video {
   vertical-align: baseline;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -888,29 +893,19 @@ a {
   padding-top: 30px;
 }
 
-.contact-us-container .contact-us-form-container label {
-  color: black;
-  font-weight: bold;
-}
-
-.contact-us-container .contact-us-form-container input {
+.contact-us-container .contact-us-form-container .field-input {
   border: 2px solid #d1d1d1 !important;
   border-radius: 5px;
   padding: 5px;
 }
 
-.contact-us-container .contact-us-form-container input:focus {
+.contact-us-container .contact-us-form-container .field-input:focus {
   outline: none;
 }
 
-.contact-us-container .contact-us-form-container textarea {
-  border: 2px solid #d1d1d1 !important;
-  border-radius: 5px;
-  padding: 10px 10px 0 0;
-}
-
-.contact-us-container .contact-us-form-container textarea:focus {
-  outline: none;
+.contact-us-container .contact-us-form-container label {
+  color: black;
+  font-weight: bold;
 }
 
 .contact-us-container .contact-us-form-container button {
@@ -925,5 +920,15 @@ a {
   background-color: #d5d5d5;
   -webkit-transition: .5s;
   transition: .5s;
+}
+
+.contact-us-container .contact-us-form-container textarea {
+  border: 2px solid #d1d1d1 !important;
+  border-radius: 5px;
+  padding: 10px 10px 0 0;
+}
+
+.contact-us-container .contact-us-form-container textarea:focus {
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */

@@ -6,12 +6,15 @@ import 'jquery/dist/jquery.min.js';
 import './Public/Styles/style.css';
 import { Fragment } from "react";
 import { ConfigProvider } from "antd";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
     <Fragment >
       <ConfigProvider direction="rtl" csp={{ nonce: 'YourNonceCode' }}>
         <AppRouter />
+        <ToastContainer />
       </ConfigProvider>
     </Fragment>
 
