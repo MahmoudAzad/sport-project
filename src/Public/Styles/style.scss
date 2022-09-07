@@ -818,8 +818,8 @@ a {
     margin-right: 80px;
     margin-left: 80px;
     height: 700px;
-    
-    
+
+
     .contact-us-information {
         display: flex;
         flex-direction: column;
@@ -837,7 +837,7 @@ a {
             font-size: 30px;
             color: white;
             margin: 50px 30px 150px 30px;
-            
+
             &:hover {
                 background-color: rgb(100, 100, 100);
                 padding: 10px;
@@ -850,7 +850,7 @@ a {
 
 
 
-   
+
 
 
 
@@ -865,31 +865,31 @@ a {
             border: 2px solid rgb(209, 209, 209) !important;
             border-radius: 5px;
             padding: 5px;
-    
+
             &:focus {
                 outline: none;
             }
         }
-    
-    
+
+
         label {
             color: black;
             // font-size:18px;
             font-weight: bold;
-  
+
         }
-    
-    
-        button{
+
+
+        button {
             padding: 10px 20px;
             border: none;
             margin-top: 30px;
             font-weight: bold;
             cursor: pointer;
-    
-            &:hover{
-                background-color:rgb(213, 213, 213);
-                transition:.5s;
+
+            &:hover {
+                background-color: rgb(213, 213, 213);
+                transition: .5s;
             }
         }
 
@@ -904,9 +904,108 @@ a {
             }
         }
 
-       
+
     }
 }
 
 
+// login-container ==================================================================>
+
+
+.login-container,
+.register-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 80px;
+
+    .login-from,
+    .register-form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-basis: 50%;
+        margin-left: 50px;
+        border-left: 1px solid rgb(231, 231, 231);
+        border-left-width: 2px;
+
+
+        .login-field,
+        .register-field {
+            padding: 8px;
+            border: 2px solid rgb(209, 209, 209) !important;
+            border-radius: 5px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .login-btn,
+        .register-btn {
+            width: 500px;
+            margin: 20px 10px 0 10px;
+            border: none;
+            border-radius: 30px;
+            background-color: rgb(23, 235, 23);
+            padding: 15px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(4, 162, 4);
+                transition: .3s;
+            }
+        }
+    }
+
+
+    .form-checkbox {
+        margin-top: 20px;
+        width: 500px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 15px;
+    }
+
+    .login-register,
+    .register-login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-basis: 50%;
+        text-align: center;
+
+        p {
+            line-height: 25px;
+        }
+
+        .register-btn , .login-btn {
+            width: 100px;
+            margin: 20px 10px 0 10px;
+            border: none;
+            border-radius: 30px;
+            background-color: rgb(23, 235, 23);
+            padding: 15px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(4, 162, 4);
+                transition: .3s;
+                text-decoration: none;
+            }
+
+  
+
+        }
+
+    }
+}
 

@@ -13,6 +13,8 @@ import Sweatshirts from "./Components/Products/Mens_sport/sweatshirts";
 import Tshirts from "./Components/Products/Mens_sport/tshirts";
 import ContactUS from "./Pages/contactUs";
 import Home from "./Pages/home";
+import Login from "./Pages/login";
+import Register from "./Pages/register";
 
 const AppRouter = () => {
     return (
@@ -28,7 +30,8 @@ const AppRouter = () => {
                 <Route path="/sweatshirts" element={<Sweatshirts />} />
                 <Route path="/showDetailProductsHelper" element={<ShowDetailProductsHelper />} />
                 <Route path="/contactus" element={<ContactUS />} />
-
+                <Route path="/login" element={<Login/>} />
+                <Route path="/register" element={<Register/>} />
             </Routes>
 
             <Footer />

@@ -36,7 +36,9 @@ const Navbar = () => {
             <div className="navbar-container container mt-3 mb-3">
                 <div className="navbar-icons">
                     <UnorderedListOutlined style={{ fontSize: 20 }} className="p-1 nav-icon" onClick={showDrawer} />
-                    <UserOutlined style={{ fontSize: 20 }} className="p-1 nav-icon" />
+                    <Link to="/login">
+                        <UserOutlined style={{ fontSize: 20 }} className="p-1 nav-icon" />
+                    </Link>
                     <ShoppingCartOutlined style={{ fontSize: 20 }} className="p-1 nav-icon" />
                     <SearchOutlined style={{ fontSize: 20 }} className="p-1 nav-icon" />
                     <Drawer placement="right" onClose={onClose} visible={visible} closable={false} width="358px" >
@@ -76,7 +78,7 @@ const Navbar = () => {
 
 
 
-                                        {/* <ul className="nav nav-pills mb-3 mt-3 nav-tab-ul" id="pills-tab" role="tablist">
+                        {/* <ul className="nav nav-pills mb-3 mt-3 nav-tab-ul" id="pills-tab" role="tablist">
                             <li className="nav-item nav-tab-li">
                                 <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">منو</a>
                             </li>
@@ -103,7 +105,7 @@ const Navbar = () => {
 
 
 
-                                        {/* 
+                        {/* 
                     <Tabs onChange={onChange} type="card" size="large" centered={true}>
                         <TabPane className="milad" tab="منو" key="1" >
                             <h5 className="font-weight-bold text-right mr-3"> ست و پکیج های ویژه</h5>
@@ -145,25 +147,25 @@ const Navbar = () => {
 
                     </Tabs> */}
 
-                                    </Drawer>
-                                </div>
+                    </Drawer>
+                </div>
 
 
-                                <div className="navbar-logo">
-                                    <img src="Gisha-Logotype-200.png" width="150" height="40" />
-                                </div>
+                <div className="navbar-logo">
+                    <img src="Gisha-Logotype-200.png" width="150" height="40" />
+                </div>
 
-                                <div className="navbar-caption">
-                                    <a href="#">پیگیری سفارش </a>
-                                    <Link to="/contactus">تماس با ما</Link>
-                                </div>
-                        </div>
-                    </Fragment>
+                <div className="navbar-caption">
+                    <a href="#">پیگیری سفارش </a>
+                    <Link to="/contactus">تماس با ما</Link>
+                </div>
+            </div>
+        </Fragment>
 
-                    );
+    );
 }
 
-                    export default Navbar;
+export default Navbar;
 
 
 

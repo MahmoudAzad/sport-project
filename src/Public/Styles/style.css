@@ -931,4 +931,172 @@ a {
 .contact-us-container .contact-us-form-container textarea:focus {
   outline: none;
 }
+
+.login-container,
+.register-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.login-container .login-from,
+.login-container .register-form,
+.register-container .login-from,
+.register-container .register-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  margin-left: 50px;
+  border-left: 1px solid #e7e7e7;
+  border-left-width: 2px;
+}
+
+.login-container .login-from .login-field,
+.login-container .login-from .register-field,
+.login-container .register-form .login-field,
+.login-container .register-form .register-field,
+.register-container .login-from .login-field,
+.register-container .login-from .register-field,
+.register-container .register-form .login-field,
+.register-container .register-form .register-field {
+  padding: 8px;
+  border: 2px solid #d1d1d1 !important;
+  border-radius: 5px;
+}
+
+.login-container .login-from .login-field:focus,
+.login-container .login-from .register-field:focus,
+.login-container .register-form .login-field:focus,
+.login-container .register-form .register-field:focus,
+.register-container .login-from .login-field:focus,
+.register-container .login-from .register-field:focus,
+.register-container .register-form .login-field:focus,
+.register-container .register-form .register-field:focus {
+  outline: none;
+}
+
+.login-container .login-from .login-btn,
+.login-container .login-from .register-btn,
+.login-container .register-form .login-btn,
+.login-container .register-form .register-btn,
+.register-container .login-from .login-btn,
+.register-container .login-from .register-btn,
+.register-container .register-form .login-btn,
+.register-container .register-form .register-btn {
+  width: 500px;
+  margin: 20px 10px 0 10px;
+  border: none;
+  border-radius: 30px;
+  background-color: #17eb17;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-container .login-from .login-btn:hover,
+.login-container .login-from .register-btn:hover,
+.login-container .register-form .login-btn:hover,
+.login-container .register-form .register-btn:hover,
+.register-container .login-from .login-btn:hover,
+.register-container .login-from .register-btn:hover,
+.register-container .register-form .login-btn:hover,
+.register-container .register-form .register-btn:hover {
+  background-color: #04a204;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.login-container .form-checkbox,
+.register-container .form-checkbox {
+  margin-top: 20px;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 15px;
+}
+
+.login-container .login-register,
+.login-container .register-login,
+.register-container .login-register,
+.register-container .register-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  text-align: center;
+}
+
+.login-container .login-register p,
+.login-container .register-login p,
+.register-container .login-register p,
+.register-container .register-login p {
+  line-height: 25px;
+}
+
+.login-container .login-register .register-btn, .login-container .login-register .login-btn,
+.login-container .register-login .register-btn,
+.login-container .register-login .login-btn,
+.register-container .login-register .register-btn,
+.register-container .login-register .login-btn,
+.register-container .register-login .register-btn,
+.register-container .register-login .login-btn {
+  width: 100px;
+  margin: 20px 10px 0 10px;
+  border: none;
+  border-radius: 30px;
+  background-color: #17eb17;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-container .login-register .register-btn:hover, .login-container .login-register .login-btn:hover,
+.login-container .register-login .register-btn:hover,
+.login-container .register-login .login-btn:hover,
+.register-container .login-register .register-btn:hover,
+.register-container .login-register .login-btn:hover,
+.register-container .register-login .register-btn:hover,
+.register-container .register-login .login-btn:hover {
+  background-color: #04a204;
+  -webkit-transition: .3s;
+  transition: .3s;
+  text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */
