@@ -11,7 +11,7 @@ import { useFormik } from 'formik';
 const ContactUS = () => {
 
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values , actions) => {
     console.log('values in handle submit =>' , values)
 
     try {
@@ -19,11 +19,21 @@ const ContactUS = () => {
       const { status } = await sendMessageService(values);
 
       if (status == 200) {
+      
 
         toast.success(values.userName + " عزیز پیام شما ارسال شد " , {
           position: "top-right",
           closeOnClick: true
         });
+
+        actions.resetForm()
+        
+        // actions.resetForm({ 
+        //   values: {
+        //     userName: "",
+        //   }
+        // }) برای ریست کردن یک فیلد
+
       }
 
     } catch (e) {
@@ -67,8 +77,9 @@ const ContactUS = () => {
             message: ""
           }}
           validationSchema={contactSchema}
-          onSubmit={(values) => {
-            handleSubmit(values);
+
+          onSubmit={(values, actions) => {
+            handleSubmit(values , actions);
           }}
         >
 

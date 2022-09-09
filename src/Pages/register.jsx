@@ -1,8 +1,48 @@
 import { Field, Form, Formik } from 'formik';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { registerSchema } from '../Components/Validations/contactValidation';
+import { sendRegisterService } from '../Services/services';
+import { setUserData } from '../Redux/usefulActions';
+
 
 const Register = () => {
+
+
+    const navigate = useNavigate() ;
+    const dispatch = useDispatch() ;
+
+    const handleRegister = async (values, actions) => {
+
+        console.log('values register', values);
+        console.log('actions register', actions);
+
+
+        const user = {
+            username: values.email,
+            email: values.email,
+            password: values.password
+        }
+
+        const responseRegister = await sendRegisterService(user);
+        console.log("responseRegister =>" , responseRegister.data.user);
+
+        if(responseRegister.status == 200){
+            toast.success('عضویت شما با موفقیت انجام شد' , {
+                position: 'top-right' , 
+                closeOnClick: true
+            })
+            dispatch(setUserData(responseRegister.data.user))
+            actions.resetForm() ;
+            navigate("/profile")
+            
+        }
+
+        }
+
+
     return (
         <div className="register-container container" >
 
@@ -10,7 +50,14 @@ const Register = () => {
             <div >
                 <Formik
                     initialValues={{
+                        email: "",
+                        password: ""
+                    }}
 
+                    // validationSchema={registerSchema}
+
+                    onSubmit={(values, actions) => {
+                        handleRegister(values, actions);
                     }}
                 >
                     <Form className="register-form">
@@ -58,10 +105,10 @@ const Register = () => {
                 </p>
 
 
-                    <Link className="register-btn" to="/login">
-                        ورود
-                    </Link>
-               
+                <Link className="register-btn" to="/login">
+                    ورود
+                </Link>
+
 
             </div>
 

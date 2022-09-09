@@ -1,8 +1,36 @@
 import { Field, Form, Formik } from 'formik';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { setUserData } from '../Redux/usefulActions';
+import { sendLoginService } from '../Services/services';
 
 const Login = () => {
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    
+    const handleLogin = async(values , actions) =>{
+        console.log("values in login =>" , values);
+        console.log("actions in login =>" , actions);
+
+        const responseLogin = await sendLoginService(values);
+        console.log("responseLogin st =>" , responseLogin.data.user);
+
+        if(responseLogin.status==200){
+            toast.success("ورود شما موفقیت آمیز بود" , {
+                position : "top-right" , 
+                closeOnClick : true
+            })
+            dispatch(setUserData(responseLogin.data.user));
+            actions.resetForm();
+            navigate('/profile')
+
+        }
+
+    }
+
     return (
         <div className="login-container container" >
 
@@ -10,14 +38,19 @@ const Login = () => {
             <div >
                 <Formik
                     initialValues={{
+                        identifier: "",
+                        password: ""
+                    }}
 
+                    onSubmit={(values, actions) => {
+                        handleLogin(values, actions);
                     }}
                 >
                     <Form className="login-from">
                         <h4 className="font-weight-bold mb-4">ورود</h4>
                         <label className="mb-2 font-weight-bold ">نام کاربری یا آدرس ایمیل <span className="text-danger">*</span></label>
                         <Field
-                            name="username"
+                            name="identifier"
                             type="text"
                             size="60"
                             className="login-field ml-5"

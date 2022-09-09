@@ -8,14 +8,18 @@ import { Fragment } from "react";
 import { ConfigProvider } from "antd";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import {Store} from "../src/Redux/store";
+import { Provider } from "react-redux";
 
 const App = () => {
   return (
     <Fragment >
+        <Provider store={Store}>
       <ConfigProvider direction="rtl" csp={{ nonce: 'YourNonceCode' }}>
-        <AppRouter />
-        <ToastContainer />
+          <AppRouter />
+          <ToastContainer />
       </ConfigProvider>
+        </Provider>
     </Fragment>
 
   );

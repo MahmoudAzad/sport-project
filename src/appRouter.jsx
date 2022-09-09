@@ -14,6 +14,7 @@ import Tshirts from "./Components/Products/Mens_sport/tshirts";
 import ContactUS from "./Pages/contactUs";
 import Home from "./Pages/home";
 import Login from "./Pages/login";
+import Profile from "./Pages/profile";
 import Register from "./Pages/register";
 
 const AppRouter = () => {
@@ -32,6 +33,7 @@ const AppRouter = () => {
                 <Route path="/contactus" element={<ContactUS />} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Register/>} />
+                <Route path="/profile" element={<Profile/>} />
             </Routes>
 
             <Footer />
