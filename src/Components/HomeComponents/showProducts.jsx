@@ -26,16 +26,13 @@ const ShowProducts = () => {
             please wait...
         </p>
     }
+    console.log("show pros =>" , showPro);
 
     return (
-        <div className="show-pro-container container">
+        <div className="show-pro-container row justify-content-md-center ">
             {showPro.map((pro) => (
-                <div className="show-pro-item">
-                    <img  src={`http://localhost:1337${pro.img.url}`} />
-                </div>
+                <img className="col-6 col-md-4 mt-4 " src={`http://localhost:1337${pro.img.url}`} />
             ))}
-
-
         </div>
     );
 }

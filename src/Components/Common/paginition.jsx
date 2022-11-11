@@ -3,11 +3,6 @@ import { range } from 'lodash';
 
 const Pagination = ({ totalProducts, currentPage, perPage, onPageChange }) => {
 
-    console.log("total Pro pagination =>" , totalProducts);
-    console.log("currentPage pagination =>" , currentPage);
-    console.log("perPage pagination =>" , perPage);
-
-
         const pageCount = Math.ceil(totalProducts/perPage);
         if(pageCount === 1) return null ; 
 

@@ -10,7 +10,6 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import {Store} from "../src/Redux/store";
 import { Provider } from "react-redux";
-
 const App = () => {
   return (
     <Fragment >

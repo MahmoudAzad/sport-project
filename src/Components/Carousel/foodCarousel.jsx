@@ -4,10 +4,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
+import { useNavigate } from "react-router";
+import { Tooltip } from "antd";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 
 const FoodCarousel = () => {
 
     const [foodData, setFoodData] = useState("")
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -27,17 +31,27 @@ const FoodCarousel = () => {
             .then(result => { setFoodData(result) });
     }, [])
 
+    function handleShowDetailProduct(food) {
+        console.log("food =>", food);
+        const product = food
+        navigate("/showDetailProductsHelper", {
+            state: {
+                product,
+            },
+        });
+    }
 
     if (!foodData) { return <p>please wait...</p> }
-    console.log("food data =>", foodData);
-
+    // console.log("food data =>", foodData);
+    
     return (
         <div className="foodCarousel-container">
+            <h4>پیشنهادهای ویژه</h4>
             <Swiper
                 style={{
                     "--swiper-pagination-color": "black",
                 }}
-                slidesPerView={4}
+                slidesPerView={2}
                 spaceBetween={30}
                 slidesPerGroup={4}
                 loop={true}
@@ -45,6 +59,17 @@ const FoodCarousel = () => {
                 pagination={{
                     clickable: true,
                 }}
+
+                breakpoints={{
+                    576: {
+                        slidesPerView: 3,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                    }
+                }}
+
+
                 modules={[Pagination, Navigation]}
                 className="carousel-swiper container"
             >
@@ -55,45 +80,22 @@ const FoodCarousel = () => {
                     <SwiperSlide className="swiper-slide">
 
 
-                        <div class="slide-images">
+                        <div class="slide-images row justify-content-center">
                             <img src={`http://localhost:1337${food.orgImg.url}`} alt="cat 1" class="slide-orgImg" />
-                            <img src={`http://localhost:1337${food.hoverImg.url}`} alt="cat 2" class="slide-hoverImg" />
+                            <img src={`http://localhost:1337${food.hoverImg.url}`} alt="cat 2" class="slide-hoverImg" onClick={() => handleShowDetailProduct(food)} />
+                            <Tooltip title="اطلاعات بیشتر" className='btn ' mouseLeaveDelay={0} color="black" >
+                                <button class=" col-3" type="button" data-hover="hover">
+                                    <ShoppingCartOutlined className='icon' />
+                                </button>
+                            </Tooltip>
                         </div>
-                        <p className="mt-3 ">{food.title}</p>
+                        <p className="mt-3" onClick={() => handleShowDetailProduct(food)}>{food.title}</p>
 
                         <div className="carousel-price ">
                             <p className="carousel-orgPrice mr-3">{food.orginalPrice}</p>
                             <p className="carousel-linedPrice"><strike className="mb-3">{food.linedPrice}</strike></p>
                         </div>
 
-
-
-                        {/* <div className="swiper-images">
-                            <img className="orginal-img" src={`http://localhost:1337${food.orgImg.url}`} />
-                            <img className="overlay-img" src={`http://localhost:1337${food.hoverImg.url}`} />
-                        </div>
-                        <p className="mt-3 ">{food.title}</p>
-                        <div className="carousel-price ">
-                            <p className="carousel-orgPrice mr-3">{food.orginalPrice}</p>
-                            <p className="carousel-linedPrice"><strike className="mb-3">{food.linedPrice}</strike></p>
-                        </div> */}
-
-
-
-                        {/* <img className="orginal-img" src={`http://localhost:1337${food.orgImg.url}`} />
-                        <div class="overlay-container">
-                            <img className="overlay-img" src={`http://localhost:1337${food.hoverImg.url}`} />
-                            <p className="mt-3 ">{food.title}</p>
-                            <div className="carousel-price ">
-                            <p className="carousel-orgPrice mr-3">{food.orginalPrice}</p>
-                            <p className="carousel-linedPrice"><strike className="mb-3">{food.linedPrice}</strike></p>
-                        </div>
-                        </div>
-                        <p className="mt-3 ">{food.title}</p>
-                        <div className="carousel-price ">
-                            <p className="carousel-orgPrice mr-3">{food.orginalPrice}</p>
-                            <p className="carousel-linedPrice"><strike className="mb-3">{food.linedPrice}</strike></p>
-                        </div> */}
                     </SwiperSlide>
 
                 ))}

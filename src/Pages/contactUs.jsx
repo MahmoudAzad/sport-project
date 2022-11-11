@@ -7,164 +7,153 @@ import { toast } from 'react-toastify';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { contactSchema } from '../Components/Validations/contactValidation';
 import { useFormik } from 'formik';
-
 const ContactUS = () => {
 
+    const handleSubmit = async (values, actions) => {
+        console.log('values in handle submit =>', values)
 
-  const handleSubmit = async (values , actions) => {
-    console.log('values in handle submit =>' , values)
+        try {
+            <BeatLoader color={'red'} size={150} />
+            const { status } = await sendMessageService(values);
 
-    try {
-      <BeatLoader color={'red'} size={150} />
-      const { status } = await sendMessageService(values);
+            if (status == 200) {
 
-      if (status == 200) {
-      
 
-        toast.success(values.userName + " عزیز پیام شما ارسال شد " , {
-          position: "top-right",
-          closeOnClick: true
-        });
+                toast.success(values.userName + " عزیز پیام شما ارسال شد ", {
+                    position: "top-right",
+                    closeOnClick: true
+                });
 
-        actions.resetForm()
-        
-        // actions.resetForm({ 
-        //   values: {
-        //     userName: "",
-        //   }
-        // }) برای ریست کردن یک فیلد
+                actions.resetForm()
 
-      }
+                // actions.resetForm({ 
+                //   values: {
+                //     userName: "",
+                //   }
+                // }) برای ریست کردن یک فیلد
 
-    } catch (e) {
-      console.log('Err =>', e.message);
+            }
+
+        } catch (e) {
+            console.log('Err =>', e.message);
+        }
     }
-  }
 
 
-  return (
-    <div className="contact-us-container  mt-5">
+    return (
+        <div className="mr-5 ml-5">
+            <div className="contact-us-container row ">
 
-      <div className="contact-us-information ml-5">
-        <h4 style={{ fontWeight: 'bold', color: 'white' }}>اطلاعات تماس گیشا اسپرت</h4>
-        <p style={{ color: 'rgb(209, 209, 209)' }}>صمیمانه پاسخگوی نظر، پیشنهاد، انتقاد و شکایت شما هستیم</p>
-        <h6 style={{ marginTop: '100px', marginRight: '50px' }}><PhoneOutlined style={{ fontSize: '22px', marginLeft: '10px', color: 'rgb(259, 259, 259)' }} />۰۲۱-۲۸۴۲۸۱۵۹</h6>
-        <h6 style={{ marginTop: '20px', marginRight: '50px' }}><MailOutlined style={{ fontSize: '22px', marginLeft: '10px', color: 'rgb(259, 259, 259)' }} />info@GishaSport.com</h6>
-        <h6 style={{ marginTop: '20px', marginRight: '50px' }}><EnvironmentOutlined style={{ fontSize: '22px', marginLeft: '10px', color: 'rgb(259, 259, 259)' }} />پونک، خیابان عدل، خیابان بهار شرقی</h6>
+                <div className="information col-lg-6 text-right pt-5">
+                    <h4 style={{ fontWeight: 'bold', color: 'white' }}>اطلاعات تماس گیشا اسپرت</h4>
+                    <p style={{ color: 'rgb(209, 209, 209)' }}>صمیمانه پاسخگوی نظر، پیشنهاد، انتقاد و شکایت شما هستیم</p>
+                    <h6 style={{ marginTop: '100px', marginRight: '50px' }}><PhoneOutlined style={{ fontSize: '22px', marginLeft: '10px', color: 'rgb(259, 259, 259)' }} />۰۲۱-۲۸۴۲۸۱۵۹</h6>
+                    <h6 style={{ marginTop: '20px', marginRight: '50px' }}><MailOutlined style={{ fontSize: '22px', marginLeft: '10px', color: 'rgb(259, 259, 259)' }} />info@GishaSport.com</h6>
+                    <h6 style={{ marginTop: '20px', marginRight: '50px' }}><EnvironmentOutlined style={{ fontSize: '22px', marginLeft: '10px', color: 'rgb(259, 259, 259)' }} />پونک، خیابان عدل، خیابان بهار شرقی</h6>
 
-        <p style={{ textAlign: 'right', marginRight: '80px', marginTop: '10px', marginLeft: '20px', color: 'rgb(209, 209, 209)', lineHeight: '20px' }}>
-          آدرس مربوط به دفتر مرکزی بوده و فروشگاه حضوری وجود ندارد
-          خرید و ثبت سفارش تنها بصورت آنلاین میباشد و درصورت نیاز به مشاوره از طریق چت آنلاین سایت، چت واتساپ و یا تماس تلفنی با ما در ارتباط باشید
-        </p>
+                    <p style={{ textAlign: 'right', marginRight: '80px', marginTop: '10px', marginLeft: '20px', color: 'rgb(209, 209, 209)', lineHeight: '20px' }}>
+                        آدرس مربوط به دفتر مرکزی بوده و فروشگاه حضوری وجود ندارد
+                        خرید و ثبت سفارش تنها بصورت آنلاین میباشد و درصورت نیاز به مشاوره از طریق چت آنلاین سایت، چت واتساپ و یا تماس تلفنی با ما در ارتباط باشید
+                    </p>
 
-        <div className="mt-5 mr-5">
-          <YoutubeOutlined className="contactus-icons" />
-          <TwitterOutlined className="contactus-icons" />
-          <GithubOutlined className="contactus-icons" />
-          <WhatsAppOutlined className="contactus-icons" />
-          <InstagramOutlined className="contactus-icons" />
+                    <div className="mt-5 mr-5 row">
+                        <YoutubeOutlined className="icon col-2" />
+                        <TwitterOutlined className="icon col-2" />
+                        <GithubOutlined className="icon col-2" />
+                        <WhatsAppOutlined className="icon col-2" />
+                        <InstagramOutlined className="icon col-2" />
+                    </div>
+                </div>
+
+
+                <div className="form-container col-lg-6  text-right pt-5">
+
+
+                    <Formik
+                        initialValues={{
+                            userName: "",
+                            phoneNumber: "",
+                            message: ""
+                        }}
+                        validationSchema={contactSchema}
+
+                        onSubmit={(values, actions) => {
+                            handleSubmit(values, actions);
+                        }}
+                    >
+
+                        <Form className="form">
+                            <label className=" mb-2">نام و نام خانوادگی *</label>
+                            <Field
+                                name="userName"
+                                type="text"
+                                className="mb-1 field-input col-12"
+                            />
+
+                            <ErrorMessage
+                                name="userName"
+                                render={(msg) => (
+                                    <div className="text-danger">{msg}</div>
+                                )}
+                            />
+
+
+                            <label className="mt-4 mb-2"> تلفن *</label>
+                            <Field
+                                name="phoneNumber"
+                                type="number"
+                                className="mb-1 field-input col-12"
+                                placeholder="مثال : ۰۹۱۲۹۹۹۸۸۷۷"
+                            // style={{ display: 'block' }}
+
+                            />
+
+
+                            <ErrorMessage
+                                name="phoneNumber"
+                                render={(msg) => (
+                                    <div className="text-danger">{msg}</div>
+                                )}
+                            />
+
+                            <label className="mt-4 mb-2"> متن پیام شما *</label>
+                            <Field
+                                placeholder="بنویسید ..."
+                                style={{ height: '200px', resize: 'none', display: 'block' }}
+                                name="message"
+                                as="textarea"
+                                className="w-100"
+                            />
+
+                            <ErrorMessage
+                                name="message"
+                                render={(msg) => (
+                                    <div className="text-danger">{msg}</div>
+                                )}
+                            />
+
+
+                            <label className="mb-2 mt-3">کد امنیتی</label>
+                            <ReCAPTCHA
+                                sitekey="Your client site key"
+                            />
+
+
+                            <button
+                                type="submit"
+                                style={{ display: 'block', marginBottom: '20px' }}
+                            >
+                                ارسال
+                            </button>
+                        </Form>
+                    </Formik>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
-
-
-      <div className="contact-us-form">
-
-  
-        <Formik
-          initialValues={{
-            userName: "",
-            phoneNumber: "",
-            message: ""
-          }}
-          validationSchema={contactSchema}
-
-          onSubmit={(values, actions) => {
-            handleSubmit(values , actions);
-          }}
-        >
-
-          <Form className="contact-us-form-container">
-            <label className=" mb-2">نام و نام خانوادگی *</label>
-            <Field
-              name="userName"
-              type="text"
-              className="mb-1 field-input"
-              size="70"
-              style={{ display: 'block' }}
-              // value={userName}
-              // onChange={e => setUserName(e.target.value)}
-            />
-
-            <ErrorMessage
-              name="userName"
-              render={(msg) => (
-                <div className="text-danger">{msg}</div>
-              )}
-            />
-
-
-            <label className="mt-4 mb-2"> تلفن *</label>
-            <Field
-              name="phoneNumber"
-              type="number"
-              className="mb-1 field-input"
-              placeholder="مثال : ۰۹۱۲۹۹۹۸۸۷۷"
-              size="70"
-              style={{ display: 'block' , width : "100%" }}
-              
-
-              // value={phoneNumber}
-              // onChange={e => setPhoneNumber(e.target.value)}
-            />
-
-
-            <ErrorMessage
-              name="phoneNumber"
-              render={(msg) => (
-                <div className="text-danger">{msg}</div>
-              )}
-            />
-
-            <label className="mt-4 mb-2"> متن پیام شما *</label>
-            <Field
-              placeholder="بنویسید ..."
-              style={{ width: '100%', height: '200px', resize: 'none' }}
-              className="mb-4"
-              name="message"
-              as="textarea"
-              // value={message}
-              // onChange={e => setMessage(e.target.value)}
-            />
-        
-            <ErrorMessage
-              name="message"
-              render={(msg) => (
-                <div className="text-danger">{msg}</div>
-              )}
-            />
-
-
-            <label className="mb-2">کد امنیتی</label>
-            <ReCAPTCHA
-              sitekey="Your client site key"
-            />
-
-
-            <button
-              type="submit"
-              style={{ display: 'block' }}
-            >
-              ارسال
-            </button>
-          </Form>
-        </Formik>
-
-      </div>
-
-
-
-    </div>
-  );
+    );
 }
 
 export default ContactUS;

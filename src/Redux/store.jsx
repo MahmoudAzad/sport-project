@@ -1,16 +1,16 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { applyMiddleware, configureStore } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+import { loadState, saveState } from './localStorage';
 import usefulReducer from './usefulReducer';
 
-// const reducers= combineReducers({
-//   loginReducer : usefulReducer
-//   });
+// const persistedState = loadState();
 
-// export const Store = configureStore(reducers);
+export const Store = configureStore({ reducer: usefulReducer  }, applyMiddleware(thunk) );
 
-// export const Store = configureStore({
-//   reducer:{
-//     loginReducer: usefulReducer
-//   }
-// })
-
-export const Store = configureStore({ reducer: usefulReducer });
+Store.subscribe(() => {
+    saveState({
+        email: Store.getState().user,
+        isLogged: Store.getState().isLogged,
+        cart :Store.getState().cart
+    });
+});

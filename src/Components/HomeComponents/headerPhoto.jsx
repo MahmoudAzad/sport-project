@@ -2,10 +2,12 @@ import React from 'react';
 
 const HeaderPhoto = () => {
     return (
-        <div className="container mt-3">
-            <img src="/images\header-photo\gishaa.png" width="100%" height="500px" alt="لباس ورزشی مردانه" />
-       
+        <div className="headerPhoto-container">
+            <div className=" mt-5 mb-5 row ">
+                <img src="/images\header-photo\gishaa.png" className="col-12 " alt="" />
+            </div>
         </div>
+
     );
 }
 

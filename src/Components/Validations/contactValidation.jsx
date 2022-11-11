@@ -7,6 +7,12 @@ export const contactSchema = Yup.object().shape({
 });
 
 export const registerSchema = Yup.object().shape({
-    username: Yup.string().required("خواهشمندیم یک آدرس ایمیل معتبر وارد کنید"),
+    email: Yup.string().email("خواهشمندیم یک آدرس ایمیل معتبر وارد کنید").required("وارد کردن ایمیل الزامی میباشد "),
+    password : Yup.string().required("خواهشمندیم گذرواژه حساب خود را وارد کنید")
+});
+
+
+export const loginSchema = Yup.object().shape({
+    identifier: Yup.string().required("وارد کردن نام کاربری یاایمیل الزامی میباشد "),
     password : Yup.string().required("خواهشمندیم گذرواژه حساب خود را وارد کنید")
 });
