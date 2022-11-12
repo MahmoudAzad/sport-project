@@ -3,21 +3,7 @@ import { Affix } from 'antd';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-
-
 const SubMenu = () => {
-
-  const navigate = useNavigate();
-
-  function getProducts(proPathName) {
-    console.log("pro name =>", proPathName);
-    navigate("/showProducts", {
-      state: {
-        proPathName
-      },
-    });
-
-  }
 
   return (
 
@@ -38,10 +24,10 @@ const SubMenu = () => {
                 <ul>
                   <li><a href="">نیم لگ و کشاله بند  مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                   <li><a href="">کفش ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                  <li><Link to={"/showProducts"}   >جوراب ورزشی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                  <li><Link to={"/showProducts"}>جوراب ورزشی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                 </ul>
                 <ul>
-                  <li><Link to={"/showProducts/" + "mens-legs"}>لگ ورزشی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                  <li><Link  to={"/showProducts/" + "mens-legs"}>لگ ورزشی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                   <li><Link to={"/showProducts/" + "mens-sport-shorts"}>شلوارک ورزشی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                   <li><a href="">شلوار مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                   <li><a href="">ست ورزشی مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>

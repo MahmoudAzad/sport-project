@@ -5,8 +5,8 @@ import Pagination from '../Common/paginition';
 import { Paginate } from '../Utils/paginate';
 import { SearchOutlined, ShoppingCartOutlined, UnorderedListOutlined } from '@ant-design/icons';
 
-const ShowProductsHelper = () => {
-
+const ShowProductsHelper = (props) => {
+    console.log("props =>" , props.child);
     const { endPath } = useParams();
     console.log("End path useParams =>", endPath);
 

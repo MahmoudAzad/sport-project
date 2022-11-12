@@ -1,4 +1,4 @@
-import { ADDTOCART, DELETEUSERDATA, EDITUSERDATA, REMOVECART, SETISLOGGEDIN, SETISLOGGEDOUT, SETTOKEN, SETUSERDATA } from "./usefulTypes"
+import { ADDTOCART, CARTDRAWER, DELETEUSERDATA, EDITUSERDATA, REMOVECART, SETISLOGGEDIN, SETISLOGGEDOUT, SETTOKEN, SETUSERDATA } from "./usefulTypes"
 
 
 // ست کردن اطلاعات کاربر
@@ -45,6 +45,12 @@ export const removeCart = (product) =>{
     console.log("hazf action =>" , product);
     return async(dispatch) =>{
         await dispatch ({type : REMOVECART , payload : product})
+    }
+}
+
+export const cartDrawer = (item)=>{
+    return async (dispatch) => {
+        await dispatch({type: CARTDRAWER, payload: item})
     }
 }
 

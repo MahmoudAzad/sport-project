@@ -69,25 +69,16 @@ const Footer = () => {
                         </Link>
                     </p>
                     <p>
-                        <Link to="/" className='link'>
-                            &bull; همه محصولات
-                        </Link>
-                    </p>
-                    <p>
-                        <Link to="/" className='link'>
-                            &bull; مجله ورزشی گیشا اسپرت
-                        </Link>
-                    </p>
-                    <p>
                         <Link to="/ContactUS" className='link'>
                             &bull; تماس با ما
                         </Link>
                     </p>
                     <p>
-                        <Link to="/shaker-printing" className='link'>
-                            &bull; شیکر با چاپ لوگو دلخواه
+                        <Link to="/" className='link'>
+                            &bull; همکاری با ما
                         </Link>
                     </p>
+               
                     <p>
                         <Link to="/privacy" className='link'>
                             &bull; حریم خصوصی
@@ -101,6 +92,11 @@ const Footer = () => {
                     <p>
                         <Link to="/track-order" className='link'>
                             &bull; پیگیری ارسال سفارش
+                        </Link>
+                    </p>
+                    <p>
+                        <Link to="/shaker-printing" className='link'>
+                            &bull; شیکر با چاپ لوگو دلخواه
                         </Link>
                     </p>
                     <p>
@@ -121,7 +117,7 @@ const Footer = () => {
             </div>
 
 
-            <div className="bottom-footer-container container">
+            <div className="bottom-footer-container container" >
                 <p>تمام حقوق مادی و معنوی فروشگاه اینترنتی <b className="font-weight-bold"><Link to="" className='link'>گیشا اسپرت</Link></b> محفوظ است.</p>
             </div>
 
