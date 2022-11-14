@@ -1290,6 +1290,108 @@ body {
   transition: .3s;
 }
 
+.cooperation-container .caption {
+  text-align: right;
+  margin-top: 30px;
+  line-height: 25px;
+}
+
+.cooperation-container .underline {
+  border-bottom: 3px solid #727272;
+  width: 80px;
+  margin-top: 10px;
+}
+
+.cooperation-container .anchor .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+  font-weight: bold;
+}
+
+.cooperation-container .anchor .item:hover {
+  text-decoration: none;
+}
+
+.cooperation-container .anchor .item .icon {
+  font-size: 30px;
+  background-color: #fee1ac;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.cooperation-container .anchor .item .description :hover {
+  color: #fe740b;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.cooperation-container #item-1,
+.cooperation-container #item-2,
+.cooperation-container #item-3 {
+  background-color: #f7f7f7;
+  text-align: right;
+  border-radius: 20px;
+  margin-top: 100px;
+}
+
+.cooperation-container #item-1 .underline,
+.cooperation-container #item-2 .underline,
+.cooperation-container #item-3 .underline {
+  border-bottom: 3px solid #fe740b;
+  width: 50px;
+}
+
+.cooperation-container #item-1 p,
+.cooperation-container #item-2 p,
+.cooperation-container #item-3 p {
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+
+.cooperation-container #item-1 .box,
+.cooperation-container #item-2 .box,
+.cooperation-container #item-3 .box {
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cooperation-container #item-1 .label,
+.cooperation-container #item-2 .label,
+.cooperation-container #item-3 .label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.cooperation-container #item-1 .field,
+.cooperation-container #item-2 .field,
+.cooperation-container #item-3 .field {
+  padding: 8px;
+  border: 2px solid #d1d1d1 !important;
+  border-radius: 5px;
+}
+
+.cooperation-container #item-1 .field:focus,
+.cooperation-container #item-2 .field:focus,
+.cooperation-container #item-3 .field:focus {
+  outline: none;
+}
+
 @media only screen and (max-width: 992px) {
   .navbar-container {
     display: none;

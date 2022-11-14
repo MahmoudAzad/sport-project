@@ -24,6 +24,7 @@ import ScrollToTop from "./scrollToTop";
 import Help from "./Pages/help";
 import Privacy from "./Pages/privacy";
 import ShakerPrinting from "./Pages/shakerPrinting";
+import Cooperation from "./Pages/cooperation";
 
 
 const AppRouter = () => {
@@ -48,6 +49,7 @@ const AppRouter = () => {
                 <Route path="/help" element={<Help />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/shaker-printing" element={<ShakerPrinting />} />
+                <Route path="/cooperation" element={<Cooperation />} />
 
 
                 <Route path="/profile" element={<ProfileList />} >

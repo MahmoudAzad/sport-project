@@ -1,5 +1,4 @@
 import { LeftOutlined } from "@ant-design/icons";
-import { Anchor } from "antd";
 import React from "react";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,8 +8,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
-
-const { Link } = Anchor;
 
 const ShakerPrinting = () => {
     return (

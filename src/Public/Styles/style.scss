@@ -370,7 +370,7 @@ $ORANGE : rgb(254, 116, 11);
     padding: 30px;
     margin-top: 30px;
 
-    h4{
+    h4 {
         text-align: center;
         color: white;
         font-weight: bold;
@@ -419,24 +419,27 @@ $ORANGE : rgb(254, 116, 11);
 
 .slide-images {
     position: relative;
-    overflow: hidden;  
-    &:hover{
-        .btn{
+    overflow: hidden;
+
+    &:hover {
+        .btn {
             bottom: 0;
         }
     }
 
-    .btn{
+    .btn {
         bottom: -160px;
         position: absolute;
         text-align: center;
         transition: .5s;
         background-color: white;
         border: 1px solid rgb(234, 234, 234);
-        .icon{
+
+        .icon {
             font-size: 25px;
             color: rgb(68, 68, 68);
-            &:hover{
+
+            &:hover {
                 color: #898989;
             }
         }
@@ -1156,6 +1159,89 @@ $ORANGE : rgb(254, 116, 11);
                 }
             }
         }
+    }
+}
+
+// cooperation.jsx
+.cooperation-container {
+    .caption {
+        text-align: right;
+        margin-top: 30px;
+        line-height: 25px;
+    }
+
+    .underline {
+        border-bottom: 3px solid rgb(114, 114, 114);
+        width: 80px;
+        margin-top: 10px;
+    }
+
+    .anchor .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        .icon {
+            font-size: 30px;
+            background-color: rgb(254, 225, 172);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .description :hover {
+            color: $ORANGE;
+            transition: .2s;
+        }
+    }
+
+    #item-1,
+    #item-2,
+    #item-3 {
+        background-color: rgb(247, 247, 247);
+        text-align: right;
+        border-radius: 20px;
+        margin-top: 100px;
+
+        .underline {
+            border-bottom: 3px solid $ORANGE;
+            width: 50px;
+        }
+
+        p {
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            background-color: rgb(232, 232, 232);
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+
+        .field {
+            padding: 8px;
+            border: 2px solid rgb(209, 209, 209) !important;
+            border-radius: 5px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
     }
 }
 
