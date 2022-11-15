@@ -1262,10 +1262,10 @@ $ORANGE : rgb(254, 116, 11);
     }
 
     .contact-us-container {
-        border: 3px solid #f0920f;
+        border: 3px solid $ORANGE;
 
         .information {
-            background-color: #f0920f;
+            background-color: $ORANGE;
             border-top-left-radius: 20px;
             border-bottom-right-radius: 0;
 

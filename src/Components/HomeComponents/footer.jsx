@@ -74,7 +74,7 @@ const Footer = () => {
                         </Link>
                     </p>
                     <p>
-                        <Link to="/" className='link'>
+                        <Link to="/cooperation" className='link'>
                             &bull; همکاری با ما
                         </Link>
                     </p>

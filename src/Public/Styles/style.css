@@ -1402,10 +1402,10 @@ body {
     display: flex;
   }
   .contact-us-container {
-    border: 3px solid #f0920f;
+    border: 3px solid #fe740b;
   }
   .contact-us-container .information {
-    background-color: #f0920f;
+    background-color: #fe740b;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 0;
   }

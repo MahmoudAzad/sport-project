@@ -1,11 +1,12 @@
-import { ADDTOCART, CARTDRAWER, DELETEUSERDATA, EDITUSERDATA, REMOVECART, SETISLOGGEDIN, SETISLOGGEDOUT, SETTOKEN, SETUSERDATA } from "./usefulTypes";
+import { ADDTOCART, CARTDRAWER, DELETEUSERDATA, EDITUSERDATA, REMOVECART, SETISLOGGEDIN, LOADING, SETISLOGGEDOUT, SETUSERDATA, LOADINGTRUE, LOADINGFALSE } from "./usefulTypes";
 
 const initialState = {
     user: undefined,
     isLogged: false,
     test: undefined,
     cart: [],
-    cartDrawer: false
+    cartDrawer: false,  
+    load: true,
 }
 
 const usefulReducer = (state = initialState, action) => {
@@ -74,11 +75,11 @@ const usefulReducer = (state = initialState, action) => {
                 cart: state.cart.filter(item => item.title !== action.payload.title)
             }
 
-            case CARTDRAWER:
-                return {
-                    ...state,
-                    cartDrawer: state.cartDrawer = action.payload
-                }
+        case CARTDRAWER:
+            return {
+                ...state,
+                cartDrawer: state.cartDrawer = action.payload
+            }
 
         default:
             return state

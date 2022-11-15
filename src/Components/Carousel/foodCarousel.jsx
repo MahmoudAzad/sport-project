@@ -7,6 +7,7 @@ import { Pagination, Navigation } from "swiper";
 import { useNavigate } from "react-router";
 import { Tooltip } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
+import Loading from "../Common/loading";
 
 const FoodCarousel = () => {
 
@@ -41,8 +42,7 @@ const FoodCarousel = () => {
         });
     }
 
-    if (!foodData) { return <p>please wait...</p> }
-    // console.log("food data =>", foodData);
+    if (!foodData) { return <Loading /> }
     
     return (
         <div className="foodCarousel-container">

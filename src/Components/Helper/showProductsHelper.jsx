@@ -4,19 +4,21 @@ import { useLocation, useNavigate, useParams } from 'react-router';
 import Pagination from '../Common/paginition';
 import { Paginate } from '../Utils/paginate';
 import { SearchOutlined, ShoppingCartOutlined, UnorderedListOutlined } from '@ant-design/icons';
+import Loading from '../Common/loading';
+// import { loading } from '../../Redux/usefulActions';
+import { connect, useDispatch } from 'react-redux';
 
-const ShowProductsHelper = (props) => {
-    console.log("props =>" , props.child);
+const ShowProductsHelper = () => {
+
     const { endPath } = useParams();
-    console.log("End path useParams =>", endPath);
-
-    // const params = useLocation();
-    // console.log("params ShowProHelp =>" , params.state.proPathName);
-
     const [products, setProducts] = useState("");
+    const navigate = useNavigate();
+
+    const [perPage, setPerPage] = useState(15);
+    const [currentPage, setCurrentPage] = useState(1);
+    const productsHelperPaginate = Paginate(products, currentPage, perPage);
 
     useEffect(() => {
-
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Access-Control-Request-Headers", "*");
@@ -34,18 +36,9 @@ const ShowProductsHelper = (props) => {
     }, [endPath])
 
 
-    const navigate = useNavigate();
-
-    const [perPage, setPerPage] = useState(15);
-    const [currentPage, setCurrentPage] = useState(1);
-
     const handlePageChange = page => {
         setCurrentPage(page);
     }
-
-    const productsHelperPaginate = Paginate(products, currentPage, perPage);
-
-
 
     function handleShowDetailProduct(item) {
         const product = item
@@ -54,15 +47,15 @@ const ShowProductsHelper = (props) => {
                 product,
             },
         });
-
     }
 
-    if (!products) { return <p>please wait...</p> }
+    if (!products) { 
+        return <Loading /> 
+    }
 
-
-    console.log("get products =>", products);
     return (
         <Fragment>
+            
             <div className=''>
                 <div className="show-products-helper-container row justify-content-center text-center">
                     {productsHelperPaginate.map((item) => (
@@ -96,20 +89,6 @@ const ShowProductsHelper = (props) => {
     );
 }
 
-export default ShowProductsHelper;
-
-
-
-
-
-
-
-// <div className='mah'>
-// <div class="product">
-//     <div class="imgbox"> <img src="/images\تیشرت مردانه\a1.jpg" /> </div>
-//     <div class="specifies">
-//         <button class="btn btn-success">Buy Now</button>
-//     </div>
-// </div>
-// <h4 className='text-right'>modal</h4>
-// </div>
+ 
+  
+  export default ShowProductsHelper; 

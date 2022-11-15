@@ -5,15 +5,16 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { useNavigate } from 'react-router';
-import { ShoppingCartOutlined } from '@ant-design/icons';
+import {  ShoppingCartOutlined } from '@ant-design/icons';
 import { Tooltip } from 'antd';
+import { useDispatch } from 'react-redux';
+import Loading from '../Common/loading';
 
 const HomeCarouselHelper = ({ endPath, title }) => {
-
     const [products, setProducts] = useState("");
+    const navigate = useNavigate();
 
-    useEffect(() => {
-
+    const fetchData = async () => {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Access-Control-Request-Headers", "*");
@@ -24,15 +25,18 @@ const HomeCarouselHelper = ({ endPath, title }) => {
             headers: myHeaders,
             redirect: 'follow'
         };
-
-        fetch(`http://localhost:1337/${endPath}`, requestOptions)
+        await fetch(`http://localhost:1337/${endPath}`, requestOptions)
             .then(response => response.json())
-            .then(result => { setProducts(result) });
+            .then(result => {
+                setProducts(result)
+            });
+    }
+
+    useEffect(() => {
+        fetchData();
     }, [])
-    const navigate = useNavigate();
 
     function handleShowDetailProduct(p) {
-        console.log("p =>", p);
         const product = p
         navigate("/showDetailProductsHelper", {
             state: {
@@ -41,16 +45,13 @@ const HomeCarouselHelper = ({ endPath, title }) => {
         });
     }
 
-
     if (!products) {
-        return <p>
-            please wait...
-        </p>
+        return <Loading />
     }
-
 
     return (
         <div className="mt-4">
+
             <h5 className="swiper-container-title container p-2 ">{title}</h5>
             <Swiper
                 style={{
@@ -100,7 +101,7 @@ const HomeCarouselHelper = ({ endPath, title }) => {
                                     <img className="slide-hoverImg" src={`http://localhost:1337${p.hoverImg.url || p.hoverImg[0].url}`} alt="cat 2" onClick={() => handleShowDetailProduct(p)} />
                                 </div>
 
-                                <Tooltip title="انتخاب گزینه ها" className='btn' mouseLeaveDelay={0} color="black"	onClick={() => handleShowDetailProduct(p)}>
+                                <Tooltip title="انتخاب گزینه ها" className='btn' mouseLeaveDelay={0} color="black" onClick={() => handleShowDetailProduct(p)}>
                                     <button class=" col-3" type="button" data-hover="hover">
                                         <ShoppingCartOutlined className='icon' />
                                     </button>

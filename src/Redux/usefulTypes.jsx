@@ -5,6 +5,7 @@ export const SETISLOGGEDOUT = 'SETISLOGGEDOUT';
 export const EDITUSERDATA = 'EDITUSERDATA';
 export const ADDTOCART = 'ADDTOCART';
 export const REMOVECART = 'REMOVECART';
-export const CARTDRAWER = "CARTDRAWER"
+export const CARTDRAWER = "CARTDRAWER";
+
 
 
