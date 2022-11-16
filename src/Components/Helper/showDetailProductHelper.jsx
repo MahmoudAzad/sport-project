@@ -123,9 +123,9 @@ const ShowDetailProductsHelper = () => {
                   width: 200,
                 }}
               >
-                <Option value="jack">یک گزینه را انتخاب کنید</Option>
-                <Option value="lucy">XL</Option>
-                <Option value="Yiminghe">۲XL</Option>
+                <Option value="jack" className="text-right">یک گزینه را انتخاب کنید</Option>
+                <Option value="lucy" className="text-right">XL</Option>
+                <Option value="Yiminghe" className="text-right">۲XL</Option>
               </Select>
 
             </h6>

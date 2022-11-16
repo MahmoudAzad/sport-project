@@ -266,8 +266,6 @@ body {
 }
 
 .submenu-container .submenu-nav .submenu-items li:hover .fw-dropdown {
-  -webkit-transition: 11s;
-  transition: 11s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -354,6 +352,18 @@ body {
 
 .mobile-menu-container .mobile-menu-item p {
   font-size: 12px;
+}
+
+.header-swiper .swiper-pagination .swiper-pagination-bullet {
+  opacity: .5;
+  background-color: #aaaaaa;
+  padding: 5px;
+  margin: 5px;
+}
+
+.header-swiper .swiper-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: white;
 }
 
 .swiper-images {

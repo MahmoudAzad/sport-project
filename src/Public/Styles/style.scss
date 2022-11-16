@@ -214,8 +214,8 @@ $ORANGE : rgb(254, 116, 11);
 }
 
 
-// submenu.jsx
 
+// submenu.jsx
 
 .submenu-container {
     width: 100%;
@@ -241,7 +241,6 @@ $ORANGE : rgb(254, 116, 11);
 
 
                 &:hover .fw-dropdown {
-                    transition: 11s;
                     display: flex;
                     flex-direction: row-reverse;
                     justify-content: space-around;
@@ -330,7 +329,18 @@ $ORANGE : rgb(254, 116, 11);
 }
 
 
+// headerCarousel.jsx
 
+.header-swiper .swiper-pagination .swiper-pagination-bullet {
+    opacity: .5;
+    background-color: rgb(170, 170, 170);
+    padding: 5px;
+    margin: 5px;
+  }
+  .header-swiper .swiper-pagination .swiper-pagination-bullet-active  {
+    opacity: 1;
+    background-color: white;
+  }
 
 
 // foodCarousel.jsx

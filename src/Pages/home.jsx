@@ -1,9 +1,9 @@
 import { Fragment } from "react";
-import HeaderPhoto from "../Components/HomeComponents/headerPhoto";
 import FoodCarousel from "../Components/Carousel/foodCarousel";
 import ShowProducts from "../Components/HomeComponents/showProducts";
 import AdvertisePhotos from "../Components/HomeComponents/advertisePhotos";
 import HomeCarouselHelper from "../Components/Helper/homeCarouselHelper";
+import HeaderCarousel from "../Components/Carousel/headerCarousel";
 
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <HeaderPhoto />
+      <HeaderCarousel />
       <FoodCarousel />
       <ShowProducts />
 
