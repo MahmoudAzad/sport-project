@@ -25,6 +25,7 @@ import Help from "./Pages/help";
 import Privacy from "./Pages/privacy";
 import ShakerPrinting from "./Pages/shakerPrinting";
 import Cooperation from "./Pages/cooperation";
+import MajorShopping from "./Pages/majorShopping";
 
 
 const AppRouter = () => {
@@ -50,7 +51,7 @@ const AppRouter = () => {
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/shaker-printing" element={<ShakerPrinting />} />
                 <Route path="/cooperation" element={<Cooperation />} />
-
+                <Route path="/major-shopping" element={<MajorShopping />} />
 
                 <Route path="/profile" element={<ProfileList />} >
                     <Route index path='' element={<Counter />} />

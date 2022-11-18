@@ -22,9 +22,8 @@ const SubMenu = () => {
                 </div>
 
                 <ul>
-                  <li><a href="">نیم لگ و کشاله بند  مردانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                  <li><Link to={"/showProducts/" + "mens-slippers"}>دمپایی اسپرت مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                   <li><Link to={"/showProducts/" + "mens-shoes"}>کفش ورزشی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                  <li><Link to={"/showProducts"}>جوراب ورزشی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                 </ul>
                 <ul>
                   <li><Link  to={"/showProducts/" + "mens-legs"}>لگ ورزشی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
@@ -33,10 +32,10 @@ const SubMenu = () => {
                   <li><Link to={"/showProducts/" + "mens-set-sports"}>ست ورزشی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                 </ul>
                 <ul>
-                  <li><a href="">تمام محصولات این دسته</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                   <li><Link to={"/showProducts/" + "ring-sleeves"}>رکابی بدنسازی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                   <li><Link to={"/showProducts/" + "tshirts"}>تیشرت و بلوز مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                   <li><Link to={"/showProducts/" + "sweatshirts"}>هودی و سوییشرت مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                  <li><Link to={"/showProducts/" + "mens-socks"}>جوراب ورزشی مردانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                 </ul>
 
               </div>
@@ -49,7 +48,7 @@ const SubMenu = () => {
 
                 <ul>
                   <li><a href="">ست ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                  <li><a href="">جوراب ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                  <li><Link to={"/showProducts/" + "mens-socks"}>جوراب ورزشی زنانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                 </ul>
                 <ul>
                   <li><a href="">لگ ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
@@ -60,9 +59,9 @@ const SubMenu = () => {
                 <ul>
 
                   <li><a href="">تمام محصولات این دسته</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                  <li><a href="">تاپ و نیم تنه ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                  <li><a href="">تیشرت ورزشی زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
-                  <li><a href="">هودی و سوییشرت زنانه</a><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                  <li><Link to={"/showProducts/" + "women-busts"}>نیم تنه ورزشی زنانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                  <li><Link to={"/showProducts/" + "tshirts"}>تیشرت ورزشی زنانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
+                  <li><Link to={"/showProducts/" + "sweatshirts"}>هودی و سوییشرت زنانه</Link><LeftOutlined style={{ fontSize: "13px", marginRight: "3px" }} /></li>
                 </ul>
               </div>
             </li>
