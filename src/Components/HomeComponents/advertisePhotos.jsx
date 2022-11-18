@@ -14,7 +14,9 @@ const AdvertisePhotos = () => {
             <Link to={"showProducts/" + "gif-carts"}>
                 <img src="/images\advertise-photos\ad2.jpg" alt="کارت هدیه" className="col-md-3 AdverticePhoto-2" />
             </Link>
-            <img src="/images\advertise-photos\ad4.jpg" alt="خرید اقساطی" className="col-md-3 AdverticePhoto-2" />
+            <Link to="/installment">
+                <img src="/images\advertise-photos\ad4.jpg" alt="خرید اقساطی" className="col-md-3 AdverticePhoto-2" />
+            </Link>
 
         </div>
     );

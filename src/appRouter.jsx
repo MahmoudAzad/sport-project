@@ -26,6 +26,7 @@ import Privacy from "./Pages/privacy";
 import ShakerPrinting from "./Pages/shakerPrinting";
 import Cooperation from "./Pages/cooperation";
 import MajorShopping from "./Pages/majorShopping";
+import Installment from "./Pages/installment";
 
 
 const AppRouter = () => {
@@ -52,6 +53,7 @@ const AppRouter = () => {
                 <Route path="/shaker-printing" element={<ShakerPrinting />} />
                 <Route path="/cooperation" element={<Cooperation />} />
                 <Route path="/major-shopping" element={<MajorShopping />} />
+                <Route path="/installment" element={<Installment />} />
 
                 <Route path="/profile" element={<ProfileList />} >
                     <Route index path='' element={<Counter />} />

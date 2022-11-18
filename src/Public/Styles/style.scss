@@ -1396,6 +1396,36 @@ $ORANGE : rgb(254, 116, 11);
     }
 }
 
+// installment.jsx
+
+.installment-container{
+    h4{
+        color: $ORANGE;
+        font-weight: bold;
+    }
+    p{
+        line-height: 25px;
+    }
+    h5{
+        color: rgb(57, 21, 139);
+        font-weight: bold;
+        margin-top: 40px;
+    }
+    li{
+        padding: 10px;
+    }
+    img{
+        border-radius: 40px;
+    }
+    .btn{
+        background-color: $ORANGE;
+        color : white;
+        padding: 10px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+}
+
 
 // Responsive 
 @media only screen and (min-width: 1200px) {}

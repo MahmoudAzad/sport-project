@@ -1582,6 +1582,37 @@ body {
   outline: none;
 }
 
+.installment-container h4 {
+  color: #fe740b;
+  font-weight: bold;
+}
+
+.installment-container p {
+  line-height: 25px;
+}
+
+.installment-container h5 {
+  color: #39158b;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.installment-container li {
+  padding: 10px;
+}
+
+.installment-container img {
+  border-radius: 40px;
+}
+
+.installment-container .btn {
+  background-color: #fe740b;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
 @media only screen and (max-width: 992px) {
   .navbar-container {
     display: none;
