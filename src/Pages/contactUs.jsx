@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { EnvironmentOutlined, GithubOutlined, InstagramOutlined, MailOutlined, PhoneOutlined, TwitterOutlined, WhatsAppOutlined, YoutubeOutlined } from '@ant-design/icons';
 import ReCAPTCHA from "react-google-recaptcha";
 import BeatLoader from "react-spinners/ClipLoader";
@@ -6,11 +6,9 @@ import { sendMessageService } from '../Services/services';
 import { toast } from 'react-toastify';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { contactSchema } from '../Components/Validations/contactValidation';
-import { useFormik } from 'formik';
 const ContactUS = () => {
 
     const handleSubmit = async (values, actions) => {
-        console.log('values in handle submit =>', values)
 
         try {
             <BeatLoader color={'red'} size={150} />
@@ -25,13 +23,6 @@ const ContactUS = () => {
                 });
 
                 actions.resetForm()
-
-                // actions.resetForm({ 
-                //   values: {
-                //     userName: "",
-                //   }
-                // }) برای ریست کردن یک فیلد
-
             }
 
         } catch (e) {
@@ -104,8 +95,6 @@ const ContactUS = () => {
                                 type="number"
                                 className="mb-1 field-input col-12"
                                 placeholder="مثال : ۰۹۱۲۹۹۹۸۸۷۷"
-                            // style={{ display: 'block' }}
-
                             />
 
 

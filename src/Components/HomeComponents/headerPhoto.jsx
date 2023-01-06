@@ -4,7 +4,7 @@ const HeaderPhoto = () => {
     return (
         <div className="headerPhoto-container">
             <div className=" mt-5 mb-5 row ">
-                <img src="/images\header-photo\gishaa.png" className="col-12 " alt="" />
+                <img src="/images\header-photo\gishaa.png" className="col-12 " alt="لوگو" />
             </div>
         </div>
 

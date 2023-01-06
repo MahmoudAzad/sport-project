@@ -3,7 +3,6 @@ import React from "react";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -25,28 +24,28 @@ const ShakerPrinting = () => {
             <div className="shaker-printing-anchor">
 
                 <AnchorLink className="anchor-item col" href='#item-1' offset='50'>
-                    <img src="/images\shaker-printing\1pie.png" />
+                    <img src="/images\advertise-photos/ad1.jpg" alt="شیکر با لوگو دلخواه" />
                     <div className="item-description mr-3">
                         <p className="item-link">چرا شیکر با لوگو دلخواه<LeftOutlined className="item-icon  mr-1" /></p>
                     </div>
                 </AnchorLink>
 
                 <AnchorLink className="anchor-item col" href='#item-2' offset='50'>
-                    <img src="/images\shaker-printing\2pie.png" />
+                    <img src="/images\shaker-printing\2pie.png" alt="شیکر با لوگو دلخواه"  />
                     <div className="item-description mr-3">
                         <p className="item-link">مزایای چاپ لوگوی شیکر <LeftOutlined className="item-icon  mr-1" /></p>
                     </div>
                 </AnchorLink>
 
                 <AnchorLink className="anchor-item col" href='#item-3' offset='50'>
-                    <img src="/images\shaker-printing\3pie.png" />
+                    <img src="/images\shaker-printing\3pie.png" alt="شیکر با لوگو دلخواه"  />
                     <div className="item-description mr-3">
                         <p className="item-link">انواع شیکرهای چاپی <LeftOutlined className="item-icon  mr-1" /></p>
                     </div>
                 </AnchorLink>
 
                 <AnchorLink className="anchor-item col" href='#item-4' offset='50'>
-                    <img src="/images\shaker-printing\4pie.png" />
+                    <img src="/images\shaker-printing\4pie.png" alt="شیکر با لوگو دلخواه"  />
                     <div className="item-description mr-3">
                         <p className="item-link">خرید شیکر با چاپ دلخواه <LeftOutlined className="item-icon  mr-1" /></p>
                     </div>
@@ -68,11 +67,11 @@ const ShakerPrinting = () => {
                         مجموعه گیشا اسپرت، بعنوان یکی از بزرگترین و معتبرترین فروشگاه های آنلاین فعال در زمینه لوازم و پوشاک ورزشی، کلیه امور مربوط به تولید شیکر ورزشی تبلیغاتی را با بهترین تنوع مدل و رنگ با لوگوی دلخواه شما در سراسر ایران و کشورهای همسایه انجام می دهد.
                     </p>
                 </div>
-                <img src="/images\shaker-printing\1shaker.png" className="col-md-5 col-lg-4 col-12" />
+                <img src="/images\shaker-printing\1shaker.png" className="col-md-5 col-lg-4 col-12" alt="شیکر با لوگو دلخواه"  />
             </div>
 
             <div className="row mt-5 bg-light pt-5 pb-5 " id="item-2">
-                <img src="/images\shaker-printing\2shaker.png" className="col-12 col-md-5 col-xl-4" />
+                <img src="/images\shaker-printing\2shaker.png" className="col-12 col-md-5 col-xl-4" alt="شیکر با لوگو دلخواه"  />
                 <div className="col-12 col-md-7 col-xl-8 text-right">
                     <h4>مزایای چاپ شیکر با لوگوی دلخواه</h4>
                     <p style={{ borderBottom: "3px solid black", width: "40px" }} className=" mt-3" ></p>
@@ -100,7 +99,7 @@ const ShakerPrinting = () => {
                 <p style={{ borderBottom: "3px solid black", width: "60px" }} className="container mt-3" ></p>
                 <div className="row text-center ">
                     <div className="col-12 col-md-6">
-                        <img src="/images\shaker-printing\3shaker.png" className="col-7" />
+                        <img src="/images\shaker-printing\3shaker.png" className="col-7" alt="شیکر با لوگو دلخواه"  />
                         <h5 className="mt-3 font-weight-bold">شیکر یک تیکه آوین</h5>
                         <li className="text-right pr-4 mb-4 mt-4"><strong className="font-weight-bold">نوع :‌</strong> یک تیکه</li>
                         <li className="text-right pr-4 mb-4"><strong className="font-weight-bold"> نوع بدنه :‌</strong> شفاف</li>
@@ -117,7 +116,7 @@ const ShakerPrinting = () => {
                     </div>
 
                     <div className="col-12 col-md-6">
-                        <img src="/images\shaker-printing\4shaker.png" className="col-7" />
+                        <img src="/images\shaker-printing\4shaker.png" className="col-7" alt="شیکر با لوگو دلخواه"  />
                         <h5 className="mt-3 font-weight-bold">شیکر یک تیکه سیگنال</h5>
                         <li className="text-right pr-4 mb-4 mt-4"><strong className="font-weight-bold">نوع :‌</strong> یک تیکه</li>
                         <li className="text-right pr-4 mb-4"><strong className="font-weight-bold"> نوع بدنه :‌</strong> شفاف</li>
@@ -135,7 +134,7 @@ const ShakerPrinting = () => {
 
                 <div className="row text-center ">
                     <div className="col-12 col-md-6">
-                        <img src="/images\shaker-printing\5shaker.png"  className="col-7"/>
+                        <img src="/images\shaker-printing\5shaker.png"  className="col-7" alt="شیکر با لوگو دلخواه" />
                         <h5 className="mt-3 font-weight-bold">شیکر یک تیکه هیربد</h5>
                         <li className="text-right pr-4 mb-4 mt-4"><strong className="font-weight-bold">نوع :‌</strong> یک تیکه</li>
                         <li className="text-right pr-4 mb-4"><strong className="font-weight-bold"> نوع بدنه :‌</strong> شفاف</li>
@@ -152,7 +151,7 @@ const ShakerPrinting = () => {
                     </div>
 
                     <div className="col-12 col-md-6">
-                        <img src="/images\shaker-printing\6shaker.png" className="col-7"/>
+                        <img src="/images\shaker-printing\6shaker.png" className="col-7" alt="شیکر با لوگو دلخواه" />
                         <h5 className="mt-3 font-weight-bold">شیکر یک تیکه رایکا</h5>
                         <li className="text-right pr-4 mb-4 mt-4"><strong className="font-weight-bold">نوع :‌</strong> یک تیکه</li>
                         <li className="text-right pr-4 mb-4"><strong className="font-weight-bold"> نوع بدنه :‌</strong> شفاف</li>
@@ -170,7 +169,7 @@ const ShakerPrinting = () => {
 
                 <div className="row text-center ">
                     <div className="col-12 col-md-6">
-                        <img src="/images\shaker-printing\7shaker.png" className="col-7"/>
+                        <img src="/images\shaker-printing\7shaker.png" className="col-7" alt="شیکر با لوگو دلخواه" />
                         <h5 className="mt-3 font-weight-bold">شیکر سه تیکه شیان شفاف</h5>
                         <li className="text-right pr-4 mb-4 mt-4"><strong className="font-weight-bold">نوع :‌</strong> یک تیکه</li>
                         <li className="text-right pr-4 mb-4"><strong className="font-weight-bold"> نوع بدنه :‌</strong> شفاف</li>
@@ -187,7 +186,7 @@ const ShakerPrinting = () => {
                     </div>
 
                     <div className="col-12 col-md-6">
-                        <img src="/images\shaker-printing\8shaker.png" className="col-7"/>
+                        <img src="/images\shaker-printing\8shaker.png" className="col-7" alt="شیکر با لوگو دلخواه" />
                         <h5 className="mt-3 font-weight-bold">شیکر سه تیکه شیان مات</h5>
                         <li className="text-right pr-4 mb-4 mt-4"><strong className="font-weight-bold">نوع :‌</strong> یک تیکه</li>
                         <li className="text-right pr-4 mb-4"><strong className="font-weight-bold"> نوع بدنه :‌</strong> شفاف</li>
@@ -205,7 +204,7 @@ const ShakerPrinting = () => {
 
                 <div className="row text-center ">
                     <div className="col-12 col-md-6">
-                        <img src="/images\shaker-printing\9shaker.png" className="col-7" />
+                        <img src="/images\shaker-printing\9shaker.png" className="col-7" alt="شیکر با لوگو دلخواه"  />
                         <h5 className="mt-3 font-weight-bold">شیکر سه تیکه کیا دودی</h5>
                         <li className="text-right pr-4 mb-4 mt-4"><strong className="font-weight-bold">نوع :‌</strong> یک تیکه</li>
                         <li className="text-right pr-4 mb-4"><strong className="font-weight-bold"> نوع بدنه :‌</strong> شفاف</li>
@@ -222,7 +221,7 @@ const ShakerPrinting = () => {
                     </div>
 
                     <div className="col-12 col-md-6">
-                        <img src="/images\shaker-printing\10shaker.png" className="col-7" />
+                        <img src="/images\shaker-printing\10shaker.png" className="col-7" alt="شیکر با لوگو دلخواه"  />
                         <h5 className="mt-3 font-weight-bold">شیکر سه تیکه کیا شفاف</h5>
                         <li className="text-right pr-4 mb-4 mt-4"><strong className="font-weight-bold">نوع :‌</strong> یک تیکه</li>
                         <li className="text-right pr-4 mb-4"><strong className="font-weight-bold"> نوع بدنه :‌</strong> شفاف</li>
@@ -241,7 +240,7 @@ const ShakerPrinting = () => {
 
                 <div className="row text-center ">
                     <div className="col-12">
-                        <img src="/images\shaker-printing\11shaker.png" width="250px" height="250px" />
+                        <img src="/images\shaker-printing\11shaker.png" width="250px" height="250px" alt="شیکر با لوگو دلخواه" />
                         <h5 className="mt-3 font-weight-bold">شیکر سه تیکه جی پلاس</h5>
                         <li className="text-right pr-4 mb-4 mt-4" ><strong className="font-weight-bold">نوع :‌</strong> سه تیکه با دو جاقرص مجزا</li>
                         <li className="text-right pr-4 mb-4"><strong className="font-weight-bold"> نوع بدنه :‌</strong> شفاف</li>
@@ -282,52 +281,52 @@ const ShakerPrinting = () => {
                     className=" p-4"
                 >
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N1.jpg" />
+                        <img src="/images\shaker-printing/N1.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N2.jpg" />
+                        <img src="/images\shaker-printing/N2.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N3.jpg" />
+                        <img src="/images\shaker-printing/N3.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N4.jpg" />
+                        <img src="/images\shaker-printing/N4.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N5.jpg" />
+                        <img src="/images\shaker-printing/N5.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N6.jpg" />
+                        <img src="/images\shaker-printing/N6.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N7.jpg" />
+                        <img src="/images\shaker-printing/N7.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N8.jpg" />
+                        <img src="/images\shaker-printing/N8.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N9.jpg" />
+                        <img src="/images\shaker-printing/N9.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N10.jpg" />
+                        <img src="/images\shaker-printing/N10.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N11.jpg" />
+                        <img src="/images\shaker-printing/N11.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N12.jpg" />
+                        <img src="/images\shaker-printing/N12.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N13.jpg" />
+                        <img src="/images\shaker-printing/N13.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N14.jpg" />
+                        <img src="/images\shaker-printing/N14.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N15.jpg" />
+                        <img src="/images\shaker-printing/N15.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/images\shaker-printing/N16.jpg" />
+                        <img src="/images\shaker-printing/N16.jpg" alt="شیکر با لوگو دلخواه"  />
                     </SwiperSlide>
 
                 </Swiper>
@@ -346,7 +345,7 @@ const ShakerPrinting = () => {
                     </p>
                 </div>
 
-                    <img src="\images/shaker-printing/12shaker.png" className="col-12 col-md-5 col-lg-4" />
+                    <img src="\images/shaker-printing/12shaker.png" className="col-12 col-md-5 col-lg-4" alt="شیکر با لوگو دلخواه"  />
             </div>
 
         </div>

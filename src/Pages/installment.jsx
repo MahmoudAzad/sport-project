@@ -8,7 +8,7 @@ const Installment = () => {
                 <div className="col-lg-6 col-12 desc text-right order-lg-first order-last mt-5 mt-lg-0">
                     <h4>خرید اقساط پوشاک و لوازم ورزشی از گیشا اسپرت</h4>
                     <p>
-                        با همکاری مجموعه گیشا اسپرت و مجموعه لندو، امکان خرید قسطی تمام محصولات ورزشی سایت گیشا اسپرت،<span style={{color:"rgb(254, 116, 11)" , fontWeight:"bold"}}> برای سفارشات بالای 5 میلیون تومان</span> وجود دارد.
+                        با همکاری مجموعه گیشا اسپرت و مجموعه لندو، امکان خرید قسطی تمام محصولات ورزشی سایت گیشا اسپرت،<span style={{ color: "rgb(254, 116, 11)", fontWeight: "bold" }}> برای سفارشات بالای 5 میلیون تومان</span> وجود دارد.
                     </p>
                     <h5>مزایای خرید اقساطی:</h5>
                     <li>تا سقف ۲۰ میلیون تومان</li>
@@ -30,15 +30,17 @@ const Installment = () => {
                     <li> به صورت ۶ ماهه، ۹ ماهه یا ۱۲ ماهه</li>
                     <li>بصورت آنلاین از طریق سایت لندو</li>
                     <li>بدون دریافت جریمه دیرکرد</li>
-                    <btn className="btn col-md-4 col-12" style={{}}>محاسبه و درخواست وام <LeftOutlined/> </btn>
+                    <btn className="btn col-md-4 col-12" style={{}}>محاسبه و درخواست وام <LeftOutlined /> </btn>
                 </div>
 
-                <img src="\images/installment/1.jpg" className="col-lg-6 col-12" />
+                <img src="\images/installment/1.jpg" className="col-lg-6 col-12" alt="خرید اقساطی" />
 
             </div>
         </div>
-
     );
 }
 
 export default Installment;
+
+
+

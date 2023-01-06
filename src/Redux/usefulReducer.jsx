@@ -1,27 +1,26 @@
-import { ADDTOCART, CARTDRAWER, DELETEUSERDATA, EDITUSERDATA, REMOVECART, SETISLOGGEDIN, LOADING, SETISLOGGEDOUT, SETUSERDATA, LOADINGTRUE, LOADINGFALSE } from "./usefulTypes";
+import { ADDTOCART, ADDTOWISHLIST, CARTDRAWER, DELETEUSERDATA, EDITUSERDATA, REMOVECART, REMOVEWISHLIST, SETISLOGGEDIN, SETISLOGGEDOUT, SETUSERDATA } from "./usefulTypes";
 
-const initialState = {
+export const initialState = {
     user: undefined,
     isLogged: false,
     test: undefined,
     cart: [],
-    cartDrawer: false,  
-    load: true,
+    wishList: [],
+    cartDrawer: false,
 }
+
 
 const usefulReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case SETUSERDATA:
-            state.user = action.payload;
-
-            return {
+            return Object.assign({}, state, {
                 ...state,
-                user: state.user = action.payload
-            }
+                user: action.payload
+            })
+
 
         case EDITUSERDATA:
-            // state.user = action.payload;
 
             return {
                 ...state,
@@ -30,44 +29,74 @@ const usefulReducer = (state = initialState, action) => {
 
 
         case DELETEUSERDATA:
-            state.user = undefined;
-
-            return {
+            return Object.assign({}, state, {
                 ...state,
-                user: state.user = undefined,
-            }
+                user: undefined
+            })
 
         case SETISLOGGEDIN:
-            return {
+            return Object.assign({}, state, {
                 ...state,
-                isLogged: state.isLogged = true
+                isLogged: true
+            })
 
-            }
 
 
         case SETISLOGGEDOUT:
-            return {
+            return Object.assign({}, state, {
                 ...state,
-                isLogged: state.isLogged = false
-            }
+                isLogged: false
+            })
 
         case ADDTOCART:
-            const reProduct = state.cart.find(item => item.title === action.payload.title);
+            const item = state.cart.find(
+                product => product.id === action.payload.id && product.title === action.payload.title
+            );
+            // const carts = state.cart.filter(item => item.title !== action.payload.title);
 
-            if (reProduct) {
-                action.payload.quantify += 1;
-                const carts = state.cart.filter(item => item.title !== action.payload.title);
-                return {
+            if (item) {
+
+                return Object.assign({}, state, {
                     ...state,
-                    cart: state.cart = [...carts, reProduct]
-                }
+                    cart: state.cart.map(item => item.id === action.payload.id && item.title === action.payload.title
+                        ? {
+                            ...item,
+                            quantify: item.quantify + 1,
+                        }
+                        : item
+                    )
+                })
             }
 
-            action.payload.quantify = 1
-            return {
+
+            return Object.assign({}, state, {
                 ...state,
-                cart: state.cart = [...state.cart, action.payload]
-            }
+                cart: [...state.cart, action.payload],
+                quantify: action.payload.quantify = 1
+
+            })
+
+
+
+
+        // case ADDTOCART:
+
+        //     const reProduct = state.cart.find(item => item.title === action.payload.title);
+        //     if (reProduct) {
+        //         const carts = state.cart.filter(item => item.title !== action.payload.title);
+        //         return Object.assign({}, state, {
+        //             ...state,
+        //             cart: [...carts, reProduct],
+        //             quantify: state.quantify += 1
+        //         })
+        //     }
+
+        //     return Object.assign({}, state, {
+        //         ...state,
+        //         cart: [...state.cart, action.payload],
+        //         quantify: action.payload.quantify = 1
+        //     })
+
 
         case REMOVECART:
             return {
@@ -76,10 +105,44 @@ const usefulReducer = (state = initialState, action) => {
             }
 
         case CARTDRAWER:
-            return {
+            return Object.assign({}, state, {
                 ...state,
-                cartDrawer: state.cartDrawer = action.payload
+                cartDrawer: action.payload
+            })
+
+        // case ADDTOWISHLIST:
+        //     return Object.assign({}, state, {
+        //         ...state,  
+        //         wishList: [...state.wishList, action.payload]
+        //     })
+        case ADDTOWISHLIST:
+            const repeatedItem = state.wishList.find(
+                product => product.id === action.payload.id && product.title === action.payload.title
+            );
+
+            if (repeatedItem) {
+
+                return Object.assign({}, state, {
+                    ...state,
+                    wishList: state.wishList.map(item => item.id === action.payload.id && item.title === action.payload.title
+                        ? {
+                            ...item
+                        }
+                        : item
+                    )
+                })
             }
+            return Object.assign({}, state, {
+                ...state,
+                wishList: [...state.wishList, action.payload],
+
+            })
+
+        case REMOVEWISHLIST:
+            return Object.assign({}, state, {
+                ...state,
+                wishList: state.wishList.filter(item => item.title !== action.payload.title)
+            })
 
         default:
             return state

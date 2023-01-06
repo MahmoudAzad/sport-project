@@ -1,12 +1,8 @@
-import { Button, Tooltip } from 'antd';
 import React, { Fragment, useEffect, useState } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import Pagination from '../Common/paginition';
 import { Paginate } from '../Utils/paginate';
-import { SearchOutlined, ShoppingCartOutlined, UnorderedListOutlined } from '@ant-design/icons';
 import Loading from '../Common/loading';
-// import { loading } from '../../Redux/usefulActions';
-import { connect, useDispatch } from 'react-redux';
 
 const ShowProductsHelper = () => {
 
@@ -63,12 +59,12 @@ const ShowProductsHelper = () => {
 
                             <div className="images" >
                                 <div >
-                                    <img className="org-img-showpro-helper" alt="example" width="250px" src={`http://localhost:1337${item.images[0].url}`} />
-                                    <div class="overlay">
-                                        <img className="hover-img-showpro-helper" onClick={() => handleShowDetailProduct(item)} alt="example" width="250px" height="250px" src={`http://localhost:1337${item.images[1].url}`} />
+                                    <img className="org-img-showpro-helper" alt="تصاویر محصولات" width="250px" src={`http://localhost:1337${item.images[0].url}`} />
+                                    <div className="overlay">
+                                        <img className="hover-img-showpro-helper" onClick={() => handleShowDetailProduct(item)} alt="تصاویر محصولات" width="250px" height="250px" src={`http://localhost:1337${item.images[1].url}`} />
                                     </div>
 
-                                    <button class="btn btn-success col-12 container" type="button" data-hover="hover"><span>انتخاب گزینه ها</span></button>
+                                    <button className="btn btn-success col-12 container" type="button" data-hover="hover"><span>انتخاب گزینه ها</span></button>
 
                                 </div>
                             </div>

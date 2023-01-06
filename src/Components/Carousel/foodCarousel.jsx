@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect,useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -33,7 +33,6 @@ const FoodCarousel = () => {
     }, [])
 
     function handleShowDetailProduct(food) {
-        console.log("food =>", food);
         const product = food
         navigate("/showDetailProductsHelper", {
             state: {
@@ -43,7 +42,7 @@ const FoodCarousel = () => {
     }
 
     if (!foodData) { return <Loading /> }
-    
+        console.log("STRAPI DONE + ===> " , foodData);
     return (
         <div className="foodCarousel-container">
             <h4>پیشنهادهای ویژه</h4>
@@ -77,14 +76,14 @@ const FoodCarousel = () => {
                 {foodData.map((food) => (
 
 
-                    <SwiperSlide className="swiper-slide">
+                    <SwiperSlide className="swiper-slide" key={food.id}>
 
 
-                        <div class="slide-images row justify-content-center">
-                            <img src={`http://localhost:1337${food.orgImg.url}`} alt="cat 1" class="slide-orgImg" />
-                            <img src={`http://localhost:1337${food.hoverImg.url}`} alt="cat 2" class="slide-hoverImg" onClick={() => handleShowDetailProduct(food)} />
+                        <div className="slide-images row justify-content-center">
+                            <img src={`http://localhost:1337${food.orgImg.url}`} alt="محصولات غذایی رژیمی" className="slide-orgImg" />
+                            <img src={`http://localhost:1337${food.hoverImg.url}`} alt="محصولات غذایی رژیمی" className="slide-hoverImg" onClick={() => handleShowDetailProduct(food)} />
                             <Tooltip title="اطلاعات بیشتر" className='btn ' mouseLeaveDelay={0} color="black" >
-                                <button class=" col-3" type="button" data-hover="hover">
+                                <button className=" col-3" type="button" data-hover="hover">
                                     <ShoppingCartOutlined className='icon' />
                                 </button>
                             </Tooltip>

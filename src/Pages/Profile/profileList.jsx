@@ -1,14 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link, Outlet, Navigate } from 'react-router-dom';
-import { loadState } from '../../Redux/localStorage';
+
+const ProfileList = (props) => {
 
 
-const ProfileList = () => {
-
-    const localStore = loadState();
-    console.log('load profile =>', localStore);
-
-    if (localStore && localStore.isLogged == true && localStore.email != "" ) {
+    if (props && props.isLogged == true && props.user != "" ) {
 
         return (
 
@@ -32,7 +29,7 @@ const ProfileList = () => {
                     <Link className="link" to={"/profile/edit-account"}>
                         جزئیات حساب
                     </Link>
-                    <Link className="link" to={"/profile/edit-account"}>
+                    <Link className="link" to={"/wish-list"}>
                         علاقه مندی
                     </Link>
                     <Link className="link" to={"/logout"}  >
@@ -53,5 +50,12 @@ const ProfileList = () => {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        user : state.user ,
+        isLogged : state.isLogged,
+    }
+}
 
-export default ProfileList;
+
+export default connect (mapStateToProps)(ProfileList);

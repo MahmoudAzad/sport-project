@@ -28,7 +28,6 @@ const HeaderCarousel = () => {
         return <Loading />
     }
 
-    console.log("Items =>", items[0].images);
     return (
         <Swiper
             className="mySwiper header-swiper col-10 mt-5"
@@ -45,8 +44,8 @@ const HeaderCarousel = () => {
 
         >
             {items[0].images.map((i) => (
-                <SwiperSlide>
-                    <img src={`http://localhost:1337${i.url}`} />
+                <SwiperSlide key={i.id}>
+                    <img src={`http://localhost:1337${i.url}`} alt="فروشگاه اینترنتی محصولات ورزشی " />
                 </SwiperSlide>
             ))}
 

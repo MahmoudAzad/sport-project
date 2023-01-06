@@ -1,7 +1,5 @@
-import { ADDTOCART, CARTDRAWER, DELETEUSERDATA, EDITUSERDATA, LOADING, LOADINGFALSE, LOADINGTRUE, REMOVECART, SETISLOGGEDIN, SETISLOGGEDOUT, SETTOKEN, SETUSERDATA } from "./usefulTypes"
+import { ADDTOCART, ADDTOWISHLIST, CARTDRAWER, DELETEUSERDATA, EDITUSERDATA, REMOVECART, REMOVEWISHLIST, SETISLOGGEDIN, SETISLOGGEDOUT, SETUSERDATA } from "./usefulTypes"
 
-
-// ست کردن اطلاعات کاربر
 
 export const setUserData = (user) => {
     return async (dispatch) => {
@@ -34,15 +32,13 @@ export const deleteUserData = () => {
 }
 
 export const addToCart = (product) =>{
-
-    // console.log(" ACTION addtocart" , product);
+    
     return async (dispatch) => {
         await dispatch({ type:ADDTOCART , payload : product})
     }
 }
 
 export const removeCart = (product) =>{
-    console.log("hazf action =>" , product);
     return async(dispatch) =>{
         await dispatch ({type : REMOVECART , payload : product})
     }
@@ -54,6 +50,17 @@ export const cartDrawer = (item)=>{
     }
 }
 
+export const addToWishlist = (item)=>{
+    return async (dispatch) => {
+        await dispatch({type: ADDTOWISHLIST, payload: item})
+    }
+}
+
+export const removeWishList = (item)=>{
+    return async (dispatch) => {
+        await dispatch({type: REMOVEWISHLIST, payload: item})
+    }
+}
 
 
 

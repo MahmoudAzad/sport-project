@@ -1,4 +1,6 @@
+import { Divider } from 'antd';
 import React, { useEffect, useState } from 'react';
+import Loading from "../Common/loading";
 
 const ShowProducts = () => {
     const [showPro, setShowPro] = useState("");
@@ -21,19 +23,23 @@ const ShowProducts = () => {
             .then(result => { setShowPro(result) });
     }, [])
 
-    if (!showPro) {
-        return <p>
-            please wait...
-        </p>
-    }
-    console.log("show pros =>" , showPro);
+    if (!showPro) { return <Loading /> }
 
     return (
-        <div className="show-pro-container row justify-content-md-center ">
-            {showPro.map((pro) => (
-                <img className="col-6 col-md-4 mt-4 " src={`http://localhost:1337${pro.img.url}`} />
-            ))}
+        <div className="col-md-10 col-11 mx-auto mt-5 ">
+
+            <Divider><h5 className="font-weight-bold">دسته‌بندی‌ها</h5></Divider>
+            <div className="row">
+                {showPro.map((pro) => (
+                    <img className="col-6 col-md-3 mt-2 "
+                        src={`http://localhost:1337${pro.img.url}`}
+                        key={pro.id} alt="لوازم ورزشی مردانه و زنانه"
+                        style={{borderRadius:"25px"}}
+                    />  
+                ))}
+            </div>
         </div>
+
     );
 }
 

@@ -8,7 +8,8 @@ import HeaderCarousel from "../Components/Carousel/headerCarousel";
 
 const Home = () => {
 
-
+  // const localStorage = localStorage.getItem('state');
+  // console.log("local storage => " , localStorage);
   return (
     <Fragment>
       <HeaderCarousel />

@@ -207,7 +207,11 @@ body {
   transition: color 0.3s;
 }
 
-.header-drawer {
+.ant-drawer-body {
+  padding: 24px 0;
+}
+
+.menuDrawer-container .header-drawer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -215,18 +219,88 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.header-drawer .search-icon {
+.menuDrawer-container .header-drawer .icon {
   color: gray;
 }
 
-.header-drawer h5 {
+.menuDrawer-container .header-drawer h5 {
   color: gray;
   font-weight: bold;
+  font-size: 17px;
+}
+
+.menuDrawer-container .drawer-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.menuDrawer-container .drawer-nav .nav-item {
+  width: 100%;
+  background-color: #d4d1d1;
+  cursor: pointer;
+}
+
+.menuDrawer-container .drawer-nav .nav-link {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
+.toggle-collapse {
+  border-bottom: 1px solid #c4c4c4;
+  cursor: pointer;
+}
+
+.toggle-collapse p {
+  padding: 15px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.toggle-collapse p:hover {
+  color: #fe740b;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.toggle-collapse .icon {
+  padding: 15px;
+  border-right: 1px solid #c4c4c4;
+}
+
+.link-container {
+  padding: 15px;
+  border-bottom: 1px solid #c4c4c4;
+  cursor: pointer;
+}
+
+.link-container:hover .link {
+  color: #fe740b;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.link-container .link {
+  color: #767575;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 20px;
+  text-decoration: none;
 }
 
 .submenu-container {
@@ -344,6 +418,10 @@ body {
   width: 100%;
   padding: 10px 0 10px 0;
   border-top: 1px solid #f2f2f2;
+}
+
+.mobile-menu-container .mobile-menu-item {
+  color: black;
 }
 
 .mobile-menu-container .mobile-menu-item .mobile-menu-icon {
@@ -536,15 +614,6 @@ body {
   font-weight: bold;
 }
 
-.show-pro-container {
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.show-pro-container img {
-  border-radius: 20px;
-}
-
 .footer-container {
   background-color: #f9f9f9;
   padding: 30px 0 30px 0;
@@ -649,6 +718,13 @@ body {
 }
 
 .show-products-helper-container .item {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.show-products-helper-container .item,
+.wishList-container .item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -659,16 +735,41 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.show-products-helper-container .item:hover .btn {
+.show-products-helper-container .item:hover .btn,
+.wishList-container .item:hover .btn {
   bottom: 0;
 }
 
-.show-products-helper-container .item .btn {
+.show-products-helper-container .item .wishlist-top-items,
+.wishList-container .item .wishlist-top-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.show-products-helper-container .item .wishlist-top-items p, .show-products-helper-container .item .wishlist-top-items input,
+.wishList-container .item .wishlist-top-items p,
+.wishList-container .item .wishlist-top-items input {
+  cursor: pointer;
+}
+
+.show-products-helper-container .item .wishlist-top-items p:hover, .show-products-helper-container .item .wishlist-top-items input:hover,
+.wishList-container .item .wishlist-top-items p:hover,
+.wishList-container .item .wishlist-top-items input:hover {
+  color: #717171;
+}
+
+.show-products-helper-container .item .btn,
+.wishList-container .item .btn {
   bottom: -160px;
   opacity: .9;
   height: 40px;
@@ -681,14 +782,16 @@ body {
   transition: 0.3s;
 }
 
-.show-products-helper-container .item .btn span {
+.show-products-helper-container .item .btn span,
+.wishList-container .item .btn span {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   -webkit-transition-delay: 0.1s;
           transition-delay: 0.1s;
 }
 
-.show-products-helper-container .item .btn:before {
+.show-products-helper-container .item .btn:before,
+.wishList-container .item .btn:before {
   position: absolute;
   left: 0;
   width: 100%;
@@ -698,19 +801,22 @@ body {
   transition: .4s, opacity .6s;
 }
 
-.show-products-helper-container .item .btn:before {
+.show-products-helper-container .item .btn:before,
+.wishList-container .item .btn:before {
   content: attr(data-hover);
   -webkit-transform: translate(0, 150%);
           transform: translate(0, 150%);
 }
 
-.show-products-helper-container .item .btn:hover span {
+.show-products-helper-container .item .btn:hover span,
+.wishList-container .item .btn:hover span {
   opacity: 0;
   -webkit-transform: scale(0.3);
           transform: scale(0.3);
 }
 
-.show-products-helper-container .item .btn:hover:before {
+.show-products-helper-container .item .btn:hover:before,
+.wishList-container .item .btn:hover:before {
   opacity: 1;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -718,32 +824,38 @@ body {
           transition-delay: .1s;
 }
 
-.show-products-helper-container .item .title {
+.show-products-helper-container .item .title,
+.wishList-container .item .title {
   cursor: pointer;
   text-align: center;
   margin-top: 5px;
 }
 
-.show-products-helper-container .item .title:hover {
+.show-products-helper-container .item .title:hover,
+.wishList-container .item .title:hover {
   color: #817f7f;
 }
 
-.show-products-helper-container .item .price {
+.show-products-helper-container .item .price,
+.wishList-container .item .price {
   color: #fe5304;
   font-weight: bold;
 }
 
-.show-products-helper-container .item .images {
+.show-products-helper-container .item .images,
+.wishList-container .item .images {
   position: relative;
   cursor: pointer;
   overflow: hidden;
 }
 
-.show-products-helper-container .item .images .org-img-showpro-helper {
+.show-products-helper-container .item .images .org-img-showpro-helper,
+.wishList-container .item .images .org-img-showpro-helper {
   display: block;
 }
 
-.show-products-helper-container .item .images .overlay {
+.show-products-helper-container .item .images .overlay,
+.wishList-container .item .images .overlay {
   position: absolute;
   top: 0;
   right: 0;
@@ -754,13 +866,15 @@ body {
   transition: transform 1.5s, opacity .3s, -webkit-transform 1.5s;
 }
 
-.show-products-helper-container .item .images:hover .overlay {
+.show-products-helper-container .item .images:hover .overlay,
+.wishList-container .item .images:hover .overlay {
   -webkit-transform: scale(1.06);
           transform: scale(1.06);
   opacity: 1;
 }
 
-.show-products-helper-container .item .images .hover-img-showpro-helper {
+.show-products-helper-container .item .images .hover-img-showpro-helper,
+.wishList-container .item .images .hover-img-showpro-helper {
   position: absolute;
 }
 
@@ -1495,7 +1609,11 @@ body {
   transition: .3s;
 }
 
-.major-shopping-container #item-1, #item-2, #item-3, #item-4, #item-5 {
+.major-shopping-container #item-1,
+#item-2,
+#item-3,
+#item-4,
+#item-5 {
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(125, 192, 210, 0)), to(#cee6f1));
   background-image: linear-gradient(to right, rgba(125, 192, 210, 0), #cee6f1);
   border-radius: 20px;
@@ -1503,11 +1621,19 @@ body {
   padding-bottom: 80px;
 }
 
-.major-shopping-container #item-1 .anchor, #item-2 .anchor, #item-3 .anchor, #item-4 .anchor, #item-5 .anchor {
+.major-shopping-container #item-1 .anchor,
+#item-2 .anchor,
+#item-3 .anchor,
+#item-4 .anchor,
+#item-5 .anchor {
   color: black;
 }
 
-.major-shopping-container #item-1 .anchor:hover, #item-2 .anchor:hover, #item-3 .anchor:hover, #item-4 .anchor:hover, #item-5 .anchor:hover {
+.major-shopping-container #item-1 .anchor:hover,
+#item-2 .anchor:hover,
+#item-3 .anchor:hover,
+#item-4 .anchor:hover,
+#item-5 .anchor:hover {
   text-decoration: none;
 }
 

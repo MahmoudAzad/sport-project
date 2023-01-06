@@ -1,11 +1,11 @@
-import { Store } from "./store";
+import { initialState } from "./usefulReducer";
 
 
 export const loadState = () => {
     try {
         const serializedState = localStorage.getItem('state');
         if (serializedState === null) {
-            return Store.getState();
+            return initialState;
         }
         return JSON.parse(serializedState);
     } catch (err) {

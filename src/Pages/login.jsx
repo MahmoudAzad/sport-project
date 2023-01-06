@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link, useNavigate, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { toast } from 'react-toastify';
-import { loadState } from '../Redux/localStorage';
 import { setIsLoggedIn, setUserData } from '../Redux/usefulActions';
 import { sendLoginService } from '../Services/services';
 import { loginSchema } from '../Components/Validations/contactValidation';
+
 const Login = () => {
 
     const navigate = useNavigate();
@@ -15,7 +15,6 @@ const Login = () => {
     const handleLogin = async (values, actions) => {
 
         const responseLogin = await sendLoginService(values);
-        console.log("response login dataa=>", responseLogin.data);
 
         const loginDispatches = () => {
             try {
@@ -33,7 +32,6 @@ const Login = () => {
                     closeOnClick: true
                 })
                 loginDispatches();
-                // localStorage.setItem("token" , responseLogin.data.jwt);
                 actions.resetForm();
                 navigate('/profile');
 
@@ -45,7 +43,6 @@ const Login = () => {
 
     }
 
-    const localStore = loadState();
 
     return (
         <div className="container">

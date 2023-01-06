@@ -1,39 +1,12 @@
-import React, { Fragment, useState } from 'react';
-import { Drawer, Tabs, Collapse, Dropdown, Menu } from 'antd';
-import { SearchOutlined, UnorderedListOutlined, UserOutlined } from '@ant-design/icons';
-import { Link, useParams , useHistory, useLocation } from 'react-router-dom';
+import React, { Fragment } from 'react';
+import { Dropdown, Menu } from 'antd';
+import { SearchOutlined, UserOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { loadState } from '../../../Redux/localStorage';
 import CartDrawer from '../../Drawers/cartDrawer';
-
-const { TabPane } = Tabs;
-const { Panel } = Collapse;
-const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`;
-
-
-
-
+import MenuDrawer from '../../Drawers/menuDrawer';
 
 const SubNavbar = (props) => {
-
-    const load = loadState();
-    console.log('Load (subNavbar) =>' , load);
-    const localStore = props;
-
-    const [visible, setVisible] = useState(false);
-
-    const showDrawer = () => {
-        setVisible(true);
-    };
-
-    const onClose = () => {
-        setVisible(false);
-    };
-
 
 
     const menu = (
@@ -80,7 +53,7 @@ const SubNavbar = (props) => {
                 }, {
                     key: '6',
                     label: (
-                        <Link to="profile/edit-account">
+                        <Link to="/wish-list">
                             علاقه مندی
                         </Link>
 
@@ -97,9 +70,6 @@ const SubNavbar = (props) => {
         />
     );
 
-
-
-
     return (
         <Fragment>
             <div className="top-line"></div>
@@ -109,19 +79,12 @@ const SubNavbar = (props) => {
                 <div className="navbar-container mt-3 mb-3 ">
 
                     <div className="navbar-icons ">
-                        <UnorderedListOutlined style={{ fontSize: 18 }} className="p-1 nav-icon" onClick={showDrawer} />
 
-                        <Drawer placement="right" onClose={onClose} visible={visible} closable={false} width="358px" >
-                            <div className="header-drawer">
-                                <h5>جستجوی محصولات</h5>
-                                <SearchOutlined style={{ fontSize: 25 }} className="search-icon" />
-                            </div>
 
-                        </Drawer>
-
+                        <MenuDrawer />
 
                         {
-                            load.isLogged === false ? (
+                            props.isLogged === false ? (
                                 <Link to="/login">
                                     <UserOutlined style={{ fontSize: 18 }} className="p-1 nav-icon mr-2" />
                                 </Link>
@@ -140,15 +103,13 @@ const SubNavbar = (props) => {
 
                         <CartDrawer />
 
-
-
                         <SearchOutlined style={{ fontSize: 18 }} className="p-1 nav-icon mr-2" />
 
                     </div>
 
 
                     <Link to="/" className="navbar-logo" >
-                        <img src="Gisha-Logotype-200.png" width="150" height="40" />
+                        <img src="Gisha-Logotype-200.png" width="150" height="40" alt="لوگو وبسایت"/>
                     </Link>
 
                     <div className="navbar-caption ">
@@ -159,8 +120,6 @@ const SubNavbar = (props) => {
                 </div>
 
             </div>
-
-
 
         </Fragment>
 

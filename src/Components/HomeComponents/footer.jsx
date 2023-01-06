@@ -1,4 +1,4 @@
-import { GithubOutlined, InstagramOutlined, MailOutlined, TwitterOutlined, WhatsAppOutlined } from '@ant-design/icons';
+import { GithubOutlined, InstagramOutlined,TwitterOutlined, WhatsAppOutlined } from '@ant-design/icons';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -44,7 +44,7 @@ const Footer = () => {
                     </h6>
 
                     <div className="main-footer-phone-number row mt-3">
-                        <img src="/images\footer-photos\phone.png" alt="تلفن تماس" className="ml-3" />
+                        <img src="/images\footer-photos\phone.png" alt="تلفن تماس : ۰۲۱۲۲۳۳۴۴۵۵" className="ml-3" />
                         <div>
                             <p className="font-weight-bold mb-3">تلفن تماس</p>
                             <p className="font-weight-bold">۰۲۱-۲۲۳۳۴۴۵۵</p>

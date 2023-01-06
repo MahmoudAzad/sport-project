@@ -46,7 +46,7 @@ const Cooperation = () => {
                             سازمان‌ها و شرکت‌های محترم می‌توانند جهت دریافت کارت هدیه برای پرسنل خود و همچنین خدمات تولید و چاپ البسه و لوازم ورزشی درخواست خود را ثبت نمایند.  مجموعه گیشا اسپرت با افتخار در خدمت شماست
                         </p>
                         <div className='box'>
-                            <img src='\images/cooperation/wats.png' />
+                            <img src='\images/cooperation/wats.png' alt='واتساپ' />
                             <div className='pt-3 mr-3'>
                                 <h5>واتساپ</h5>
                                 <p>09121112233</p>
@@ -54,7 +54,7 @@ const Cooperation = () => {
                         </div>
 
                         <div className='box mt-2 mb-5'>
-                            <img src='\images/cooperation/telephone.png' />
+                            <img src='\images/cooperation/telephone.png' alt='تلفن : ۰۲۱۲۲۲۲۲۲۲۲' />
                             <div className='pt-3 mr-3'>
                                 <h5>تلفن تماس</h5>
                                 <p>021-8976534</p>
@@ -62,12 +62,12 @@ const Cooperation = () => {
                         </div>
 
                     </div>
-                    <img src='\images/cooperation/organ.png' className='col-12 col-md-5' height='500px' />
+                    <img src='\images/cooperation/organ.png' className='col-12 col-md-5' height='500px' alt="ارگان معتبر"/>
                 </div>
 
 
                 <div id='item-2' className='row '>
-                    <img src='\images/cooperation/supply.png' className='col-12 col-md-5' height="500px" />
+                    <img src='\images/cooperation/supply.png' className='col-12 col-md-5' height="500px" alt="ضمانت کالا" />
                     <div className="col-12 col-md-7 mt-5">
                         <h4>تامین کالا</h4>
                         <p className="underline"></p>
@@ -75,7 +75,7 @@ const Cooperation = () => {
                             تولید کنندگان و عرضه کنندگان پوشاک ورزشی و همچنین سایر لوازم و تجهیزات ورزشی می‌توانند درخواست خود را مبنی بر فروش کالا به صورت عمده در گیشا اسپرت اعلام نمایند. با افتخار حامی تولید ملی خواهیم بود.
                         </p>
                         <div className='box'>
-                            <img src='\images/cooperation/wats.png' />
+                            <img src='\images/cooperation/wats.png' alt="واتساپ" />
                             <div className='pt-3 mr-3'>
                                 <h5>واتساپ</h5>
                                 <p>09121112233</p>
@@ -83,7 +83,7 @@ const Cooperation = () => {
                         </div>
 
                         <div className='box mt-2 mb-5'>
-                            <img src='\images/cooperation/telephone.png' />
+                            <img src='\images/cooperation/telephone.png' alt="تلفن تماس ۲۲۹۹۸۸۸۷۷۷۷" />
                             <div className='pt-3 mr-3'>
                                 <h5>تلفن تماس</h5>
                                 <p>021-8976534</p>
@@ -198,9 +198,9 @@ const Cooperation = () => {
 
                             </Form>
                         </Formik>
-                        <button type="button" class="btn btn-secondary mt-3 mb-5">ارسال</button>
+                        <button type="button" className="btn btn-secondary mt-3 mb-5">ارسال</button>
                     </div>
-                    <img className='col-12 col-md-5' src='\images/cooperation/cv.png' height='500px' />
+                    <img className='col-12 col-md-5' src='\images/cooperation/cv.png' height='500px' alt="" />
 
                 </div>
 

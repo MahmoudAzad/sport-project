@@ -27,6 +27,7 @@ import ShakerPrinting from "./Pages/shakerPrinting";
 import Cooperation from "./Pages/cooperation";
 import MajorShopping from "./Pages/majorShopping";
 import Installment from "./Pages/installment";
+import WishList from "./Pages/wishList";
 
 
 const AppRouter = () => {
@@ -54,6 +55,8 @@ const AppRouter = () => {
                 <Route path="/cooperation" element={<Cooperation />} />
                 <Route path="/major-shopping" element={<MajorShopping />} />
                 <Route path="/installment" element={<Installment />} />
+                <Route path="/wish-list" element={<WishList />} />
+
 
                 <Route path="/profile" element={<ProfileList />} >
                     <Route index path='' element={<Counter />} />

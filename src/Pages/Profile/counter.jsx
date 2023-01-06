@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { DownloadOutlined, EnvironmentOutlined, ExportOutlined, HeartOutlined, ScheduleOutlined, UserOutlined } from '@ant-design/icons';
-import { loadState } from '../../Redux/localStorage';
+import { connect } from 'react-redux';
 
 
-const Counter = () => {
+const Counter = (props) => {
 
     const [userEmail, setUserEmail] = useState("")
     const name = userEmail.substring(0, userEmail.lastIndexOf("@"));
 
     useEffect(() => {
-        const load = loadState();
-        setUserEmail(load.email)
+        const load = props.user;
+        setUserEmail(load)
     }, [])
 
 
@@ -42,7 +42,7 @@ const Counter = () => {
                     <p>جزئیات حساب</p>
                 </Link>
 
-                <Link to={"/profile/edit-account"} className="item" >
+                <Link to={"/wish-list"} className="item" >
                     <HeartOutlined className="icon" />
                     <p>علاقه مندی</p>
                 </Link>
@@ -58,5 +58,12 @@ const Counter = () => {
 }
 
 
+function mapStateToProps (state) {
+    return {
+        user : state.user,
+    }
+}
 
-export default Counter;
+
+
+export default connect(mapStateToProps)(Counter);

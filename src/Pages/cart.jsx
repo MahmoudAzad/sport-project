@@ -1,57 +1,56 @@
 import React from 'react';
 import { CloseOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
-import { loadState } from '../Redux/localStorage';
 import { removeCart } from '../Redux/usefulActions';
 import { connect, useDispatch } from 'react-redux';
-
-const Cart = () => {
-
-    const load = loadState();
+import { v4 as uuidv4 } from 'uuid';
+const Cart = (props) => {
     const dispatch = useDispatch()
-
-    const str = 'hello 123 world';
-
-    const replaced = str.replace(/\D/g, '');
-    console.log("cuuuut =>", replaced);
 
     return (
         <>
-            {load.cart.length > 0 ? (
+            {props.cart.length > 0 ? (
                 <>
                     <div style={{ marginLeft: "100px", marginRight: "100px" }}>
                         <div className="cart-container row ">
                             <div className="mt-5 col-7  offset-1">
 
                                 <table className='cart-table '>
-                                    <tr className='text-right border-bottom mt-5 mb-2 '>
-                                        <th className="col-1 pb-3"></th>
-                                        <th className="col-1"></th>
-                                        <th className="col-4">محصول</th>
-                                        <th className="col-3">قیمت</th>
-                                        <th className="col-1">تعداد</th>
-                                        <th className="col-2">جمع جزء</th>
-
-                                    </tr>
-                                    {load.cart.map((p) => (
-                                        <tr className='text-right border-bottom '   >
-                                            <td className="col-1"><CloseOutlined onClick={() => dispatch(removeCart(p))} /></td>
-                                            {p.images && (
-                                                <td className="col-1"><img src={`http://localhost:1337${p.images[0].url}`} width="70px" height="70px" /> </td>
-                                            )}
-
-                                            {p.img && (
-                                                <td className="col-1"><img src={`http://localhost:1337${p.img.url}`} width="70px" height="70px" /> </td>
-                                            )}
-
-                                            {p.orgImg && (
-                                                <td className="col-1"><img src={`http://localhost:1337${p.orgImg.url}`} width="70px" height="70px" /> </td>
-                                            )}
-                                            <td className="col-4 " style={{ lineHeight: "20px" }}>{p.title}</td>
-                                            <td className="col-3">{p.price || p.orginalPrice}</td>
-                                            <td className="col-1">{p.quantify}</td>
-                                            <td className="col-2 font-weight-bold" style={{ color: " rgb(254, 116, 11)" }}>{p.price || p.orginalPrice}</td>
+                                    <thead >
+                                        <tr className='text-right border-bottom mt-5 mb-2 '>
+                                            <th className="col-1 pb-3"></th>
+                                            <th className="col-1"></th>
+                                            <th className="col-4">محصول</th>
+                                            <th className="col-3">قیمت</th>
+                                            <th className="col-1">تعداد</th>
+                                            <th className="col-2">جمع جزء</th>
                                         </tr>
+                                    </thead>
+                                    {props.cart.map((p) => (
+                                        <tbody key={uuidv4()}>
+                                            <tr className='text-right border-bottom '>
+
+                                                <td className="col-1"><CloseOutlined onClick={() => dispatch(removeCart(p))} /></td>
+                                                {p.images && (
+                                                    <td className="col-1"><img src={`http://localhost:1337${p.images[0].url}`} width="70px" height="70px" alt="محصول انتخابی" /> </td>
+                                                )}
+
+                                                {p.img && (
+                                                    <td className="col-1"><img src={`http://localhost:1337${p.img.url}`} width="70px" height="70px" alt="محصول انتخابی" /> </td>
+                                                )}
+
+                                                {p.orgImg && (
+                                                    <td className="col-1"><img src={`http://localhost:1337${p.orgImg.url}`} width="70px" height="70px" alt="محصول انتخابی" /> </td>
+                                                )}
+                                                <td className="col-4 " style={{ lineHeight: "20px" }}>{p.title}</td>
+                                                <td className="col-3">{p.price || p.orginalPrice}</td>
+                                                <td className="col-1">{p.quantify}</td>
+
+                                                <td className="col-2 font-weight-bold" style={{ color: " rgb(254, 116, 11)" }}>{p.price || p.orginalPrice}</td>
+                                            </tr>
+                                        </tbody>
+
+
                                     ))}
 
                                 </table>
@@ -119,7 +118,7 @@ const Cart = () => {
 
 function mapStateToProps(state) {
     return {
-        cart: state.cart
+        cart: state.cart,
     }
 }
 

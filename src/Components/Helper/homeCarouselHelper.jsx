@@ -7,7 +7,6 @@ import { Pagination, Navigation } from "swiper";
 import { useNavigate } from 'react-router';
 import {  ShoppingCartOutlined } from '@ant-design/icons';
 import { Tooltip } from 'antd';
-import { useDispatch } from 'react-redux';
 import Loading from '../Common/loading';
 
 const HomeCarouselHelper = ({ endPath, title }) => {
@@ -93,16 +92,16 @@ const HomeCarouselHelper = ({ endPath, title }) => {
                 {products.map((p) => (
 
 
-                    <SwiperSlide className="swiper-slide">
+                    <SwiperSlide className="swiper-slide" key={p.id}>
                         <div >
                             <div className="slide-images row justify-content-center" >
-                                <img src={`http://localhost:1337${p.img.url}`} alt="cat 1" class="slide-orgImg" />
-                                <div class="overlay">
-                                    <img className="slide-hoverImg" src={`http://localhost:1337${p.hoverImg.url || p.hoverImg[0].url}`} alt="cat 2" onClick={() => handleShowDetailProduct(p)} />
+                                <img src={`http://localhost:1337${p.img.url}`} alt="گالری تصاویر محصولات" className="slide-orgImg" />
+                                <div className="overlay">
+                                    <img className="slide-hoverImg" src={`http://localhost:1337${p.hoverImg.url || p.hoverImg[0].url}`} alt="گالری تصاویر محصولات" onClick={() => handleShowDetailProduct(p)} />
                                 </div>
 
                                 <Tooltip title="انتخاب گزینه ها" className='btn' mouseLeaveDelay={0} color="black" onClick={() => handleShowDetailProduct(p)}>
-                                    <button class=" col-3" type="button" data-hover="hover">
+                                    <button className=" col-3" type="button" data-hover="hover">
                                         <ShoppingCartOutlined className='icon' />
                                     </button>
                                 </Tooltip>
@@ -111,11 +110,6 @@ const HomeCarouselHelper = ({ endPath, title }) => {
                             </div>
                         </div>
 
-
-                        {/* <div class="slide-images">
-                            <img src={`http://localhost:1337${p.img.url}`} alt="cat 1" class="slide-orgImg" />
-                            <img className="slide-hoverImg" src={`http://localhost:1337${p.hoverImg.url || p.hoverImg[0].url}`} alt="cat 2" onClick={() => handleShowDetailProduct(p)} />
-                        </div> */}
                         <p className="mt-3 title" onClick={() => handleShowDetailProduct(p)}>{p.title}</p>
                         <div className="carousel-price ">
                             <p className="carousel-orgPrice mr-3 ">{p.price}</p>

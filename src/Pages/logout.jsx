@@ -13,9 +13,6 @@ const Logout = () => {
 
         async function handleLogOut() {
             logoutDispatches();
-            // localStorage.clearItem("isLogged" );
-            // localStorage.clearItem("isLogged" );
-
             navigate("/login");
         }
 

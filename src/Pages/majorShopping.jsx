@@ -7,41 +7,41 @@ import ReCAPTCHA from 'react-google-recaptcha';
 const MajorShopping = () => {
     return (
         <div className="major-shopping-container col-11 col-md-11 container">
-            <h4 className="text-center">خرید عمده لباس و لوازم ورزشی</h4>
-            <h6 className="underline container"></h6>
+            <p className="text-center">خرید عمده لباس و لوازم ورزشی</p>
+            {/* <p className="underline container" /> */}
             <p className="mb-5 mb-md-0">اگر فروشگاه لوازم ورزشی، داروخانه و یا باشگاه بدنسازی دارید و به دنبال خرید عمده لباس ورزشی و همچنین سایر لوازم و اکسسوری هستید، ما در مجموعه گیشا اسپرت امکان خرید به صورت عمده  با شرایط ویژه را برای شما فراهم کرده ایم.</p>
             <div className='anchor-container d-none d-md-flex'>
 
                 <AnchorLink className="anchor-item col-xl col-4 mt-5" href='#item-1' offset='50'>
-                    <img src="/images\major-shopping/anchor1.jpg" />
+                    <img src="/images\major-shopping/anchor1.jpg" alt="شیکر با لوگو دلخواه" />
                     <div className="item-description mr-3">
                         <p className="item-link">چرا شیکر با لوگو دلخواه</p>
                         <LeftOutlined className="item-icon" />
                     </div>
                 </AnchorLink>
                 <AnchorLink className="anchor-item col-xl col-4 mt-5" href='#item-2' offset='50'>
-                    <img src="/images\major-shopping/anchor2.jpg" />
+                    <img src="/images\major-shopping/anchor2.jpg" alt="لباس ورزشی زنانه" />
                     <div className="item-description mr-3">
                         <p className="item-link">لباس ورزشی زنانه </p>
                         <LeftOutlined className="item-icon" />
                     </div>
                 </AnchorLink>
                 <AnchorLink className="anchor-item col-xl col-4 mt-5" href='#item-3' offset='50'>
-                    <img src="/images\major-shopping/anchor3.jpg" />
+                    <img src="/images\major-shopping/anchor3.jpg" alt="شیکر و جاگ‌واتر" />
                     <div className="item-description mr-3">
                         <p className="item-link">شیکر و جاگ‌واتر</p>
                         <LeftOutlined className="item-icon" />
                     </div>
                 </AnchorLink>
                 <AnchorLink className="anchor-item col-xl col-4 mt-5" href='#item-4' offset='50'>
-                    <img src="/images\major-shopping/anchor4.jpg" />
+                    <img src="/images\major-shopping/anchor4.jpg" alt="تجهیزات بدنسازی"  />
                     <div className="item-description mr-3">
                         <p className="item-link">تجهیزات بدنسازی</p>
                         <LeftOutlined className="item-icon " />
                     </div>
                 </AnchorLink>
                 <AnchorLink className="anchor-item col-xl col-4 mt-5" href='#item-5' offset='50'>
-                    <img src="/images\major-shopping/anchor5.jpg" />
+                    <img src="/images\major-shopping/anchor5.jpg" alt="اکسسوری"  />
                     <div className="item-description mr-3">
                         <p className="item-link">اکسسوری</p>
                         <LeftOutlined className="item-icon " />
@@ -60,12 +60,12 @@ const MajorShopping = () => {
                         <p className='text-md-right text-center mt-4'>تماس و جزئیات بیشتر ❯</p>
                     </AnchorLink>
                 </div>
-                <img src="\images/major-shopping/item1.png" className="col-12 col-md-5 col-lg-4" />
+                <img src="\images/major-shopping/item1.png" className="col-12 col-md-5 col-lg-4" alt="خرید عمده لباس ورزشی مردانه"  />
             </div>
 
             <div id='item-2' className="row col-md-11 col-12 m-auto">
 
-                <img src="\images/major-shopping/item2.png" className="col-12 col-md-5 col-lg-4" />
+                <img src="\images/major-shopping/item2.png" className="col-12 col-md-5 col-lg-4" alt="خرید عمده لباس ورزشی زنانه"  />
 
                 <div className="desc col-12 col-md-7 col-lg-8">
                     <h4 className="text-md-right text-center">خرید عمده لباس ورزشی زنانه</h4>
@@ -92,13 +92,13 @@ const MajorShopping = () => {
                     </AnchorLink>
                 </div>
 
-                <img src="\images/major-shopping/item3.png" className="col-12 col-md-5 col-lg-4" />
+                <img src="\images/major-shopping/item3.png" className="col-12 col-md-5 col-lg-4" alt="خرید عمده شیکر ورزشی و جاگ واتر"  />
 
             </div>
 
             <div id='item-4' className="row col-md-11 col-12 m-auto">
 
-                <img src="\images/major-shopping/item4.png" className="col-12 col-md-5 col-lg-4" />
+                <img src="\images/major-shopping/item4.png" className="col-12 col-md-5 col-lg-4" alt="خرید عمده تجهیزات بدنسازی"  />
 
                 <div className="desc col-12 col-md-7 col-lg-8">
                     <h4 className="text-md-right text-center">خرید عمده تجهیزات بدنسازی</h4>
@@ -128,7 +128,7 @@ const MajorShopping = () => {
                     </AnchorLink>
                 </div>
 
-                <img src="\images/major-shopping/item5.png" className="col-12 col-md-5 col-lg-4" />
+                <img src="\images/major-shopping/item5.png" className="col-12 col-md-5 col-lg-4" alt="خرید عمده اکسسوری ورزشی"  />
 
             </div>
 
@@ -139,14 +139,14 @@ const MajorShopping = () => {
                 <div className="row">
                     <div className="col-md-5 col-12">
                         <div className="icon-box">
-                            <img src="\images/major-shopping/telephone.png" />
+                            <img src="\images/major-shopping/telephone.png" alt="تلفن ۰۲۱۵۰۵۰۵۰۵۰"  />
                             <div className="mr-3">
                                 <h5>تلفن تماس</h5>
                                 <p>021-28428159</p>
                             </div>
                         </div>
                         <div className="icon-box mt-3">
-                            <img src="\images/major-shopping/whatsapp.png" />
+                            <img src="\images/major-shopping/whatsapp.png" alt="واتساپ"  />
                             <div className="mr-3">
                                 <p>فقط عمده و همکاری سازمانی</p>
                                 <h5>واتساپ</h5>
