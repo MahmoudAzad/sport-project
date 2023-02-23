@@ -1,8 +1,11 @@
-import { GithubOutlined, InstagramOutlined,TwitterOutlined, WhatsAppOutlined } from '@ant-design/icons';
-import React from 'react';
+import { GithubOutlined, InstagramOutlined, TwitterOutlined, WhatsAppOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+
+    const [showing, setShowing] = useState(false);
+
     return (
         <div className='footer-container'>
 
@@ -39,9 +42,34 @@ const Footer = () => {
                         فروشگاه آنلاین پوشاک و لوازم ورزشی گیشا اسپرت
                     </h5>
                     <p className="box"></p>
-                    <h6 >
+                    <h6 className='mb-5' >
                         فروشگاه اینترنتی گیشا اسپرت در سال 1396 کار خود را در زمینه انواع لباس ورزشی مردانه و زنانه و همچنین لوازم و تجهیزات ورزشی، با تمرکز بیشتر بر رشته‌های ورزشی فیتنس و بدنسازی شروع کرد. در این سال‌ها تمرکز ما بر جلب رضایت مشتریان و پشتیبانی قوی از آن‌ها بوده است و در این راستا همواره سعی نمودیم تا بر تنوع کالایی افزوده و کیفیت کارها را اولویت اصلی خودمان قرار دهیم. با رشد روزافزون خرید اینترنتی، تلاش کردیم تمامی چالش‌های خرید آنلاین را برای مشتریان عزیزمان برطرف سازیم تا با جلب اعتماد مشتریان و صداقت، برند خود را متمایز سازیم.
+                        {/* {showing
+                            ? <span style={{ color: "orange" }}>ادامه...</span>
+                            : <span style={{ color: "orange" }}>بستن</span>
+                        } */}
+
+                        <span onClick={() => { setShowing(!showing) }} style={{ color: "rgb(254, 116, 11)" , cursor:"pointer" , borderBottom: "1px solid black"}}  >
+                            {showing ? (
+                                " بستن "
+                            ) : (
+                                " ادامه ..."
+                            )}
+                        </span>
+
+
                     </h6>
+
+
+                    {showing
+                        ?
+                        <h6 >
+                            محصولات ارائه شده در گیشا اسپرت در چند دسته اصلی جای داده می‌شوند، پوشاک ورزشی، لوازم و تجهیزات ورزشی و اکسسوری ورزشی. در دسته بندی پوشاک ورزشی، تنوع بالای لباس ورزشی مردانه و لباس ورزشی زنانه با زیر دسته‌های لگ ورزشی، رکابی و تیشرت ورزشی، شلوار و شلوارک ورزشی، هودی و سویشرت، کفش ورزشی و همچنین ست‌های ورزشی در دسته لباس ورزشی مردانه و لگ ورزشی، تاپ و نیم تنه ورزشی، شلوار و شلوارک و همچنین انواع ست لباس اسپرت زنانه در دسته لباس ورزشی زنانه موجود است. در سایر دسته‌بندی ها قمقمه و شیکر ورزشی، تجهیزات ورزشی مانند انواع کش بدنسازی، مچبند و بند لیفت، دستکش بدنسازی، کیف و کوله و همچنین کمربند بدنسازی وجود دارد.
+                            امیدواریم بتوانیم در کیفیت و سرعت خدمات رضایت شما مشتریان عزیز را فراهم کنیم و گامی در راستای ایجاد رویکردی جدید در ورزش به خصوص فیتنس و بدنسازی برداریم.
+                        </h6>
+                        : null
+                    }
+
 
                     <div className="main-footer-phone-number row mt-3">
                         <img src="/images\footer-photos\phone.png" alt="تلفن تماس : ۰۲۱۲۲۳۳۴۴۵۵" className="ml-3" />
@@ -78,7 +106,7 @@ const Footer = () => {
                             &bull; همکاری با ما
                         </Link>
                     </p>
-               
+
                     <p>
                         <Link to="/privacy" className='link'>
                             &bull; حریم خصوصی

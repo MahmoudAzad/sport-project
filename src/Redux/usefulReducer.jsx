@@ -1,16 +1,17 @@
-import { ADDTOCART, ADDTOWISHLIST, CARTDRAWER, DELETEUSERDATA, EDITUSERDATA, REMOVECART, REMOVEWISHLIST, SETISLOGGEDIN, SETISLOGGEDOUT, SETUSERDATA } from "./usefulTypes";
+import { useState } from "react";
+import { ADDTOCART, ADDTOWISHLIST, CARTDRAWER, DELETEUSERDATA, EDITUSERDATA, REMOVECART, REMOVEWISHLIST, SETISLOGGEDIN, SETISLOGGEDOUT, SETUSERDATA, REMOVEWISHLISTCHECKS } from "./usefulTypes";
 
 export const initialState = {
     user: undefined,
     isLogged: false,
-    test: undefined,
     cart: [],
     wishList: [],
     cartDrawer: false,
 }
 
 
-const usefulReducer = (state = initialState, action) => {
+const UsefulReducer = (state = initialState, action) => {
+
     switch (action.type) {
 
         case SETUSERDATA:
@@ -139,9 +140,21 @@ const usefulReducer = (state = initialState, action) => {
             })
 
         case REMOVEWISHLIST:
+            console.log("reducer 1 item =>", action.payload.title);
             return Object.assign({}, state, {
                 ...state,
                 wishList: state.wishList.filter(item => item.title !== action.payload.title)
+            })
+
+        case REMOVEWISHLISTCHECKS:
+            const test = action.payload.map((p) => (p.title));
+            console.log("Test => ", test);
+            const wishlistorg = state.wishList;
+            console.log("wish list => ", wishlistorg);
+            return Object.assign({}, state, {
+                ...state,
+                wishList: state.wishList.filter(item => !action.payload.includes(item))
+
             })
 
         default:
@@ -152,4 +165,4 @@ const usefulReducer = (state = initialState, action) => {
 
 
 
-export default usefulReducer;
+export default UsefulReducer;

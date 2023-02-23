@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -18,6 +18,7 @@ const ShowDetailProductsHelper = () => {
   const params = useLocation();
   const dispatch = useDispatch();
   const [loadings, setLoadings] = useState();
+  const [option, setOption] = useState()
 
   const addToCartDispatches = (params) => {
     try {
@@ -44,18 +45,46 @@ const ShowDetailProductsHelper = () => {
 
     setTimeout(() => {
       setLoadings(prevLoadings => {
-        const newLoadings = [...prevLoadings];
+        const newLoadings = [...prevLoadings];  
         newLoadings[index] = false;
         return newLoadings;
       });
     }, 6000);
   };
 
+
+
+  const handleChange = (event) => {
+    // setOption(event.target.value);
+    console.log("option =>", event);
+  }
+
+
+  const [size, setSize] = useState();
+  useEffect(() => {
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Access-Control-Request-Headers", "*");
+    myHeaders.append("Access-Control-Request-Method", "*");
+    myHeaders.append("accept", "*/*");
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:1337/tests", requestOptions)
+      .then(response => response.json())
+      .then(result => setSize(result));
+  }, [])
+  if (!size) { return <h1>please wait ...</h1> }
+  console.log(" size=>" , size);
   return (
     <>
-  
+
       <div className="row m-5 border-bottom">
-      
+
         <div className="col-6 ml-5">
           <Swiper
             spaceBetween={30}
@@ -76,14 +105,14 @@ const ShowDetailProductsHelper = () => {
 
             {params.state.product.orgImg && (
               <SwiperSlide>
-                <img src={`http://localhost:1337${params.state.product.orgImg.url}`} alt="جزییات محصول انتخابی"  />
+                <img src={`http://localhost:1337${params.state.product.orgImg.url}`} alt="جزییات محصول انتخابی" />
               </SwiperSlide>
             )}
 
             {params.state.product.images && (
               params.state.product.images.map((img) => (
                 <SwiperSlide key={img.id}>
-                  <img src={`http://localhost:1337${img.url}`} alt="جزییات محصول انتخابی"  />
+                  <img src={`http://localhost:1337${img.url}`} alt="جزییات محصول انتخابی" />
                 </SwiperSlide>
               ))
             )}
@@ -106,16 +135,22 @@ const ShowDetailProductsHelper = () => {
             <h6 className="font-weight-bold mr-3">
               سایز لباس :
               <Select
+                onChange={handleChange}
                 className="mr-3"
                 defaultValue="یک گزینه را انتخاب کنید"
                 style={{
                   width: 200,
                 }}
               >
-                <Option value="jack" className="text-right">یک گزینه را انتخاب کنید</Option>
-                <Option value="lucy" className="text-right">XL</Option>
-                <Option value="Yiminghe" className="text-right">۲XL</Option>
+                  <Option className="text-right">
+                {size[0].body.map((item) => (
+                    <>{item.id}</>
+                    ))}
+                  </Option>
+                {/* <Option value="jack" className="text-right">یک گزینه را انتخاب کنید</Option>
+                <Option value="2xl" className="text-right">۲XL</Option> */}
               </Select>
+
 
             </h6>
             <Button
@@ -129,7 +164,7 @@ const ShowDetailProductsHelper = () => {
             </Button>
 
 
-            <p className="m-3" style={{ cursor: "pointer" }} onClick={()=> dispatch(addToWishlist(params.state.product))}> <HeartOutlined /> افزودن به علاقه مندی</p>
+            <p className="m-3" style={{ cursor: "pointer" }} onClick={() => dispatch(addToWishlist(params.state.product))}> <HeartOutlined /> افزودن به علاقه مندی</p>
           </div>
           <div className="text-right font-weight-bold mt-3 mr-3">
             <p >شناسه محصول :‌ {params.state.product.id}</p>

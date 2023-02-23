@@ -610,8 +610,8 @@ $ORANGE : rgb(254, 116, 11);
     .main-footer-container .item2 {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        line-height: 20px;
+        justify-content: flex-start;
+        line-height: 50px;
 
         h5 {
             border-bottom: 3px solid rgb(255, 118, 38);
@@ -675,13 +675,31 @@ $ORANGE : rgb(254, 116, 11);
 }
 
 
-// showProductsHelper.jsx
+// showProductsHelper.jsx , wishList-container 
 .show-products-helper-container {
     .item {
         align-items: center;
     }
 }
 
+.wishlistDeleteCollapse{
+    background-color: #f1f1f1;
+    padding: 5px;
+
+    p{
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: bold;
+        &:hover {
+            color: rgb(91, 91, 91);
+            transition: .3s;
+        }
+    }
+}
+
+.ReactCollapse--collapse {
+    transition: height 500ms;
+  }
 .show-products-helper-container,
 .wishList-container {
     .item {

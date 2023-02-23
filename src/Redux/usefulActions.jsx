@@ -1,4 +1,4 @@
-import { ADDTOCART, ADDTOWISHLIST, CARTDRAWER, DELETEUSERDATA, EDITUSERDATA, REMOVECART, REMOVEWISHLIST, SETISLOGGEDIN, SETISLOGGEDOUT, SETUSERDATA } from "./usefulTypes"
+import { ADDTOCART, ADDTOWISHLIST, CARTDRAWER, DELETEUSERDATA, EDITUSERDATA, REMOVECART, REMOVEWISHLIST, REMOVEWISHLISTCHECKS, SETISLOGGEDIN, SETISLOGGEDOUT, SETUSERDATA } from "./usefulTypes"
 
 
 export const setUserData = (user) => {
@@ -57,8 +57,17 @@ export const addToWishlist = (item)=>{
 }
 
 export const removeWishList = (item)=>{
+    console.log("action 1 item => " , item);
     return async (dispatch) => {
         await dispatch({type: REMOVEWISHLIST, payload: item})
+    }
+}
+
+
+export const removeWishListChecks = (item)=>{
+    console.log("thiiiiiiis => " , item);
+    return async (dispatch) => {
+        await dispatch({type: REMOVEWISHLISTCHECKS, payload: item})
     }
 }
 

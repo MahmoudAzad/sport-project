@@ -1,7 +1,7 @@
 import { applyMiddleware, configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import {  loadState, saveState } from './localStorage';
-import usefulReducer from './usefulReducer';
+import UsefulReducer from './usefulReducer';
 
 import { legacy_createStore as createStore} from 'redux'
 
@@ -15,7 +15,7 @@ import { legacy_createStore as createStore} from 'redux'
 const presistedState = loadState();
 
 export const Store = createStore(
-    usefulReducer,
+    UsefulReducer,
     presistedState,
     (applyMiddleware(thunk))
  );
