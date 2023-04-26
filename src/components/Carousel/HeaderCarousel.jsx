@@ -3,27 +3,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import { useState } from "react";
 import Loading from "../Common/Loading";
-
+import { getProducts } from "../../services/Services";
 const HeaderCarousel = () => {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Access-Control-Request-Headers", "*");
-    myHeaders.append("Access-Control-Request-Method", "*");
-    myHeaders.append("accept", "*/*");
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
+    const fetchData = async () => {
+      const { data } = await getProducts("header-carousels");
+      setItems(data);
     };
-
-    fetch("http://localhost:1337/header-carousels", requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        setItems(result);
-      });
+    fetchData();
   }, []);
 
   if (!items) {

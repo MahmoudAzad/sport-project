@@ -1,30 +1,24 @@
-import { Divider } from "antd";
 import React, { useEffect, useState } from "react";
+import { getCategoryImages, getProducts } from "../../services/Services";
+import { Divider } from "antd";
 import Loading from "../Common/Loading";
 
 const CategoriesCards = () => {
-  const [showPro, setShowPro] = useState("");
+  const [categoryImages, setCategoryImages] = useState("");
 
   useEffect(() => {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Access-Control-Request-Headers", "*");
-    myHeaders.append("Access-Control-Request-Method", "*");
-    myHeaders.append("accept", "*/*");
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
+    const fetchData = async () => {
+      try {
+        const { data } = await getProducts("show-pros");
+        setCategoryImages(data);
+      } catch (e) {
+        console.log("err");
+      }
     };
-
-    fetch("http://localhost:1337/show-pros", requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        setShowPro(result);
-      });
+    fetchData();
   }, []);
 
-  if (!showPro) {
+  if (!categoryImages) {
     return <Loading />;
   }
 
@@ -34,11 +28,11 @@ const CategoriesCards = () => {
         <h5 className="font-weight-bold">دسته‌بندی‌ها</h5>
       </Divider>
       <div className="row">
-        {showPro.map((pro) => (
+        {categoryImages.map((item) => (
           <img
             className="col-6 col-md-3 mt-2 "
-            src={`http://localhost:1337${pro.img.url}`}
-            key={pro.id}
+            src={`http://localhost:1337${item.img.url}`}
+            key={item.id}
             alt="لوازم ورزشی مردانه و زنانه"
             style={{ borderRadius: "25px" }}
           />

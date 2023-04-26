@@ -8,28 +8,23 @@ import { useNavigate } from "react-router";
 import { Tooltip } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import Loading from "../Common/Loading";
+import { getFoodCarousel, getProducts } from "../../services/Services";
 
 const FoodCarousel = () => {
   const [foodData, setFoodData] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Access-Control-Request-Headers", "*");
-    myHeaders.append("Access-Control-Request-Method", "*");
-    myHeaders.append("accept", "*/*");
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
+    const fetchData = async () => {
+      try {
+        const { data } = await getProducts("food-carousel-swipers");
+        console.log(data, "data");
+        setFoodData(data);
+      } catch (e) {
+        console.log(e);
+      }
     };
-
-    fetch("http://localhost:1337/food-carousel-swipers", requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        setFoodData(result);
-      });
+    fetchData();
   }, []);
 
   function handleShowDetailProduct(food) {

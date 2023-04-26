@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import Pagination from "../Common/Paginition";
 import { Paginate } from "../Function/Paginate";
 import Loading from "../Common/Loading";
+import { getProducts } from "../../services/Services";
 
 const ProductsCards = ({ endPath }) => {
   console.log("endPath proCarts => ", endPath);
@@ -15,22 +16,15 @@ const ProductsCards = ({ endPath }) => {
   const productsHelperPaginate = Paginate(products, currentPage, perPage);
 
   useEffect(() => {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Access-Control-Request-Headers", "*");
-    myHeaders.append("Access-Control-Request-Method", "*");
-    myHeaders.append("accept", "*/*");
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
+    const fetchData = async () => {
+      try {
+        const { data } = await getProducts(endPath);
+        setProducts(data);
+      } catch (e) {
+        console.log(e);
+      }
     };
-
-    fetch(`http://localhost:1337/${endPath}`, requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        setProducts(result);
-      });
+    fetchData();
   }, [endPath]);
 
   const handlePageChange = (page) => {

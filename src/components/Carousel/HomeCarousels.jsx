@@ -8,30 +8,17 @@ import { useNavigate } from "react-router";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Tooltip } from "antd";
 import Loading from "../Common/Loading";
+import { getProducts } from "../../services/Services";
 
 const HomeCarousels = ({ endPath, title }) => {
   const [products, setProducts] = useState("");
   const navigate = useNavigate();
 
-  const fetchData = async () => {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Access-Control-Request-Headers", "*");
-    myHeaders.append("Access-Control-Request-Method", "*");
-    myHeaders.append("accept", "*/*");
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
-    };
-    await fetch(`http://localhost:1337/${endPath}`, requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        setProducts(result);
-      });
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await getProducts(endPath);
+      setProducts(data);
+    };
     fetchData();
   }, []);
 
