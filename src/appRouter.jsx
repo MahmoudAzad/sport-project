@@ -1,114 +1,78 @@
 import { UpOutlined } from "@ant-design/icons";
 import { BackTop } from "antd";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ShowDetailProductsHelper from "./Components/Helper/showDetailProductHelper";
-import ShowProductsHelper from "./Components/Helper/showProductsHelper";
-import Footer from "./Components/HomeComponents/footer";
-import ContactUS from "./Pages/contactUs";
-import Home from "./Pages/home";
-import Login from "./Pages/login";
-import Logout from "./Pages/logout";
-import Adresses from "./Pages/Profile/addresses";
-import Counter from "./Pages/Profile/counter";
-import Downloads from "./Pages/Profile/downloads";
-import EditAccount from "./Pages/Profile/editAccount";
-import Order from "./Pages/Profile/order";
-import ProfileList from "./Pages/Profile/profileList";
-import Register from "./Pages/register";
-import Navbar from "./Components/HomeComponents/Navbar/navbar";
-import Menu from "./Components/HomeComponents/Menu/menu";
-import Cart from "./Pages/cart";
-import TrackOrder from "./Pages/trackOrder";
-import Terms from "./Pages/terms";
-import ScrollToTop from "./scrollToTop";
-import Help from "./Pages/help";
-import Privacy from "./Pages/privacy";
-import ShakerPrinting from "./Pages/shakerPrinting";
-import Cooperation from "./Pages/cooperation";
-import MajorShopping from "./Pages/majorShopping";
-import Installment from "./Pages/installment";
-import Wishlist from "./Pages/wishlist";
-
-
+import Product from "./pages/Product";
+import Products from "./pages/Products";
+import Footer from "./components/Common/Footer";
+import ContactUS from "./pages/ContactUs";
+import Home from "./pages/Home";
+import MyAccount from "./pages/MyAccount";
+import Logout from "./components/Function/Logout";
+import Adresses from "./pages/Profile/Addresses";
+import Counter from "./pages/Profile/Counter";
+import Downloads from "./pages/Profile/Downloads";
+import EditAccount from "./pages/Profile/EditAccount";
+import Order from "./pages/Profile/Order";
+import ProfileList from "./pages/Profile/ProfileList";
+import Menu from "./components/Menu/Menu";
+import Cart from "./pages/Cart";
+import TrackOrder from "./pages/TrackOrder";
+import Terms from "./pages/Terms";
+import ScrollToTop from "./components/Function/ScrollToTop";
+import Help from "./pages/Help";
+import Privacy from "./pages/Privacy";
+import ShakerPrinting from "./pages/ShakerPrinting";
+import Cooperation from "./pages/Cooperation";
+import MajorShopping from "./pages/MajorShopping";
+import Installment from "./pages/Installment";
+import Wishlist from "./pages/Wishlist";
+import Navbar from "./components/Navbar/Navbar";
 
 const AppRouter = () => {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Navbar />
+      <Menu />
 
-    return (
-        <BrowserRouter>
-            <ScrollToTop />
-            <Navbar />
-            <Menu />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products/:endPath" element={<Products />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/contactus" element={<ContactUS />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/my-account" element={<MyAccount />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/track-order" element={<TrackOrder />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/help" element={<Help />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/shaker-printing" element={<ShakerPrinting />} />
+        <Route path="/cooperation" element={<Cooperation />} />
+        <Route path="/major-shopping" element={<MajorShopping />} />
+        <Route path="/installment" element={<Installment />} />
+        <Route path="/wish-list" element={<Wishlist />} />
 
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/showProducts/:endPath" element={<ShowProductsHelper />} />
-                <Route path="/showDetailProductsHelper" element={<ShowDetailProductsHelper />} />
-                <Route path="/contactus" element={<ContactUS />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/logout" element={<Logout />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/track-order" element={<TrackOrder />} />
-                <Route path="/terms" element={<Terms />} />
-                <Route path="/help" element={<Help />} />
-                <Route path="/privacy" element={<Privacy />} />
-                <Route path="/shaker-printing" element={<ShakerPrinting />} />
-                <Route path="/cooperation" element={<Cooperation />} />
-                <Route path="/major-shopping" element={<MajorShopping />} />
-                <Route path="/installment" element={<Installment />} />
-                <Route path="/wish-list" element={<Wishlist />} />
+        <Route path="/profile" element={<ProfileList />}>
+          <Route index path="" element={<Counter />} />
+          <Route path="order" element={<Order />} />
+          <Route path="downloads" element={<Downloads />} />
+          <Route path="adresses" element={<Adresses />} />
+          <Route path="edit-account" element={<EditAccount />} />
+        </Route>
+      </Routes>
 
+      <Footer />
 
-
-
-
-
-                <Route path="/profile" element={<ProfileList />} >
-                    <Route index path='' element={<Counter />} />
-                    <Route path='order' element={<Order />} />
-                    <Route path="downloads" element={<Downloads />} />
-                    <Route path="adresses" element={<Adresses />} />
-                    <Route path="edit-account" element={<EditAccount />} />
-                </Route>
-
-            </Routes>
-
-            <Footer />
-
-            <div >
-                <BackTop className="back-top-container">
-                    <div className="back-top"><UpOutlined /></div>
-                </BackTop>
-            </div>
-        </BrowserRouter>
-    );
-}
+      <div>
+        <BackTop className="back-top-container">
+          <div className="back-top">
+            <UpOutlined />
+          </div>
+        </BackTop>
+      </div>
+    </BrowserRouter>
+  );
+};
 
 export default AppRouter;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
