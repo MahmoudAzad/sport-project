@@ -1,25 +1,18 @@
-import { applyMiddleware, configureStore } from "@reduxjs/toolkit";
-import thunk from "redux-thunk";
-import { loadState, saveState } from "./LocalStorage";
-import UsefulReducer from "./Reducers";
+import { configureStore } from "@reduxjs/toolkit";
+import storage from "redux-persist/lib/storage";
+import { persistStore, persistReducer } from "redux-persist";
+import Reducers from "./Reducers";
+const persistConfig = {
+  key: "root",
+  storage,
+};
 
-import { legacy_createStore as createStore } from "redux";
+const persistedReducer = persistReducer(persistConfig, Reducers);
 
-// export const Store = configureStore({ reducer: usefulReducer  }, applyMiddleware(thunk) );
-
-const presistedState = loadState();
-
-export const Store = createStore(
-  UsefulReducer,
-  presistedState,
-  applyMiddleware(thunk)
-);
-
-Store.subscribe(() => {
-  saveState({
-    user: Store.getState().user,
-    isLogged: Store.getState().isLogged,
-    cart: Store.getState().cart,
-    wishList: Store.getState().wishList,
-  });
+export const Store = configureStore({
+  reducer: {
+    persistedReducer,
+  },
 });
+
+export const persistor = persistStore(Store);

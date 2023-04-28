@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
-import { DeleteUserData, SetIsLoggedOut } from "../../redux/Actions";
+import { logOutUser } from "../../redux/Reducers/UserReducer";
 
 const Logout = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const Logout = () => {
   useEffect(() => {
     async function handleLogOut() {
       logoutDispatches();
-      navigate("/my-account");
+      navigate("/login");
     }
 
     handleLogOut();
@@ -18,10 +18,9 @@ const Logout = () => {
 
   const logoutDispatches = () => {
     try {
-      dispatch(DeleteUserData());
-      dispatch(SetIsLoggedOut());
+      dispatch(logOutUser());
     } catch (errors) {
-      console.log("Err dispatch logout.jsx  =>", errors);
+      console.log("Error : logout : dont logout  =>", errors);
     }
   };
 

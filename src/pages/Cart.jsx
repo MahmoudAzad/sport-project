@@ -1,15 +1,17 @@
 import React from "react";
 import { CloseOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { RemoveCart } from "../redux/Actions";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-const Cart = (props) => {
+import { removedFromCart, selectAllCarts } from "../redux/Reducers/CartReducer";
+const Cart = () => {
   const dispatch = useDispatch();
+
+  const carts = useSelector(selectAllCarts);
 
   return (
     <>
-      {props.cart.length > 0 ? (
+      {carts.length > 0 ? (
         <>
           <div style={{ marginLeft: "100px", marginRight: "100px" }}>
             <div className="cart-container row ">
@@ -25,12 +27,12 @@ const Cart = (props) => {
                       <th className="col-2">جمع جزء</th>
                     </tr>
                   </thead>
-                  {props.cart.map((p) => (
+                  {carts.map((p) => (
                     <tbody key={uuidv4()}>
                       <tr className="text-right border-bottom ">
                         <td className="col-1">
                           <CloseOutlined
-                            onClick={() => dispatch(RemoveCart(p))}
+                            onClick={() => dispatch(removedFromCart(p))}
                           />
                         </td>
                         {p.images && (
@@ -174,10 +176,4 @@ const Cart = (props) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    cart: state.cart,
-  };
-}
-
-export default connect(mapStateToProps)(Cart);
+export default Cart;

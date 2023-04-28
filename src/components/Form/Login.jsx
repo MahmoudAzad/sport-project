@@ -1,41 +1,41 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { toast } from "react-toastify";
-import { SetIsLoggedIn, SetUserData } from "../../redux/Actions";
-import { SendLoginService } from "../../services/Services";
 import { LoginSchema } from "../Function/Validations";
+import { loginUser } from "../../redux/Reducers/UserReducer";
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleLogin = async (values, actions) => {
-    const responseLogin = await SendLoginService(values);
+  const loginStatus = useSelector((state) => state.persistedReducer.status);
 
-    const loginDispatches = () => {
-      try {
-        dispatch(SetUserData(responseLogin.data.user.username));
-        dispatch(SetIsLoggedIn());
-      } catch (errors) {
-        console.log("Err dispatch login.jsx=>", errors);
+  const userState = useSelector((state) => state.persistedReducer.user);
+  console.log("user state in login page 1 => ", userState);
+
+  const handleLogin = (values, actions) => {
+    dispatch(loginUser(values)).then((action) => {
+      if (action.type === "/user/loginUser/pending") {
+        console.log("pending");
       }
-    };
-
-    if (responseLogin.status == 200) {
-      try {
+      if (action.type === "/user/loginUser/fulfilled") {
+        actions.resetForm();
+        navigate("/profile");
         toast.success("ورود شما موفقیت آمیز بود", {
           position: "top-right",
           closeOnClick: true,
         });
-        loginDispatches();
-        actions.resetForm();
-        navigate("/profile");
-      } catch (e) {
-        console.log("ERR LOGIN =>", e.message);
       }
-    }
+
+      if (action.type === "/user/loginUser/rejected") {
+        toast.error("دوست من هنوز ثبت نام نکردی", {
+          position: "top-right",
+          closeOnClick: true,
+        });
+      }
+    });
   };
 
   return (

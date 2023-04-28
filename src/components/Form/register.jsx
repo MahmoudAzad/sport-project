@@ -1,37 +1,36 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
 import React from "react";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { RegisterSchema } from "../Function/Validations";
-import { SendRegisterService } from "../../services/Services";
-import { SetIsLoggedIn, SetUserData } from "../../redux/Actions";
+import { registerUser } from "../../redux/Reducers/UserReducer";
 
-const Register = (props) => {
+const Register = () => {
   const localStore = undefined;
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleRegister = async (values, actions) => {
+  const handleRegister = (values, actions) => {
     const user = {
       username: values.email,
       email: values.email,
       password: values.password,
     };
 
-    const responseRegister = await SendRegisterService(user);
-
-    if (responseRegister.status == 200) {
-      toast.success("عضویت شما با موفقیت انجام شد", {
-        position: "top-right",
-        closeOnClick: true,
-      });
-      dispatch(SetUserData(responseRegister.data.user.username));
-      dispatch(SetIsLoggedIn());
-      actions.resetForm();
-      navigate("/profile");
-    }
+    dispatch(registerUser(user)).then((action) => {
+      if (action.type === "/user/registerUser/pending") {
+        console.log("pending");
+      }
+      if (action.type === "/user/registerUser/fulfilled") {
+        actions.resetForm();
+        navigate("/profile");
+        toast.success("عضویت شما با موفقیت انجام شد", {
+          position: "top-right",
+          closeOnClick: true,
+        });
+      }
+    });
   };
 
   if (localStore == undefined) {

@@ -1,19 +1,26 @@
 import React from "react";
 import { Badge, Drawer } from "antd";
 import { ShoppingCartOutlined, CloseOutlined } from "@ant-design/icons";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-import { ChangeCartDrawer, RemoveCart } from "../../redux/Actions";
 import { v4 as uuidv4 } from "uuid";
+import {
+  changeShowCartDrawer,
+  removedFromCart,
+  selectAllCarts,
+} from "../../redux/Reducers/CartReducer";
 
-const CartDrawer = (props) => {
+const CartDrawer = () => {
   const location = useLocation();
   const dispatch = useDispatch();
 
+  const carts = useSelector(selectAllCarts);
+  const cartDrawer = useSelector((state) => state.persistedReducer.cartDrawer);
+
   return (
     <>
-      <Badge size="small" showZero count={props.cart.length}>
-        <div onClick={() => dispatch(ChangeCartDrawer(true))}>
+      <Badge size="small" showZero count={carts.length}>
+        <div onClick={() => dispatch(changeShowCartDrawer(true))}>
           <ShoppingCartOutlined
             style={{ fontSize: 18 }}
             className="p-1 nav-icon mr-2"
@@ -27,14 +34,14 @@ const CartDrawer = (props) => {
             <h5 className="font-weight-bold">سبد خرید</h5>
             <p className="close-icon">
               <CloseOutlined
-                onClick={() => dispatch(ChangeCartDrawer(false))}
+                onClick={() => dispatch(changeShowCartDrawer(false))}
               />{" "}
               بستن (ESC)
             </p>
           </div>
         }
         footer={
-          props.cart.length > 0 ? (
+          carts.length > 0 ? (
             <div className="shoping-cart-list-btn">
               <div className="row ">
                 <h6 className=" font-weight-bold col text-right">
@@ -49,7 +56,7 @@ const CartDrawer = (props) => {
               </div>
               <Link
                 to="/cart"
-                onClick={() => dispatch(ChangeCartDrawer(false))}
+                onClick={() => dispatch(changeShowCartDrawer(false))}
               >
                 <button className="btn btn-success btn-sm col-12 p-2 mt-2 ">
                   مشاهده سبد خرید
@@ -63,14 +70,14 @@ const CartDrawer = (props) => {
         }
         placement="left"
         closable={false}
-        onClose={() => dispatch(ChangeCartDrawer(false))}
-        visible={props.cartDrawer}
+        onClose={() => dispatch(changeShowCartDrawer(false))}
+        visible={cartDrawer}
         width={340}
         className="cart-drawer"
       >
-        {props.cart.length > 0 ? (
+        {carts.length > 0 ? (
           <>
-            {props.cart.map((p) => (
+            {carts.map((p) => (
               <div
                 className="shoping-cart-list-drawer-items pt-3 pb-2 row border-bottom"
                 key={uuidv4()}
@@ -116,7 +123,9 @@ const CartDrawer = (props) => {
                     </div>
                   </div>
                   <div className="col-2 text-right">
-                    <CloseOutlined onClick={() => dispatch(RemoveCart(p))} />
+                    <CloseOutlined
+                      onClick={() => dispatch(removedFromCart(p))}
+                    />
                   </div>
                 </div>
               </div>
@@ -134,7 +143,7 @@ const CartDrawer = (props) => {
                 </p>
                 <Link to="/">
                   <button
-                    onClick={() => dispatch(ChangeCartDrawer(false))}
+                    onClick={() => dispatch(changeShowCartDrawer(false))}
                     className="btn btn-success btn-sm mt-3"
                   >
                     بازگشت به فروشگاه
@@ -149,12 +158,4 @@ const CartDrawer = (props) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    cart: state.cart,
-    cartDrawer: state.cartDrawer,
-    quantify: state.quantify,
-  };
-}
-
-export default connect(mapStateToProps)(CartDrawer);
+export default CartDrawer;

@@ -15,7 +15,8 @@ import ReactMarkdown from "react-markdown";
 import { useLocation } from "react-router";
 import { Button, Select } from "antd";
 import { connect, useDispatch } from "react-redux";
-import { AddToCart, AddToWishlist, ChangeCartDrawer } from "../redux/Actions";
+import { addToCart, changeShowCartDrawer } from "../redux/Reducers/CartReducer";
+import { addedToWishList } from "../redux/Reducers/WishListReducer";
 const { Option } = Select;
 
 const Product = () => {
@@ -23,19 +24,9 @@ const Product = () => {
   const dispatch = useDispatch();
   const [loadings, setLoadings] = useState();
 
-  const addToCartDispatches = (params) => {
-    try {
-      dispatch(AddToCart(params));
-    } catch (errors) {
-      console.log("Err dispatch addToCart.jsx=>", errors);
-    }
-  };
-
   const addToCartHandler = (params) => {
-    setLoadings(true);
-    addToCartDispatches(params);
-    dispatch(ChangeCartDrawer(true));
-    setLoadings(false);
+    dispatch(addToCart(params));
+    dispatch(changeShowCartDrawer(true));
   };
 
   return (
@@ -128,7 +119,7 @@ const Product = () => {
             <p
               className="m-3"
               style={{ cursor: "pointer" }}
-              onClick={() => dispatch(AddToWishlist(params.state.product))}
+              onClick={() => dispatch(addedToWishList(params.state.product))}
             >
               {" "}
               <HeartOutlined /> افزودن به علاقه مندی

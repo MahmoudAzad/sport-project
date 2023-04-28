@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import "antd/dist/antd.css";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Checkbox } from "antd";
 import { CloseOutlined, HeartOutlined, CheckOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
-import { RemoveWishList, RemoveWishListChecks } from "../redux/Actions";
 import { Collapse } from "react-collapse";
 import { useEffect } from "react";
+import {
+  removedFromWishList,
+  removedFromWishListCheck,
+  selectAllWishlists,
+} from "../redux/Reducers/WishListReducer";
 const { Panel } = Collapse;
 const CheckboxGroup = Checkbox.Group;
 
-const Wishlist = (props) => {
-  const [groupKey, setGroupKey] = useState(props.wishList);
+const WishList = () => {
+  const allWishlists = useSelector(selectAllWishlists);
+
+  const [groupKey, setGroupKey] = useState(allWishlists);
   const [checked, setChecked] = useState({});
   const [output, setOutput] = useState([]);
   const [checkAll, setCheckAll] = useState(false);
@@ -22,7 +28,7 @@ const Wishlist = (props) => {
 
   function handleShowDetailProduct(item) {
     const product = item;
-    navigate("/product", {
+    navigate("/showDetailProductsHelper", {
       state: {
         product,
       },
@@ -76,7 +82,7 @@ const Wishlist = (props) => {
   return (
     <>
       <div>
-        {props.wishList.length > 0 ? (
+        {allWishlists.length > 0 ? (
           <div className="container mt-5">
             <h5 className="text-right border-bottom pb-3">
               محصولات علاقه مندی شما
@@ -86,7 +92,7 @@ const Wishlist = (props) => {
               <div className="text-right d-flex wishlistDeleteCollapse ">
                 <p
                   className="ml-4 p-2"
-                  onClick={() => dispatch(RemoveWishListChecks(output))}
+                  onClick={() => dispatch(removedFromWishListCheck(output))}
                 >
                   <CloseOutlined className="pl-1" />
                   حذف
@@ -112,14 +118,15 @@ const Wishlist = (props) => {
             </Collapse>
 
             <div className="wishList-container row ">
-              {props.wishList.map((item) => (
+              {allWishlists.map((item) => (
                 <div key={item.title} className="item col-md-4  col-6 mt-4">
                   <div className="wishlist-top-items">
                     <p
-                      onClick={() => dispatch(RemoveWishList(item))}
+                      onClick={() => dispatch(removedFromWishList(item))}
                       style={{ fontSize: "15px" }}
                     >
-                      <CloseOutlined style={{ fontSize: "12px" }} /> حذف
+                      <CloseOutlined style={{ fontSize: "12px" }} />
+                      حذف
                     </p>
                     <Checkbox
                       onChange={(e) => onChange(e, item)}
@@ -129,21 +136,64 @@ const Wishlist = (props) => {
                   </div>
                   <div className="images mr-5">
                     <div>
-                      <img
-                        className="org-img-showpro-helper"
-                        alt="تصاویر محصولات"
-                        width="250px"
-                        src={`http://localhost:1337${item.images[0].url}`}
-                      />
-                      <div className="overlay">
+                      {item.images && (
                         <img
-                          className="hover-img-showpro-helper"
-                          onClick={() => handleShowDetailProduct(item)}
+                          className="org-img-showpro-helper"
                           alt="تصاویر محصولات"
                           width="250px"
-                          height="250px"
-                          src={`http://localhost:1337${item.images[1].url}`}
+                          src={`http://localhost:1337${item.images[0].url}`}
                         />
+                      )}
+                      {item.orgImg && (
+                        <img
+                          className="org-img-showpro-helper"
+                          alt="تصاویر محصولات"
+                          width="250px"
+                          src={`http://localhost:1337${item.orgImg.url}`}
+                        />
+                      )}
+                      {item.img && (
+                        <img
+                          className="org-img-showpro-helper"
+                          alt="تصاویر محصولات"
+                          width="250px"
+                          src={`http://localhost:1337${item.img.url}`}
+                        />
+                      )}
+
+                      <div className="overlay">
+                        {item.images && (
+                          <img
+                            className="hover-img-showpro-helper"
+                            onClick={() => handleShowDetailProduct(item)}
+                            alt="تصاویر محصولات"
+                            width="250px"
+                            height="250px"
+                            src={`http://localhost:1337${item.images[1].url}`}
+                          />
+                        )}
+
+                        {item.hoverImg && item.hoverImg[0] && (
+                          <img
+                            className="hover-img-showpro-helper"
+                            onClick={() => handleShowDetailProduct(item)}
+                            alt="تصاویر محصولات"
+                            width="250px"
+                            height="250px"
+                            src={`http://localhost:1337${item.hoverImg[0].url}`}
+                          />
+                        )}
+
+                        {item.hoverImg && item.hoverImg.url && (
+                          <img
+                            className="hover-img-showpro-helper"
+                            onClick={() => handleShowDetailProduct(item)}
+                            alt="تصاویر محصولات"
+                            width="250px"
+                            height="250px"
+                            src={`http://localhost:1337${item.hoverImg.url}`}
+                          />
+                        )}
                       </div>
 
                       <button
@@ -193,10 +243,4 @@ const Wishlist = (props) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    wishList: state.wishList,
-  };
-}
-
-export default connect(mapStateToProps)(Wishlist);
+export default WishList;
