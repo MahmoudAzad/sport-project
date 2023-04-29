@@ -15,7 +15,9 @@ const CartDrawer = () => {
   const dispatch = useDispatch();
 
   const carts = useSelector(selectAllCarts);
-  const cartDrawer = useSelector((state) => state.persistedReducer.cartDrawer);
+  const cartDrawer = useSelector(
+    (state) => state.persistedReducer.cart.cartDrawer
+  );
 
   return (
     <>

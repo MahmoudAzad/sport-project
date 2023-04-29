@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   DownloadOutlined,
@@ -9,16 +8,14 @@ import {
   ScheduleOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
-const Counter = (props) => {
-  const [userEmail, setUserEmail] = useState("");
+const Counter = () => {
+  const userEmail = useSelector(
+    (state) => state.persistedReducer.user.user.username
+  );
+  console.log("userEmail => ", userEmail);
   const name = userEmail.substring(0, userEmail.lastIndexOf("@"));
-
-  useEffect(() => {
-    const load = props.user;
-    setUserEmail(load);
-  }, []);
 
   return (
     <div className="counter-container container mr-5">
@@ -67,10 +64,4 @@ const Counter = (props) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    user: state.user,
-  };
-}
-
-export default connect(mapStateToProps)(Counter);
+export default Counter;

@@ -2,11 +2,15 @@ import React, { Fragment } from "react";
 import { Dropdown, Menu } from "antd";
 import { SearchOutlined, UserOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
 import CartDrawer from "../Drawer/CartDrawer";
 import MenuDrawer from "../Drawer/MenuDrawer";
+import { useSelector } from "react-redux";
 
-const SubNavbar = (props) => {
+const SubNavbar = () => {
+  const isLoggedUser = useSelector(
+    (state) => state.persistedReducer.user.isLogged
+  );
+
   const menu = (
     <Menu
       items={[
@@ -51,14 +55,7 @@ const SubNavbar = (props) => {
           <div className="navbar-icons ">
             <MenuDrawer />
 
-            {props.isLogged === false ? (
-              <Link to="/my-account">
-                <UserOutlined
-                  style={{ fontSize: 18 }}
-                  className="p-1 nav-icon mr-2"
-                />
-              </Link>
-            ) : (
+            {isLoggedUser ? (
               <Dropdown overlay={menu} placement="bottomRight">
                 <Link to="/profile">
                   <UserOutlined
@@ -67,6 +64,13 @@ const SubNavbar = (props) => {
                   />
                 </Link>
               </Dropdown>
+            ) : (
+              <Link to="/my-account">
+                <UserOutlined
+                  style={{ fontSize: 18 }}
+                  className="p-1 nav-icon mr-2"
+                />
+              </Link>
             )}
 
             <CartDrawer />
@@ -79,7 +83,7 @@ const SubNavbar = (props) => {
 
           <Link to="/" className="navbar-logo">
             <img
-              src="images/logo.png"
+              src="images\logo.png"
               width="150"
               height="40"
               alt="لوگو وبسایت"
@@ -96,11 +100,4 @@ const SubNavbar = (props) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    isLogged: state.isLogged,
-    cart: state.cart,
-  };
-}
-
-export default connect(mapStateToProps)(SubNavbar);
+export default SubNavbar;

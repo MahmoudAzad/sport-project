@@ -143,8 +143,4 @@ const Product = () => {
   );
 };
 
-function mapStateToProps(state) {
-  return { state };
-}
-
-export default connect(mapStateToProps)(Product);
+export default Product;

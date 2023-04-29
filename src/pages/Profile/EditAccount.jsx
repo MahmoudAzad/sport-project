@@ -2,24 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Col, Row } from "antd";
 import { Field, Form, Formik } from "formik";
 import Loading from "../../components/Common/Loading";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 
-const EditAccount = (props) => {
-  const [userEmail, setUserEmail] = useState("");
+const EditAccount = () => {
+  const userEmail = useSelector(
+    (state) => state.persistedReducer.user.user.username
+  );
   const name = userEmail.substring(0, userEmail.lastIndexOf("@"));
-
-  useEffect(() => {
-    const load = props.user;
-    setUserEmail(load);
-  }, []);
 
   const handleEditAccount = (values) => {
     console.log("Edit values =>", values);
   };
-
-  if (!userEmail) {
-    return <Loading />;
-  }
 
   return (
     <div>
@@ -96,9 +89,5 @@ const EditAccount = (props) => {
     </div>
   );
 };
-function mapStateToProps(state) {
-  return {
-    user: state.user,
-  };
-}
-export default connect(mapStateToProps)(EditAccount);
+
+export default EditAccount;

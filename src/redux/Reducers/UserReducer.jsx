@@ -34,22 +34,22 @@ const UserReducer = createSlice({
       })
       .addCase(registerUser.fulfilled, (state, action) => {
         state.status = "fulfilled";
-        state.user = action.payload.user.username;
         state.isLogged = true;
+        state.user = action.payload.user;
       })
-      .addCase(registerUser.failed, (state, action) => {
-        state.status = "failed";
+      .addCase(registerUser.rejected, (state, action) => {
+        state.status = "rejected";
       })
       .addCase(loginUser.pending, (state, action) => {
         state.status = "pending";
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.status = "fulfilled";
-        state.user = action.payload.user.username;
-        state.isLogged = true;
+        state.isLogged = "true";
+        state.user = action.payload.user;
       })
-      .addCase(loginUser.failed, (state, action) => {
-        state.status = "failed";
+      .addCase(loginUser.rejected, (state, action) => {
+        state.status = "rejected";
       });
   },
 });

@@ -10,7 +10,7 @@ const Logout = () => {
   useEffect(() => {
     async function handleLogOut() {
       logoutDispatches();
-      navigate("/login");
+      navigate("/my-account");
     }
 
     handleLogOut();
