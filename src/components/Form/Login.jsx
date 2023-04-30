@@ -1,19 +1,14 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { toast } from "react-toastify";
 import { LoginSchema } from "../Function/Validations";
 import { loginUser } from "../../redux/Reducers/UserReducer";
 
-const Login = () => {
+const Login = ({ changePage }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const loginStatus = useSelector((state) => state.persistedReducer.status);
-
-  const userState = useSelector((state) => state.persistedReducer.user);
-  console.log("user state in login page 1 => ", userState);
 
   const handleLogin = (values, actions) => {
     dispatch(loginUser(values)).then((action) => {
@@ -111,9 +106,12 @@ const Login = () => {
             خیلی ساده و سریع انجام میشود
           </p>
 
-          <Link to="/register">
-            <button className="login-btn col-11 col-md-3 ">عضویت</button>
-          </Link>
+          <button
+            className="login-btn col-11 col-md-3 "
+            onClick={() => changePage("register")}
+          >
+            عضویت
+          </button>
         </div>
       </div>
     </div>

@@ -1,12 +1,12 @@
 import React from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { RegisterSchema } from "../Function/Validations";
 import { registerUser } from "../../redux/Reducers/UserReducer";
 
-const Register = () => {
+const Register = ({ changePage }) => {
   const localStore = undefined;
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -113,9 +113,12 @@ const Register = () => {
               وارد حساب کاربری شوید
             </p>
 
-            <Link to="/login">
-              <button className="register-btn col-11 col-md-3 ">ورود</button>
-            </Link>
+            <button
+              onClick={() => changePage("login")}
+              className="register-btn col-11 col-md-3 "
+            >
+              ورود
+            </button>
           </div>
         </div>
       </div>
