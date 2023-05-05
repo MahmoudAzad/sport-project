@@ -9,12 +9,14 @@ const WishListReducer = createSlice({
   reducers: {
     addToWishlist: (state, action) => {
       const { id } = action.payload;
+      console.log("id action => ", id);
       const repeatedItem = state.entities[id];
       if (repeatedItem) {
         alert("این محصول قبلا به لیست علاقه مندی های شما اضافه شده");
       } else {
         const newItem = { ...action.payload };
         wishlistAdapter.addOne(state, newItem);
+        console.log("added added");
       }
     },
     removedFromWishList: (state, action) => {
@@ -34,9 +36,6 @@ export const {
   selectAll: selectAllWishlists,
 } = wishlistAdapter.getSelectors((state) => state.persistedReducer.wishList);
 
-export const {
-  addedToWishList,
-  removedFromWishList,
-  removedFromWishListCheck,
-} = WishListReducer.actions;
+export const { addToWishlist, removedFromWishList, removedFromWishListCheck } =
+  WishListReducer.actions;
 export default WishListReducer.reducer;

@@ -16,8 +16,11 @@ const CheckboxGroup = Checkbox.Group;
 
 const WishList = () => {
   const allWishlists = useSelector(selectAllWishlists);
+  console.log("All wish list =>", allWishlists);
 
-  const [groupKey, setGroupKey] = useState(allWishlists);
+  const allState = useSelector((state) => state.persistedReducer);
+  console.log("All state => ", allState);
+
   const [checked, setChecked] = useState({});
   const [output, setOutput] = useState([]);
   const [checkAll, setCheckAll] = useState(false);
@@ -28,7 +31,7 @@ const WishList = () => {
 
   function handleShowDetailProduct(item) {
     const product = item;
-    navigate("/showDetailProductsHelper", {
+    navigate("/product", {
       state: {
         product,
       },
@@ -36,15 +39,15 @@ const WishList = () => {
   }
 
   const onCheckAllChange = (e) => {
-    const checkeded = groupKey.reduce((prev, curr) => {
+    const checkeded = allWishlists.reduce((prev, curr) => {
       return { ...prev, [curr.title]: e.target.checked };
     }, {});
     setChecked(checkeded);
     setCheckAll(e.target.checked);
-    setOutput(groupKey);
+    setOutput(allWishlists);
 
     if (e.target.checked) {
-      setOutput(groupKey);
+      setOutput(allWishlists);
     } else {
       setOutput([]);
       setShowAccordian(false);
@@ -60,7 +63,7 @@ const WishList = () => {
       setShowAccordian(false);
     }
 
-    if (values.length === groupKey.length && values.every((v) => v)) {
+    if (values.length === allWishlists.length && values.every((v) => v)) {
       setCheckAll(true);
     } else {
       setCheckAll(false);

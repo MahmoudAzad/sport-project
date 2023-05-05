@@ -14,13 +14,15 @@ import { EffectFade, Navigation, Pagination } from "swiper";
 import ReactMarkdown from "react-markdown";
 import { useLocation } from "react-router";
 import { Button, Select } from "antd";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart, changeShowCartDrawer } from "../redux/Reducers/CartReducer";
-import { addedToWishList } from "../redux/Reducers/WishListReducer";
+import { addToWishlist } from "../redux/Reducers/WishListReducer";
 const { Option } = Select;
 
 const Product = () => {
   const params = useLocation();
+  console.log("params.state.product =>", params.state.product);
+
   const dispatch = useDispatch();
   const [loadings, setLoadings] = useState();
 
@@ -119,7 +121,7 @@ const Product = () => {
             <p
               className="m-3"
               style={{ cursor: "pointer" }}
-              onClick={() => dispatch(addedToWishList(params.state.product))}
+              onClick={() => dispatch(addToWishlist(params.state.product))}
             >
               {" "}
               <HeartOutlined /> افزودن به علاقه مندی
