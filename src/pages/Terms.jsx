@@ -1,6 +1,9 @@
 import React from "react";
+import { useLocation } from "react-router";
 
 const Terms = () => {
+  const location = useLocation();
+  console.log("useLocation => ", location);
   return (
     <div className="container mt-5">
       <div className="text-center">

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/effect-fade";
 import {
   FacebookOutlined,
@@ -10,19 +9,17 @@ import {
   TwitterOutlined,
   WhatsAppOutlined,
 } from "@ant-design/icons";
-import { EffectFade, Navigation, Pagination } from "swiper";
 import ReactMarkdown from "react-markdown";
 import { useLocation } from "react-router";
 import { Button, Select } from "antd";
 import { useDispatch } from "react-redux";
 import { addToCart, changeShowCartDrawer } from "../redux/Reducers/CartReducer";
 import { addToWishlist } from "../redux/Reducers/WishListReducer";
+import ProductCarousel from "../components/Carousel/ProductCarousel";
 const { Option } = Select;
 
 const Product = () => {
   const params = useLocation();
-  console.log("params.state.product =>", params.state.product);
-
   const dispatch = useDispatch();
   const [loadings, setLoadings] = useState();
 
@@ -35,44 +32,7 @@ const Product = () => {
     <>
       <div className="row m-5 border-bottom">
         <div className="col-6 ml-5">
-          <Swiper
-            spaceBetween={30}
-            effect={"fade"}
-            navigation={true}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[EffectFade, Navigation, Pagination]}
-            className="mySwiper "
-          >
-            {params.state.product.img && (
-              <SwiperSlide>
-                <img
-                  src={`http://localhost:1337${params.state.product.img.url}`}
-                  alt="جزییات محصول انتخابی"
-                />
-              </SwiperSlide>
-            )}
-
-            {params.state.product.orgImg && (
-              <SwiperSlide>
-                <img
-                  src={`http://localhost:1337${params.state.product.orgImg.url}`}
-                  alt="جزییات محصول انتخابی"
-                />
-              </SwiperSlide>
-            )}
-
-            {params.state.product.images &&
-              params.state.product.images.map((img) => (
-                <SwiperSlide key={img.id}>
-                  <img
-                    src={`http://localhost:1337${img.url}`}
-                    alt="جزییات محصول انتخابی"
-                  />
-                </SwiperSlide>
-              ))}
-          </Swiper>
+          <ProductCarousel params={params} />
         </div>
 
         <div>

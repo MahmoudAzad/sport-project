@@ -8,7 +8,7 @@ import { useNavigate } from "react-router";
 import { Tooltip } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import Loading from "../Common/Loading";
-import { getFoodCarousel, getProducts } from "../../services/Services";
+import { getProducts } from "../../services/Services";
 
 const FoodCarousel = () => {
   const [foodData, setFoodData] = useState("");

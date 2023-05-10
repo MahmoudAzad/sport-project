@@ -11,8 +11,6 @@ import {
   removedFromWishListCheck,
   selectAllWishlists,
 } from "../redux/Reducers/WishListReducer";
-const { Panel } = Collapse;
-const CheckboxGroup = Checkbox.Group;
 
 const WishList = () => {
   const allWishlists = useSelector(selectAllWishlists);

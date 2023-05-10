@@ -1,13 +1,10 @@
 import axios from "axios";
 
-axios.defaults.headers.post["Content-Type"] = "application/json";
 const baseUrl = "http://localhost:1337";
+axios.defaults.headers.post["Content-Type"] = "application/json";
 
 export const SendMessageService = (userMessage) => {
-  return axios.post(
-    "http://localhost:1337/create-tests",
-    JSON.stringify(userMessage)
-  );
+  return axios.post(baseUrl, JSON.stringify(userMessage));
 };
 
 export const getProducts = (endPath) => {
@@ -15,12 +12,9 @@ export const getProducts = (endPath) => {
 };
 
 export const fetchRegisterUser = (user) => {
-  return axios.post(
-    "http://localhost:1337/auth/local/register",
-    JSON.stringify(user)
-  );
+  return axios.post(`${baseUrl}/auth/local/register`, JSON.stringify(user));
 };
 
 export const fetchLoginUser = (values) => {
-  return axios.post("http://localhost:1337/auth/local", JSON.stringify(values));
+  return axios.post(`${baseUrl}/auth/local`, JSON.stringify(values));
 };
