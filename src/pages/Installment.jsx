@@ -1,8 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Installment = () => {
   return (
     <div className="col-lg-10 col-11 container mt-lg-5 mt-1">
+      <Helmet>
+        <title>خرید اقساطی</title>
+      </Helmet>
       <div className="installment-container row">
         <div className="col-lg-6 col-12 desc text-right order-lg-first order-last mt-5 mt-lg-0">
           <h4 className="fw-bold text-orange">

@@ -1,9 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import CooperationAnchor from "../components/Anchor/CooperationAnchor";
 
 const Cooperation = () => {
   return (
     <div className="col-11 col-xl-9 container mt-5">
+      <Helmet>
+        <title>همکاری با ما</title>
+      </Helmet>
       <h4 className="text-center">همکاری با گیشا اسپرت</h4>
       <p className="mt-4 lh-base">
         گیشا اسپرت در راستای توسعه کسب‌و‌کار در زمینه‌های همکاری سازمانی و تامین

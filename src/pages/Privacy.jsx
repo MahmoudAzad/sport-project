@@ -1,8 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Privacy = () => {
   return (
     <div className="container mt-5">
+      <Helmet>
+        <title>حریم شخصی</title>
+      </Helmet>
       <div className="text-center">
         <h3 className="fw-bold border-bottom border-2 pb-3">حریم شخصی</h3>
       </div>

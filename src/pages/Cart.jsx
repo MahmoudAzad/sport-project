@@ -4,11 +4,15 @@ import { selectAllCarts } from "../redux/Reducers/CartReducer";
 import CartTable from "../components/Table/CartTable";
 import TotalShoppingForm from "../components/Form/TotalShoppingForm";
 import EmptyCart from "../components/Common/EmptyCart";
+import { Helmet } from "react-helmet";
 
 const Cart = () => {
   const carts = useSelector(selectAllCarts);
   return (
     <>
+      <Helmet>
+        <title>سبد خرید</title>
+      </Helmet>
       {carts.length > 0 ? (
         <div className="col-9 mx-auto ">
           <div className="cart-container row ">

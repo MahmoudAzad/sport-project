@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { addToCart, changeShowCartDrawer } from "../redux/Reducers/CartReducer";
 import { addToWishlist } from "../redux/Reducers/WishListReducer";
 import ProductCarousel from "../components/Carousel/ProductCarousel";
+import { Helmet } from "react-helmet";
 
 const Product = () => {
   const params = useLocation();
@@ -19,6 +20,9 @@ const Product = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{params.state.product.title}</title>
+      </Helmet>
       <div className="row m-5 border-bottom">
         <div className="col-lg-6 col-12 ">
           <ProductCarousel params={params} />

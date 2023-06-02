@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import LoginForm from "../components/Form/LoginForm";
 import RegisterForm from "../components/Form/RegisterForm";
 
@@ -7,6 +8,9 @@ const MyAccount = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>حساب کاربری من</title>
+      </Helmet>
       {activeTab === "login" ? (
         <div className="container">
           <div className="mt-5 row">

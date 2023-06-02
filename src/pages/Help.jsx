@@ -1,8 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Help = () => {
   return (
     <div className="container text-center mt-5">
+      <Helmet>
+        <title>راهنما</title>
+      </Helmet>
       <>
         <h4 className="fw-bold pb-2 border-bottom border-2">راهنما</h4>
         <div className="row">

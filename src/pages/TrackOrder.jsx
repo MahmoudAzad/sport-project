@@ -1,7 +1,11 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 const TrackOrder = () => {
   return (
     <div className="text-center mt-5 ">
+      <Helmet>
+        <title>پیگیری سفارش</title>
+      </Helmet>
       <h4 className="fw-bold">پیگیری ارسال سفارش</h4>
 
       <div className="container p-5 mt-5 bg-light-gray rounded-3 col-lg-5 col-11">

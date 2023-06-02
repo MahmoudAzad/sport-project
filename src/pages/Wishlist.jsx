@@ -7,6 +7,7 @@ import {
   removedFromWishListCheck,
   selectAllWishlists,
 } from "../redux/Reducers/WishListReducer";
+import { Helmet } from "react-helmet";
 
 const WishList = () => {
   const allWishlists = useSelector(selectAllWishlists);
@@ -78,6 +79,9 @@ const WishList = () => {
 
   return (
     <>
+      <Helmet>
+        <title>علاقه مندی ها</title>
+      </Helmet>
       <div>
         {allWishlists.length > 0 ? (
           <div className="container mt-5">

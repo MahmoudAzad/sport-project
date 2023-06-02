@@ -1,9 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import ShakerPrintingAnchor from "../components/Anchor/ShakerPrintingAnchor";
 
 const ShakerPrinting = () => {
   return (
     <div className="container col-11 col-xl-9">
+      <Helmet>
+        <title>شیکر با چاپ دلخواه</title>
+      </Helmet>
       <div className="mt-5">
         <h5 className="fw-bold text-center mb-3">
           سفارش شیکر ورزشی با چاپ لوگو دلخواه شما

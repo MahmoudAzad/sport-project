@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useLocation } from "react-router";
 
 const Terms = () => {
@@ -6,6 +7,9 @@ const Terms = () => {
   console.log("useLocation => ", location);
   return (
     <div className="container mt-5">
+      <Helmet>
+        <title>قوانین و مقررات</title>
+      </Helmet>
       <div className="text-center">
         <h3 className="fw-bold ">قوانین و مقررات</h3>
         <p

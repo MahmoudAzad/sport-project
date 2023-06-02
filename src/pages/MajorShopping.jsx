@@ -1,10 +1,14 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import MajorShoppingAnchor from "../components/Anchor/MajorShoppingAnchor";
 import MajorShoppingForm from "../components/Form/MajorShoppingForm";
 
 const MajorShopping = () => {
   return (
     <div className="major-shopping-container col-11 col-md-11 container">
+      <Helmet>
+        <title>خرید عمده</title>
+      </Helmet>
       <h4 className="text-center fw-bold my-5">خرید عمده لباس و لوازم ورزشی</h4>
       <p className="mb-5 mb-md-0 lh-base">
         اگر فروشگاه لوازم ورزشی، داروخانه و یا باشگاه بدنسازی دارید و به دنبال

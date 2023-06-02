@@ -1,9 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link, Outlet } from "react-router-dom";
 
 const ProfileList = () => {
   return (
     <div className="container mx-auto row mt-5">
+      <Helmet>
+        <title>حساب کاربری</title>
+      </Helmet>
       <div className="col-3 border-start border-2 d-flex flex-column">
         <h5 className="fw-bold border-bottom border-2 pb-2">حساب کاربری من</h5>
 

@@ -4,6 +4,7 @@ import Pagination from "../Common/Paginition";
 import { Paginate } from "../Function/Paginate";
 import Loading from "../Common/Loading";
 import { getProducts } from "../../services/Services";
+import { Helmet } from "react-helmet";
 
 const ProductsCards = ({ endPath }) => {
   console.log("endPath proCarts => ", endPath);
@@ -46,6 +47,9 @@ const ProductsCards = ({ endPath }) => {
 
   return (
     <>
+      <Helmet>
+        <title>مشخصات,قیمت,انواع لباس</title>
+      </Helmet>
       <div className="row justify-content-center  text-center">
         {productsHelperPaginate.map((item) => (
           <div

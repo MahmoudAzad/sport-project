@@ -1,9 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import ContactUsForm from "../components/Form/ContactUsForm";
 
 const ContactUS = () => {
   return (
     <div className="mx-5">
+      <Helmet>
+        <title>تماس با ما</title>
+      </Helmet>
       <div className="contact-us-container border border-warning border-3  rounded-5 row mt-5 ">
         <div className=" rounded-start rounded-5 col-lg-6 text-right pt-5 bg-orange">
           <h4 className="fw-bold text-white">اطلاعات تماس گیشا اسپرت</h4>
