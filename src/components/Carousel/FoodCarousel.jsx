@@ -5,8 +5,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { useNavigate } from "react-router";
-import { Tooltip } from "antd";
-import { ShoppingCartOutlined } from "@ant-design/icons";
 import Loading from "../Common/Loading";
 import { getProducts } from "../../services/Services";
 
@@ -39,10 +37,9 @@ const FoodCarousel = () => {
   if (!foodData) {
     return <Loading />;
   }
-  console.log("STRAPI DONE + ===> ", foodData);
   return (
-    <div className="foodCarousel-container">
-      <h4>پیشنهادهای ویژه</h4>
+    <div className="foodCarousel-container mt-5 p-4">
+      <h4 className="text-white fw-bold text-center mb-4">پیشنهادهای ویژه</h4>
       <Swiper
         style={{
           "--swiper-pagination-color": "black",
@@ -64,40 +61,42 @@ const FoodCarousel = () => {
           },
         }}
         modules={[Pagination, Navigation]}
-        className="carousel-swiper container"
+        className="bg-white pt-2 pb-5 rounded-4 container"
       >
         {foodData.map((food) => (
-          <SwiperSlide className="swiper-slide" key={food.id}>
-            <div className="slide-images row justify-content-center">
+          <SwiperSlide
+            className="swiper-slide d-flex flex-column justify-content-end"
+            key={food.id}
+          >
+            <div className="slide-images position-relative overflow-hidden row justify-content-center">
               <img
                 src={`http://localhost:1337${food.orgImg.url}`}
                 alt="محصولات غذایی رژیمی"
-                className="slide-orgImg"
+                className="slide-orgImg w-100 h-100"
               />
               <img
                 src={`http://localhost:1337${food.hoverImg.url}`}
                 alt="محصولات غذایی رژیمی"
-                className="slide-hoverImg"
+                className="slide-hoverImg w-100 h-100"
                 onClick={() => handleShowDetailProduct(food)}
               />
-              <Tooltip
+              <button
+                type="button"
+                className="btn bg-white col-3 tooltipIcon position-absolute text-center "
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
                 title="اطلاعات بیشتر"
-                className="btn "
-                mouseLeaveDelay={0}
-                color="black"
               >
-                <button className=" col-3" type="button" data-hover="hover">
-                  <ShoppingCartOutlined className="icon" />
-                </button>
-              </Tooltip>
+                <i className="bi bi-cart3 icon" />
+              </button>
             </div>
             <p className="mt-3" onClick={() => handleShowDetailProduct(food)}>
               {food.title}
             </p>
 
-            <div className="carousel-price ">
+            <div className="d-flex justify-content-center mt-4">
               <p className="carousel-orgPrice mr-3">{food.orginalPrice}</p>
-              <p className="carousel-linedPrice">
+              <p className="text-secondary fw-bold me-2">
                 <strike className="mb-3">{food.linedPrice}</strike>
               </p>
             </div>

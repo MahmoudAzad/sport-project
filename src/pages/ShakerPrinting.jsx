@@ -3,17 +3,13 @@ import ShakerPrintingAnchor from "../components/Anchor/ShakerPrintingAnchor";
 
 const ShakerPrinting = () => {
   return (
-    <div className="col-11 col-xl-9  container shaker-printing-container">
-      <div className="shaker-printing-caption">
-        <h5>سفارش شیکر ورزشی با چاپ لوگو دلخواه شما</h5>
-        <p
-          className="bottom-line container"
-          style={{ borderBottom: "3px solid rgb(75, 75, 75)", width: "60px" }}
-        ></p>
-        <p
-          className="text-right mt-3"
-          style={{ lineHeight: "30px", color: "rgb(75, 75, 75)" }}
-        >
+    <div className="container col-11 col-xl-9">
+      <div className="mt-5">
+        <h5 className="fw-bold text-center mb-3">
+          سفارش شیکر ورزشی با چاپ لوگو دلخواه شما
+        </h5>
+
+        <p className="mt-4 lh-lg text-secondary">
           در دنیای رقابتی امروز با افزایش انواع بیزینس ها و کسب و کار ها، همه
           صاحبان مشاغل به دنبال راهی برای تبلیغات موثر و ماندگار هستند. چاپ لوگو
           یا برند روی هر محصول مرتبط به آن کسب و کار علاوه بر این که یک پروموشن
@@ -28,19 +24,13 @@ const ShakerPrinting = () => {
       </div>
       <ShakerPrintingAnchor />
       <div
-        className="row mt-5 pt-5 pb-5 pr-3"
-        style={{ backgroundColor: "rgb(255, 232, 232)", borderRadius: "20px" }}
+        className="row mt-5 pt-5 pb-5 pr-3 rounded-4"
+        style={{ backgroundColor: "rgb(255, 232, 232)" }}
       >
-        <div className="col-12 col-md-7 col-lg-8 order-last order-md-first text-right">
-          <h5 className="font-weight-bold">خرید شیکر با چاپ دلخواه</h5>
-          <p
-            style={{
-              borderBottom: "3px solid black",
-              width: "40px",
-              marginTop: "20px",
-            }}
-          />
-          <p style={{ lineHeight: "30px", marginTop: "30px" }}>
+        <div className="col-12 col-md-7 col-lg-8 order-last order-md-first">
+          <h5 className="fw-bold">خرید شیکر با چاپ دلخواه</h5>
+
+          <p className="lh-lg mt-4">
             در صورت تمایل برای مشاوره و خرید شیکر ورزشی با لوگو اختصاصی به صورت
             عمده با کارشناسان فروش ما از طریق راه‌های تماس انتهای صفحه در ارتباط
             باشید.

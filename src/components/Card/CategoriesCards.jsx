@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCategoryImages, getProducts } from "../../services/Services";
-import { Divider } from "antd";
+import { getProducts } from "../../services/Services";
 import Loading from "../Common/Loading";
 
 const CategoriesCards = () => {
@@ -11,8 +10,8 @@ const CategoriesCards = () => {
       try {
         const { data } = await getProducts("show-pros");
         setCategoryImages(data);
-      } catch (e) {
-        console.log("err");
+      } catch (err) {
+        console.log("err => ", err);
       }
     };
     fetchData();
@@ -24,17 +23,18 @@ const CategoriesCards = () => {
 
   return (
     <div className="col-md-10 col-11 mx-auto mt-5 ">
-      <Divider>
-        <h5 className="font-weight-bold">دسته‌بندی‌ها</h5>
-      </Divider>
+      <div class="my-4 text-center">
+        <h5 class="fw-bold px-3 ">دسته‌بندی‌ها</h5>
+        <hr />
+      </div>
+
       <div className="row">
         {categoryImages.map((item) => (
           <img
-            className="col-6 col-md-3 mt-2 "
+            className="col-6 col-md-3 mt-2 rounded-5"
             src={`http://localhost:1337${item.img.url}`}
             key={item.id}
             alt="لوازم ورزشی مردانه و زنانه"
-            style={{ borderRadius: "25px" }}
           />
         ))}
       </div>

@@ -1,973 +1,206 @@
-import React, { useState } from "react";
-import { Drawer, Tabs, Collapse } from "antd";
-import {
-  SearchOutlined,
-  UnorderedListOutlined,
-  RightOutlined,
-  LeftOutlined,
-} from "@ant-design/icons";
+import React from "react";
 import { Link } from "react-router-dom";
-const { Panel } = Collapse;
 
 const MenuDrawer = () => {
-  const [visible, setVisible] = useState(false);
-
-  const showDrawer = () => {
-    setVisible(true);
-  };
-
-  const onClose = () => {
-    setVisible(false);
-  };
-
   return (
     <>
-      <UnorderedListOutlined
-        style={{ fontSize: 18 }}
-        className="p-1 nav-icon"
-        onClick={showDrawer}
-      />
-
-      <Drawer
-        placement="right"
-        onClose={onClose}
-        visible={visible}
-        closable={false}
-        width="358px"
-        className="menuDrawer-container"
+      <a
+        data-bs-toggle="offcanvas"
+        href="#offcanvasMenu"
+        role="button"
+        aria-controls="offcanvasMenu"
       >
-        <div className="header-drawer">
-          <h5>جستجوی محصولات</h5>
-          <SearchOutlined style={{ fontSize: 22 }} className="icon" />
+        <i class="bi bi-list subNav-icon cursor-pointer me-2 h5 text-black" />
+      </a>
+
+      <div
+        class="offcanvas offcanvas-end"
+        style={{ width: "350px" }}
+        tabindex="-1"
+        id="offcanvasMenu"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <input
+            type="text"
+            placeholder="جستجوی محصولات"
+            style={{ border: "none", outline: "none", fontWeight: "bold" }}
+          />
+          <i class="bi bi-search" />
         </div>
-
-        <ul className="nav nav-pills  drawer-nav" id="pills-tab" role="tablist">
-          <li className="nav-item ">
-            <p
-              className="nav-link active"
-              id="pills-home-tab"
-              data-toggle="pill"
-              href="#pills-home"
-              role="tab"
-              aria-controls="pills-home"
-              aria-selected="true"
+        <div class="overflow-auto">
+          <ul class="nav nav-pills mb-3 p-0 " id="pills-tab" role="tablist">
+            <li class="bg-light-gray  nav-item col-6 " role="presentation">
+              <div
+                class="nav-link active py-3 col-12"
+                id="pills-home-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-home"
+                type="button"
+                role="tab"
+                aria-controls="pills-home"
+                aria-selected="true"
+              >
+                دسته بندی ها
+              </div>
+            </li>
+            <li class="bg-light-gray  nav-item col-6" role="presentation">
+              <div
+                class="nav-link py-3 col-12"
+                id="pills-profile-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-profile"
+                type="button"
+                role="tab"
+                aria-controls="pills-profile"
+                aria-selected="false"
+              >
+                منو
+              </div>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="pills-home"
+              role="tabpanel"
+              aria-labelledby="pills-home-tab"
             >
-              منو
-            </p>
-          </li>
-          <li className="nav-item">
-            <p
-              className="nav-link"
-              id="pills-profile-tab"
-              data-toggle="pill"
-              href="#pills-profile"
-              role="tab"
-              aria-controls="pills-profile"
-              aria-selected="false"
-            >
-              دسته بندی ها
-            </p>
-          </li>
-        </ul>
+              <p className="text-end pe-3 py-3">ست و پکیج های ویژه</p>
 
-        <div className="tab-content" id="pills-tabContent">
-          <div
-            className="tab-pane fade show active text-right "
-            id="pills-home"
-            role="tabpanel"
-            aria-labelledby="pills-home-tab"
-          >
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>ست و پکیج های ویژه</p>
-            </div>
-
-            <div className="toggle-collapse  row ">
-              <p className="col-10 pr-5">لباس ورزشی مردانه</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#mens-sport"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="mens-sport">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  تیشرت ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  بلوز و استرج ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  تیشرت ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  هودی و سوییشرت مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شلوارک ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  لگ ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  نیم لگ و کشاله بند ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شلوار ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  ست ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  مایو مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link">
-                  کفش ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link">
-                  دمپایی اسپرت
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  جوراب ورزشی مردانه
-                </Link>
-              </div>
-            </div>
-
-            <div className="toggle-collapse row ">
-              <p className="col-10 pr-5">لباس ورزشی زنانه</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#women-sport"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="women-sport">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  نیم تنه ورزشی زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  تیشرت ورزشی زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  هودی و سوییشرت زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  دامن ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شلوار زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شلوارک ورزشی زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  لگ ورزشی زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link">
-                  جوراب ورزشی زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  ست ورزشی زنانه
-                </Link>
-              </div>
-            </div>
-
-            <div className="toggle-collapse  row ">
-              <p className="col-10 pr-5">لوازم ورزشی</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#sporting-goods"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="sporting-goods">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  کش بدنسازی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  دستکش بدنسازی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  مچ بند و بندلیفت
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  ماساژور
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  زانوبند بدنسازی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  کمربند بدنسازی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  کیفو ساک ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link">
-                  کوله و شوزبک ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  وزنه و دمبل
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  لوازم بدنسازی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  ظرف غذا
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  جاپودر و جاقرصی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  لوازم کاربردی ورزشی
-                </Link>
-              </div>
-            </div>
-
-            <div className="toggle-collapse  row ">
-              <p className="col-10 pr-5">قمقمه و شیکر</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#shaker"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="shaker">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  جاک واتر
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  قمقمه ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  فلاسک ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  تمام شیکرهای بدنسازی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شیکر برقی ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شیکر استیل
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شیکر دومخزنه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link">
-                  شیکر یک تیکه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شیکر دو تیکه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شیکر سه تیکه
-                </Link>
-              </div>
-            </div>
-
-            <div className="toggle-collapse  row ">
-              <p className="col-10 pr-5">اکسسوری ورزشی</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#accessory"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="accessory">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  جوراب ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  جوراب ورزشی زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  ساق دست ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  کلاه ورزشی اسپرت
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  اسکارف و دستمال سر
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  گردنبند
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  جاکلیدی ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link">
-                  اکشن فیگور
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  سایر اکسسوری
-                </Link>
-              </div>
-            </div>
-
-            <div className="toggle-collapse  row ">
-              <p className="col-10 pr-5">کفش ورزشی و دمپایی</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#shoes-slippers"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="shoes-slippers">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  کفش ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  دمپایی اسپرت
-                </Link>
-              </div>
-            </div>
-
-            <div className="toggle-collapse  row ">
-              <p className="col-10 pr-5">تغذیه رژیمی</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#nutrition"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="nutrition">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  گرانولا
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شکلات پروتیین بار
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  رایس کیک
-                </Link>
-              </div>
-            </div>
-
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>هدیه</p>
-            </div>
-
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>صفحه اصلی</p>
-            </div>
-
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>محصولات</p>
-            </div>
-
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>خرید اقساطی</p>
-            </div>
-
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>پیگیری ارسال سفارش</p>
-            </div>
-
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>
-                راهنما,خرید,ارسال و بازگردانی
+              <p className="text-black text-end">
+                <div className="d-flex justify-content-between align-items-center border-top border-bottom ">
+                  <p className=" pe-3 text-decoration-none">
+                    لباس ورزشی مردانه
+                  </p>
+                  <i
+                    data-bs-toggle="collapse"
+                    href="#collapseMenswear"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseMenswear"
+                    class="bi bi-caret-left border-end py-3 px-3"
+                  />
+                </div>
               </p>
-            </div>
+              <div class="collapse text-end" id="collapseMenswear">
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom">تیشرت ورزشی مردانه</p>
+                </Link>
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom">
+                    بلوز و استرج ورزشی مردانه
+                  </p>
+                </Link>
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom">
+                    هودی و سوییشرت مردانه
+                  </p>
+                </Link>
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom">شلوارک ورزشی مردانه</p>
+                </Link>
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom">لگ ورزشی مردانه</p>
+                </Link>
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom">
+                    نیم لگ و کشاله بند ورزشی مردانه
+                  </p>
+                </Link>
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom"> شلوار ورزشی مردانه</p>
+                </Link>
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom"> ست ورزشی مردانه</p>
+                </Link>
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom"> مایو مردانه</p>
+                </Link>
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom"> کفش ورزشی مردانه</p>
+                </Link>
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom"> دمپایی اسپرت</p>
+                </Link>
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom"> جوراب ورزشی مردانه</p>
+                </Link>
+              </div>
 
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>تماس با ما</p>
-            </div>
-
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>همکاری با ما</p>
-            </div>
-
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>حریم خصوصی</p>
-            </div>
-
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>قوانین و مقررات</p>
-            </div>
-
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>ورود / ثبت نام</p>
-            </div>
-          </div>
-
-          <div
-            className="tab-pane fade text-right"
-            id="pills-profile"
-            role="tabpanel"
-            aria-labelledby="pills-profile-tab"
-          >
-            <div className="toggle-collapse ">
-              <p style={{ paddingRight: "35px" }}>ست و پکیج های ویژه</p>
-            </div>
-
-            <div className="toggle-collapse  row ">
-              <p className="col-10 pr-5">لباس ورزشی مردانه</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#mens-sport-fade"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="mens-sport-fade">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  تیشرت ورزشی مردانه
+              <p className="text-black text-end">
+                <div className="d-flex justify-content-between align-items-center border-top border-bottom ">
+                  <p className=" pe-3 text-decoration-none">لباس ورزشی زنانه</p>
+                  <i
+                    data-bs-toggle="collapse"
+                    href="#collapseWomenwear"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseWomenwear"
+                    class="bi bi-caret-left border-end py-3 px-3"
+                  />
+                </div>
+              </p>
+              <div class="collapse text-end" id="collapseWomenwear">
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom">
+                    {" "}
+                    نیم تنه ورزشی زنانه
+                  </p>
                 </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  بلوز و استرج ورزشی مردانه
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom">
+                    بلوز و استرج ورزشی مردانه
+                  </p>
                 </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  تیشرت ورزشی مردانه
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom">
+                    هودی و سوییشرت مردانه
+                  </p>
                 </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  هودی و سوییشرت مردانه
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom">شلوارک ورزشی مردانه</p>
                 </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شلوارک ورزشی مردانه
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom">لگ ورزشی مردانه</p>
                 </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  لگ ورزشی مردانه
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom">
+                    نیم لگ و کشاله بند ورزشی مردانه
+                  </p>
                 </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  نیم لگ و کشاله بند ورزشی مردانه
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom"> شلوار ورزشی مردانه</p>
                 </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شلوار ورزشی مردانه
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom"> ست ورزشی مردانه</p>
                 </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  ست ورزشی مردانه
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom"> مایو مردانه</p>
                 </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  مایو مردانه
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom"> کفش ورزشی مردانه</p>
                 </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link">
-                  کفش ورزشی مردانه
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom"> دمپایی اسپرت</p>
                 </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link">
-                  دمپایی اسپرت
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  جوراب ورزشی مردانه
+                <Link to="/cart" className=" text-black text-decoration-none">
+                  <p className="py-3 pe-3 border-bottom"> جوراب ورزشی مردانه</p>
                 </Link>
               </div>
             </div>
 
-            <div className="toggle-collapse row ">
-              <p className="col-10 pr-5">لباس ورزشی زنانه</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#women-sport-fade"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="women-sport-fade">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  نیم تنه ورزشی زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  تیشرت ورزشی زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  هودی و سوییشرت زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  دامن ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شلوار زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شلوارک ورزشی زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  لگ ورزشی زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link">
-                  جوراب ورزشی زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  ست ورزشی زنانه
-                </Link>
-              </div>
-            </div>
-
-            <div className="toggle-collapse  row ">
-              <p className="col-10 pr-5">لوازم ورزشی</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#sporting-goods-fade"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="sporting-goods-fade">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  کش بدنسازی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  دستکش بدنسازی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  مچ بند و بندلیفت
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  ماساژور
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  زانوبند بدنسازی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  کمربند بدنسازی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  کیفو ساک ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link">
-                  کوله و شوزبک ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  وزنه و دمبل
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  لوازم بدنسازی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  ظرف غذا
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  جاپودر و جاقرصی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  لوازم کاربردی ورزشی
-                </Link>
-              </div>
-            </div>
-
-            <div className="toggle-collapse  row ">
-              <p className="col-10 pr-5">قمقمه و شیکر</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#shaker-fade"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="shaker-fade">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  جاک واتر
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  قمقمه ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  فلاسک ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  تمام شیکرهای بدنسازی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شیکر برقی ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شیکر استیل
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شیکر دومخزنه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link">
-                  شیکر یک تیکه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شیکر دو تیکه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شیکر سه تیکه
-                </Link>
-              </div>
-            </div>
-
-            <div className="toggle-collapse  row ">
-              <p className="col-10 pr-5">اکسسوری ورزشی</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#accessory-fade"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="accessory-fade">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  جوراب ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  جوراب ورزشی زنانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  ساق دست ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  کلاه ورزشی اسپرت
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  اسکارف و دستمال سر
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  گردنبند
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  جاکلیدی ورزشی
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link">
-                  اکشن فیگور
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  سایر اکسسوری
-                </Link>
-              </div>
-            </div>
-
-            <div className="toggle-collapse  row ">
-              <p className="col-10 pr-5">کفش ورزشی و دمپایی</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#shoes-slippers-fade"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="shoes-slippers-fade">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  کفش ورزشی مردانه
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  دمپایی اسپرت
-                </Link>
-              </div>
-            </div>
-
-            <div className="toggle-collapse  row ">
-              <p className="col-10 pr-5">تغذیه رژیمی</p>
-              <div
-                className="icon col-2"
-                data-toggle="collapse"
-                href="#nutrition-fade"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <LeftOutlined className="pl-3" />
-              </div>
-            </div>
-
-            <div className="collapse" id="nutrition-fade">
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  گرانولا
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  شکلات پروتیین بار
-                </Link>
-              </div>
-              <div className="link-container">
-                <Link to="/cart" className="link ">
-                  رایس کیک
-                </Link>
-              </div>
+            <div
+              class="tab-pane fade"
+              id="pills-profile"
+              role="tabpanel"
+              aria-labelledby="pills-profile-tab"
+            >
+              ssss
             </div>
           </div>
         </div>
-      </Drawer>
+      </div>
     </>
   );
 };

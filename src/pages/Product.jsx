@@ -1,22 +1,11 @@
 import React, { useState } from "react";
 import "swiper/css/effect-fade";
-import {
-  FacebookOutlined,
-  HeartOutlined,
-  InstagramOutlined,
-  LinkedinOutlined,
-  MailOutlined,
-  TwitterOutlined,
-  WhatsAppOutlined,
-} from "@ant-design/icons";
 import ReactMarkdown from "react-markdown";
 import { useLocation } from "react-router";
-import { Button, Select } from "antd";
 import { useDispatch } from "react-redux";
 import { addToCart, changeShowCartDrawer } from "../redux/Reducers/CartReducer";
 import { addToWishlist } from "../redux/Reducers/WishListReducer";
 import ProductCarousel from "../components/Carousel/ProductCarousel";
-const { Option } = Select;
 
 const Product = () => {
   const params = useLocation();
@@ -31,72 +20,79 @@ const Product = () => {
   return (
     <>
       <div className="row m-5 border-bottom">
-        <div className="col-6 ml-5">
+        <div className="col-lg-6 col-12 ">
           <ProductCarousel params={params} />
         </div>
 
-        <div>
-          <div className="text-right font-weight-bold border-bottom">
-            <h5 className="mt-5 mr-3 ">{params.state.product.title}</h5>
+        <div className="col-lg-6 ">
+          <div className="text-right fw-bold border-bottom">
+            <h5 className="mt-5 me-3 ">{params.state.product.title}</h5>
 
-            <h4
-              className="font-weight-bold mt-3 mr-3"
-              style={{ color: "rgb(254, 116, 11)" }}
-            >
+            <h4 className="fw-bold mt-3 me-3 text-orange">
               {params.state.product.price || params.state.product.orginalPrice}
             </h4>
 
-            <ReactMarkdown className="font-weight-bold mt-3">
+            <ReactMarkdown className="fw-bold text-md mt-3">
               {params.state.product.attr}
             </ReactMarkdown>
 
-            <h6 className="font-weight-bold mr-3">
+            <div className="fw-bold me-3 d-flex align-items-center">
               سایز لباس :
-              <Select
-                className="mr-3"
-                defaultValue="یک گزینه را انتخاب کنید"
-                style={{
-                  width: 200,
-                }}
-              >
-                <Option value="jack" className="text-right">
+              <div className="dropdown">
+                <button
+                  className="btn btn-white border dropdown-toggle me-2"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   یک گزینه را انتخاب کنید
-                </Option>
-                <Option value="2xl" className="text-right">
-                  ۲XL
-                </Option>
-              </Select>
-            </h6>
+                </button>
+                <ul
+                  className="dropdown-menu w-100 "
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      l
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      2xl
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      3xl
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-            <Button
-              type="primary"
-              size="large"
-              className="mt-3 mr-3 bg-success"
-              onClick={() => addToCartHandler(params.state.product)}
-              loading={loadings}
-            >
+            <button className="btn btn-success mt-3 me-3 ">
               افزودن به سبد خرید
-            </Button>
+            </button>
 
             <p
-              className="m-3"
-              style={{ cursor: "pointer" }}
+              className="m-3 cursor-pointer"
               onClick={() => dispatch(addToWishlist(params.state.product))}
             >
               {" "}
-              <HeartOutlined /> افزودن به علاقه مندی
+              <i className="bi bi-heart" /> افزودن به علاقه مندی
             </p>
           </div>
-          <div className="text-right font-weight-bold mt-3 mr-3">
+          <div className="text-right fw-bold mt-3 me-3">
             <p>شناسه محصول :‌ {params.state.product.id}</p>
-            <div className="d-flex mt-3 mb-5" style={{ cursor: "pointer" }}>
+            <div className="d-flex mt-3 mb-5 cursor-pointer">
               <p>اشتراک گذاری : </p>
-              <FacebookOutlined className="mr-1" />
-              <TwitterOutlined className="mr-1" />
-              <MailOutlined className="mr-1" />
-              <LinkedinOutlined className="mr-1" />
-              <WhatsAppOutlined className="mr-1" />
-              <InstagramOutlined className="mr-1" />
+              <i className="bi bi-facebook me-1" />
+              <i className="bi bi-twitter me-1" />
+              <i className="bi bi-envelope me-1" />
+              <i className="bi bi-linkedin me-1" />
+              <i className="bi bi-whatsapp me-1" />
+              <i className="bi bi-instagram me-1" />
             </div>
           </div>
         </div>

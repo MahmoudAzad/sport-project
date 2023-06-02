@@ -1,46 +1,61 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { Link, Outlet, Navigate } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const ProfileList = () => {
-  const user = useSelector((state) => state.persistedReducer.user.user);
-  console.log("user=======================>", user);
-  // if (user && user.isLogged && user != "") {
   return (
-    <div className="profile-list-container container mt-5">
-      <div className="profile-list">
-        <h5>حساب کاربری من</h5>
+    <div className="container mx-auto row mt-5">
+      <div className="col-3 border-start border-2 d-flex flex-column">
+        <h5 className="fw-bold border-bottom border-2 pb-2">حساب کاربری من</h5>
 
-        <Link className="link" to={"/profile"}>
+        <Link
+          className="profileList-link my-2 py-3 pe-2 text-decoration-none text-black fw-bold"
+          to={"/profile"}
+        >
           پیشخوان
         </Link>
 
-        <Link className="link" to={"/profile/order"}>
+        <Link
+          className="profileList-link mb-2 py-3 pe-2 text-decoration-none text-black fw-bold"
+          to={"/profile/order"}
+        >
           سفارشات
         </Link>
-        <Link className="link" to={"/profile/downloads"}>
+        <Link
+          className="profileList-link mb-2 py-3 pe-2 text-decoration-none text-black fw-bold"
+          to={"/profile/downloads"}
+        >
           دانلود ها
         </Link>
-        <Link className="link" to={"/profile/adresses"}>
+        <Link
+          className="profileList-link mb-2 py-3 pe-2 text-decoration-none text-black fw-bold"
+          to={"/profile/adresses"}
+        >
           آدرس ها
         </Link>
-        <Link className="link" to={"/profile/edit-account"}>
+        <Link
+          className="profileList-link mb-2 py-3 pe-2 text-decoration-none text-black fw-bold"
+          to={"/profile/edit-account"}
+        >
           جزئیات حساب
         </Link>
-        <Link className="link" to={"/wish-list"}>
+        <Link
+          className="profileList-link mb-2 py-3 pe-2 text-decoration-none text-black fw-bold"
+          to={"/wish-list"}
+        >
           علاقه مندی
         </Link>
-        <Link className="link" to={"/logout"}>
+        <Link
+          className="profileList-link mb-2 py-3 pe-2 text-decoration-none text-black fw-bold"
+          to={"/logout"}
+        >
           خروج
         </Link>
       </div>
-
-      <Outlet className="profile-list-outlet" />
+      <div className=" col-9">
+        <Outlet />
+      </div>
     </div>
   );
-  // } else {
-  //   return <Navigate to="/login" />;
-  // }
 };
 
 export default ProfileList;

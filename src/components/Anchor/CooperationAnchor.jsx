@@ -1,66 +1,76 @@
 import React from "react";
-import {
-  InsuranceTwoTone,
-  LayoutTwoTone,
-  LeftOutlined,
-  ShopTwoTone,
-} from "@ant-design/icons";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import CooperationForm from "../Form/CooperationForm";
+import { AnchorOffcet } from "../Function/AnchorOffcet";
 
 const CooperationAnchor = () => {
   return (
     <>
-      <div className="anchor row mt-5 d-none d-md-flex">
-        <AnchorLink className="item col" href="#item-1" offset="50">
-          <InsuranceTwoTone className="icon" twoToneColor="orange" />
+      <div className="mt-5 d-none d-md-flex justify-content-around">
+        <a
+          className="d-flex align-items-center text-decoration-none text-black fw-bold "
+          href="#item-1"
+          onClick={AnchorOffcet}
+        >
+          <img src="images/cooperation/icon1.png" width="50" className="ms-3" />
           <div className="description mr-3">
-            <p className="item-link">
-              همکاری سازمانی <LeftOutlined className="item-icon mr-1" />
+            <p className="item-link ">
+              همکاری سازمانی <i className="bi bi-chevron-left" />
             </p>
           </div>
-        </AnchorLink>
+        </a>
 
-        <AnchorLink className="item col" href="#item-2" offset="50">
-          <ShopTwoTone className="icon" twoToneColor="orange" />
+        <a
+          className="d-flex align-items-center text-decoration-none text-black fw-bold"
+          href="#item-2"
+          onClick={AnchorOffcet}
+        >
+          <img src="images/cooperation/icon2.png" width="50" className="ms-3" />
           <div className="description mr-3">
             <p className="item-link">
-              تامین کالا <LeftOutlined className="item-icon  mr-1" />
+              تامین کالا <i class="bi bi-chevron-left" />
             </p>
           </div>
-        </AnchorLink>
+        </a>
 
-        <AnchorLink className="item col" href="#item-3" offset="50">
-          <LayoutTwoTone className="icon" twoToneColor="orange" />
+        <a
+          className="d-flex align-items-center text-decoration-none text-black fw-bold"
+          href="#item-3"
+          onClick={AnchorOffcet}
+        >
+          <img src="images/cooperation/icon3.png" width="50" className="ms-3" />
           <div className="description mr-3">
             <p className="item-link">
-              فرصت شغلی <LeftOutlined className="item-icon  mr-1" />
+              فرصت شغلی <i class="bi bi-chevron-left" />
             </p>
           </div>
-        </AnchorLink>
+        </a>
       </div>
 
-      <div id="item-1" className="row ">
+      <div id="item-1" className="row bg-light my-5 rounded">
         <div className="col-12 col-md-7 order-last order-md-first mt-5">
           <h4>همکاری سازمانی</h4>
-          <p className="underline"></p>
-          <p>
+          <p className="mt-4 lh-base">
             سازمان‌ها و شرکت‌های محترم می‌توانند جهت دریافت کارت هدیه برای پرسنل
             خود و همچنین خدمات تولید و چاپ البسه و لوازم ورزشی درخواست خود را
             ثبت نمایند. مجموعه گیشا اسپرت با افتخار در خدمت شماست
           </p>
-          <div className="box">
-            <img src="\images/cooperation/wats.png" alt="واتساپ" />
+          <div className="contact-box d-flex align-items-end p-4 rounded my-4">
+            <img
+              src="\images/cooperation/wats.png"
+              alt="واتساپ"
+              className="ms-3"
+            />
             <div className="pt-3 mr-3">
               <h5>واتساپ</h5>
               <p>09121112233</p>
             </div>
           </div>
 
-          <div className="box mt-2 mb-5">
+          <div className="contact-box d-flex align-items-end p-4 rounded">
             <img
               src="\images/cooperation/telephone.png"
               alt="تلفن : ۰۲۱۲۲۲۲۲۲۲۲"
+              className="ms-3"
             />
             <div className="pt-3 mr-3">
               <h5>تلفن تماس</h5>
@@ -76,7 +86,7 @@ const CooperationAnchor = () => {
         />
       </div>
 
-      <div id="item-2" className="row ">
+      <div id="item-2" className="row bg-light my-5 rounded">
         <img
           src="\images/cooperation/supply.png"
           className="col-12 col-md-5"
@@ -85,25 +95,29 @@ const CooperationAnchor = () => {
         />
         <div className="col-12 col-md-7 mt-5">
           <h4>تامین کالا</h4>
-          <p className="underline"></p>
-          <p>
+          <p className="mt-4 lh-base">
             تولید کنندگان و عرضه کنندگان پوشاک ورزشی و همچنین سایر لوازم و
             تجهیزات ورزشی می‌توانند درخواست خود را مبنی بر فروش کالا به صورت
             عمده در گیشا اسپرت اعلام نمایند. با افتخار حامی تولید ملی خواهیم
             بود.
           </p>
-          <div className="box">
-            <img src="\images/cooperation/wats.png" alt="واتساپ" />
+          <div className="contact-box d-flex align-items-end p-4 rounded my-4">
+            <img
+              src="\images/cooperation/wats.png"
+              alt="واتساپ"
+              className="ms-3"
+            />
             <div className="pt-3 mr-3">
               <h5>واتساپ</h5>
               <p>09121112233</p>
             </div>
           </div>
 
-          <div className="box mt-2 mb-5">
+          <div className="contact-box d-flex align-items-end p-4 rounded my-4">
             <img
               src="\images/cooperation/telephone.png"
               alt="تلفن تماس ۲۲۹۹۸۸۸۷۷۷۷"
+              className="ms-3"
             />
             <div className="pt-3 mr-3">
               <h5>تلفن تماس</h5>
@@ -113,11 +127,11 @@ const CooperationAnchor = () => {
         </div>
       </div>
 
-      <div id="item-3" className="row">
+      <div id="item-3" className="row bg-light">
         <div className="col-12 col-md-7 mt-5 order-last order-md-first">
           <h4>فرصت شغلی</h4>
           <p className="underline"></p>
-          <p>
+          <p className="my-4 lh-base">
             مجموعه گیشا اسپرت، همواره از افراد با انگیزه و متخصص دعوت به عمل
             می‌آورد تا با پیوستن به مجموعه در زمینه‌های شغلی گوناگون در کنار ما
             بوده و با هم زمینه رشد و توسعه فردی و کسب‌وکار را فراهم سازیم.

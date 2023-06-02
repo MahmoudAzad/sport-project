@@ -10,9 +10,9 @@ const Cart = () => {
   return (
     <>
       {carts.length > 0 ? (
-        <div className="mr-5 ml-5">
+        <div className="col-9 mx-auto ">
           <div className="cart-container row ">
-            <div className="mt-5 col-7  offset-1">
+            <div className="mt-5 col-lg-8 col-12">
               <CartTable carts={carts} />
             </div>
             <TotalShoppingForm />

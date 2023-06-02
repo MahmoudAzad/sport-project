@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Pagination from "../Common/Paginition";
 import { Paginate } from "../Function/Paginate";
@@ -45,58 +45,59 @@ const ProductsCards = ({ endPath }) => {
   }
 
   return (
-    <Fragment>
-      <div className="">
-        <div className="show-products-helper-container row justify-content-center text-center">
-          {productsHelperPaginate.map((item) => (
-            <div key={item.id} className="item col-md-3 m-5 col-6 ">
-              <div className="images">
-                <div>
+    <>
+      <div className="row justify-content-center  text-center">
+        {productsHelperPaginate.map((item) => (
+          <div
+            key={item.id}
+            className="productsCards-item align-items-center col-md-3 m-5 col-6 "
+          >
+            <div className="images">
+              <div>
+                <img
+                  className="org-img-showpro-helper"
+                  alt="تصاویر محصولات"
+                  width="250px"
+                  src={`http://localhost:1337${item.images[0].url}`}
+                />
+                <div className="overlay">
                   <img
-                    className="org-img-showpro-helper"
+                    className="hover-img-showpro-helper"
+                    onClick={() => handleShowDetailProduct(item)}
                     alt="تصاویر محصولات"
                     width="250px"
-                    src={`http://localhost:1337${item.images[0].url}`}
+                    height="250px"
+                    src={`http://localhost:1337${item.images[1].url}`}
                   />
-                  <div className="overlay">
-                    <img
-                      className="hover-img-showpro-helper"
-                      onClick={() => handleShowDetailProduct(item)}
-                      alt="تصاویر محصولات"
-                      width="250px"
-                      height="250px"
-                      src={`http://localhost:1337${item.images[1].url}`}
-                    />
-                  </div>
-
-                  <button
-                    className="btn btn-success col-12 container"
-                    type="button"
-                    data-hover="hover"
-                  >
-                    <span>انتخاب گزینه ها</span>
-                  </button>
                 </div>
-              </div>
 
-              <h6
-                className="title "
-                onClick={() => handleShowDetailProduct(item)}
-              >
-                {item.title}
-              </h6>
-              <h6 className="price">{item.price}</h6>
+                <button
+                  className="btn btn-success col-12 container"
+                  type="button"
+                  data-hover="hover"
+                >
+                  <span>انتخاب گزینه ها</span>
+                </button>
+              </div>
             </div>
-          ))}
-        </div>
-        <Pagination
-          totalProducts={products.length}
-          currentPage={currentPage}
-          perPage={perPage}
-          onPageChange={handlePageChange}
-        />
+
+            <h6
+              className="title "
+              onClick={() => handleShowDetailProduct(item)}
+            >
+              {item.title}
+            </h6>
+            <h6 className="price">{item.price}</h6>
+          </div>
+        ))}
       </div>
-    </Fragment>
+      <Pagination
+        totalProducts={products.length}
+        currentPage={currentPage}
+        perPage={perPage}
+        onPageChange={handlePageChange}
+      />
+    </>
   );
 };
 

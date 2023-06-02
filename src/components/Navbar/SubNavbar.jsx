@@ -1,6 +1,4 @@
 import React, { Fragment } from "react";
-import { Dropdown, Menu } from "antd";
-import { SearchOutlined, UserOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import CartDrawer from "../Drawer/CartDrawer";
 import MenuDrawer from "../Drawer/MenuDrawer";
@@ -11,74 +9,65 @@ const SubNavbar = () => {
     (state) => state.persistedReducer.user.isLogged
   );
 
-  const menu = (
-    <Menu
-      items={[
-        {
-          key: "1",
-          label: <Link to="/profile">پیشخوان</Link>,
-        },
-        {
-          key: "2",
-          label: <Link to="/profile/order">سفارشات</Link>,
-        },
-        {
-          key: "3",
-          label: <Link to="profile/downloads">دانلود ها</Link>,
-        },
-        {
-          key: "4",
-          label: <Link to="profile/adresses">آدرس ها</Link>,
-        },
-        {
-          key: "5",
-          label: <Link to="profile/edit-account">جزئیات حساب</Link>,
-        },
-        {
-          key: "6",
-          label: <Link to="/wish-list">علاقه مندی</Link>,
-        },
-        {
-          key: "7",
-          label: <Link to="/logout">خروج</Link>,
-        },
-      ]}
-    />
-  );
+  const menu = [
+    {
+      key: "1",
+      label: <Link to="/profile">پیشخوان</Link>,
+    },
+    {
+      key: "2",
+      label: <Link to="/profile/order">سفارشات</Link>,
+    },
+    {
+      key: "3",
+      label: <Link to="profile/downloads">دانلود ها</Link>,
+    },
+    {
+      key: "4",
+      label: <Link to="profile/adresses">آدرس ها</Link>,
+    },
+    {
+      key: "5",
+      label: <Link to="profile/edit-account">جزئیات حساب</Link>,
+    },
+    {
+      key: "6",
+      label: <Link to="/wish-list">علاقه مندی</Link>,
+    },
+    {
+      key: "7",
+      label: <Link to="/logout">خروج</Link>,
+    },
+  ];
 
   return (
     <Fragment>
       <div className="top-line"></div>
 
-      <div className="container">
-        <div className="navbar-container mt-3 mb-3 ">
-          <div className="navbar-icons ">
+      <div className="d-none d-lg-block container">
+        <div className="d-flex justify-content-between text-center mt-3 mb-3 ">
+          <div className="d-flex align-items-center">
             <MenuDrawer />
 
             {isLoggedUser ? (
-              <Dropdown overlay={menu} placement="bottomRight">
-                <Link to="/profile">
-                  <UserOutlined
-                    style={{ fontSize: 18 }}
-                    className="p-1 nav-icon mr-2"
-                  />
+              <div class="user-dropdown">
+                <Link to="/profile" className="user-link">
+                  <i className="dropbtn bi bi-person subNav-icon cursor-pointer me-2 h5 text-black" />
                 </Link>
-              </Dropdown>
+                <div class="user-dropdown-content">
+                  {menu.map((item) => (
+                    <p>{item.label}</p>
+                  ))}
+                </div>
+              </div>
             ) : (
               <Link to="/my-account">
-                <UserOutlined
-                  style={{ fontSize: 18 }}
-                  className="p-1 nav-icon mr-2"
-                />
+                <i class="bi bi-person subNav-icon cursor-pointer me-2 h5 text-black" />
               </Link>
             )}
 
             <CartDrawer />
-
-            <SearchOutlined
-              style={{ fontSize: 18 }}
-              className="p-1 nav-icon mr-2"
-            />
+            <i class="bi bi-search subNav-icon cursor-pointer mx-2 h5" />
           </div>
 
           <Link to="/" className="navbar-logo">
@@ -90,9 +79,19 @@ const SubNavbar = () => {
             />
           </Link>
 
-          <div className="navbar-caption ">
-            <Link to="/track-order">پیگیری سفارش </Link>
-            <Link to="/contactus">تماس با ما</Link>
+          <div className="subNavbar-caption">
+            <Link
+              to="/track-order"
+              className="fw-bold px-3 py-2 ms-1 text-decoration-none"
+            >
+              پیگیری سفارش{" "}
+            </Link>
+            <Link
+              to="/contactus"
+              className="fw-bold px-3 py-2 ms-4 text-decoration-none"
+            >
+              تماس با ما
+            </Link>
           </div>
         </div>
       </div>

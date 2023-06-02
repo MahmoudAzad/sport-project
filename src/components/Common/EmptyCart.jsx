@@ -1,16 +1,14 @@
-import { ShoppingCartOutlined } from "@ant-design/icons";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const EmptyCart = () => {
   return (
     <div className="text-center mt-5">
-      <ShoppingCartOutlined
+      <i
+        className="bi bi-cart3"
         style={{ fontSize: "200px", color: "rgb(228, 228, 228)" }}
       />
-      <h1 className="font-weight-bold mt-3 mb-3">
-        سبد خرید شما در حال حاضر خالی است.
-      </h1>
+      <h1 className="fw-bold mt-3 mb-3">سبد خرید شما در حال حاضر خالی است.</h1>
       <h6>
         قبل از شروع پرداخت، شما باید برخی از محصولات را به سبد خرید خود اضافه
         کنید.

@@ -45,28 +45,28 @@ const RegisterForm = () => {
           handleRegister(values, actions);
         }}
       >
-        <Form className="register-form">
-          <h4 className="font-weight-bold mb-4">عضویت</h4>
-          <label className="mb-2 font-weight-bold ">
+        <Form className="register-form border-start border-2">
+          <h4 className="fw-bold mb-4">عضویت</h4>
+          <label className="mb-2 fw-bold ">
             آدرس ایمیل <span className="text-danger">*</span>
           </label>
           <Field
             name="email"
             type="text"
-            className="register-field col-xl-11 col-lg-11 col-md-11"
+            className="p-2 border border-2 border-secondary rounded-3 col-xl-11 col-lg-11 col-md-11"
           />
           <ErrorMessage
             name="email"
             render={(msg) => <div className="text-danger mt-2">{msg}</div>}
           />
 
-          <label className="mb-2 mt-4 font-weight-bold ">
+          <label className="mb-2 mt-4 fw-bold d-block ">
             گذرواژه<span className="text-danger">*</span>
           </label>
           <Field
             name="password"
             type="password"
-            className="register-field col-xl-11 col-lg-11 col-md-11"
+            className="p-2 border border-2 border-secondary rounded-3 col-xl-11 col-lg-11 col-md-11"
           />
 
           <ErrorMessage
@@ -74,24 +74,14 @@ const RegisterForm = () => {
             render={(msg) => <div className="text-danger mt-2">{msg}</div>}
           />
 
-          <p
-            className="col-11 "
-            style={{
-              lineHeight: "25px",
-              marginTop: "20px",
-              paddingBottom: "40px",
-              textAlign: "right",
-              borderBottom: "2px solid rgb(209, 209, 209)",
-            }}
-          >
+          <p className="col-11 lh-base mt-4 pb-4 border-bottom border-2">
             در صورت کلیک بر روی ثبت نام بدین معناست که مندرجات حریم خصوصی و
             قوانین سایت را مطالعه کرده و پذیرفته اید.
           </p>
 
           <button
             type="submit"
-            style={{ display: "block" }}
-            className="register-btn mt-3 col-md-11 "
+            className="border-0 rounded-4 text-white p-3 fw-bold mt-3 col-md-11 bg-green"
           >
             عضویت
           </button>

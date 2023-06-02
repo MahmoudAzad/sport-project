@@ -44,15 +44,15 @@ const LoginForm = () => {
         handleLogin(values, actions);
       }}
     >
-      <Form className="login-form">
-        <h4 className="font-weight-bold mb-4">ورود</h4>
-        <label className="mb-2 font-weight-bold ">
+      <Form className="border-start border-2">
+        <h4 className="fw-bold mb-4">ورود</h4>
+        <label className="mb-2 fw-bold ">
           نام کاربری یا آدرس ایمیل <span className="text-danger">*</span>
         </label>
         <Field
           name="identifier"
           type="text"
-          className="login-field col-xl-11 col-lg-11 col-md-11"
+          className="p-2 border border-2 border-secondary rounded-3  col-xl-11 col-lg-11 col-md-11"
         />
 
         <ErrorMessage
@@ -60,13 +60,13 @@ const LoginForm = () => {
           render={(msg) => <div className="text-danger mt-2">{msg}</div>}
         />
 
-        <label className="mb-2 mt-4 font-weight-bold ">
+        <label className="mb-2 mt-4 fw-bold ">
           رمز عبور<span className="text-danger">*</span>
         </label>
         <Field
           name="password"
           type="password"
-          className="login-field col-xl-11 col-lg-11 col-md-11 "
+          className="p-2 border border-2 border-secondary rounded-3 col-xl-11 col-lg-11 col-md-11 "
         />
 
         <ErrorMessage
@@ -76,20 +76,17 @@ const LoginForm = () => {
 
         <button
           type="submit"
-          style={{ display: "block" }}
-          className="login-btn mt-3 col-md-11 "
+          className="border-0 rounded-4 text-white p-3 fw-bold mt-3 col-md-11 bg-green"
         >
           ورود
         </button>
 
-        <div className="mt-4 form-checkbox">
+        <div className="mt-4 w-100 d-flex justify-content-around ">
           <p>
-            <input className="ml-2" type="checkbox" />
+            <input className="ms-2" type="checkbox" />
             مرا به خاطر بسپار
           </p>
-          <p className="ml-5" style={{ color: "#f57e10" }}>
-            رمز عبور را فراموش کرده اید ؟
-          </p>
+          <p className="ms-5 text-orange">رمز عبور را فراموش کرده اید ؟</p>
         </div>
       </Form>
     </Formik>

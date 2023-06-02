@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import "antd/dist/antd.css";
 import { useDispatch, useSelector } from "react-redux";
-import { Checkbox } from "antd";
-import { CloseOutlined, HeartOutlined, CheckOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
-import { Collapse } from "react-collapse";
 import { useEffect } from "react";
 import {
   removedFromWishList,
@@ -85,53 +81,58 @@ const WishList = () => {
       <div>
         {allWishlists.length > 0 ? (
           <div className="container mt-5">
-            <h5 className="text-right border-bottom pb-3">
-              محصولات علاقه مندی شما
-            </h5>
+            <h5 className=" border-bottom pb-3">محصولات علاقه مندی شما</h5>
 
-            <Collapse isOpened={showAccordian}>
-              <div className="text-right d-flex wishlistDeleteCollapse ">
+            <div className={`collapse ${showAccordian ? "show" : ""}`}>
+              <div className="text-right d-flex bg-light-gray p-1">
                 <p
-                  className="ml-4 p-2"
+                  className="ms-4 p-2 cursor-pointer fw-bold "
                   onClick={() => dispatch(removedFromWishListCheck(output))}
                 >
-                  <CloseOutlined className="pl-1" />
+                  <i class="bi bi-x-lg ps-1" />
                   حذف
                 </p>
                 {checkAll ? (
-                  <p className=" p-2">
-                    <CheckOutlined className="pl-1" />
+                  <p className="p-2">
+                    <i class="bi bi-check-lg ps-1" />
                     لغو انتخاب همه
                   </p>
                 ) : (
                   <p className=" p-2">
-                    <CheckOutlined className="pl-1" />
+                    <i class="bi bi-check-lg ps-1" />
                     انتخاب همه
                   </p>
                 )}
 
-                <Checkbox
-                  onChange={onCheckAllChange}
+                <input
+                  type="checkbox"
+                  class="form-check-input pt-1"
+                  onchange={onCheckAllChange}
                   checked={checkAll}
-                  className="pt-1"
                 />
               </div>
-            </Collapse>
+            </div>
 
-            <div className="wishList-container row ">
+            <div className=" row ">
               {allWishlists.map((item) => (
-                <div key={item.title} className="item col-md-4  col-6 mt-4">
-                  <div className="wishlist-top-items">
-                    <p
-                      onClick={() => dispatch(removedFromWishList(item))}
-                      style={{ fontSize: "15px" }}
-                    >
-                      <CloseOutlined style={{ fontSize: "12px" }} />
-                      حذف
-                    </p>
-                    <Checkbox
+                <div
+                  key={item.title}
+                  className="wishList-item d-flex flex-column  col-md-4 col-6 mt-4"
+                >
+                  <div className="d-flex justify-content-around mb-3">
+                    <div className="d-flex align-items-start">
+                      <i class="bi bi-x-lg" />
+                      <p
+                        onClick={() => dispatch(removedFromWishList(item))}
+                        className="cursor-pointer fs-6"
+                      >
+                        حذف
+                      </p>
+                    </div>
+                    <input
+                      type="checkbox"
+                      class="form-check-input pt-1"
                       onChange={(e) => onChange(e, item)}
-                      value={item.title}
                       checked={checked[item.title]}
                     />
                   </div>
@@ -220,12 +221,11 @@ const WishList = () => {
           </div>
         ) : (
           <div className="text-center mt-5">
-            <HeartOutlined
+            <i
+              class="bi bi-heart"
               style={{ fontSize: "200px", color: "rgb(228, 228, 228)" }}
             />
-            <h1 className="font-weight-bold mt-3 mb-3">
-              این لیست علاقه مندی خالی است.
-            </h1>
+            <h1 className="fw-bold mt-3 mb-3">این لیست علاقه مندی خالی است.</h1>
             <h6>شما هیچ محصولی به لیست علاقه مندی هایتان اظافه نکرده اید!</h6>
             <h6>
               برای پیدا کردن محصولات مورد علاقه یتان جهت افزودن به لیست علاقه

@@ -1,6 +1,5 @@
 import React from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import ReCAPTCHA from "react-google-recaptcha";
 import { ContactSchema } from "../Function/Validations";
 import { SendMessageService } from "../../services/Services";
 import { toast } from "react-toastify";
@@ -33,12 +32,12 @@ const ContactUsForm = () => {
         handleSubmit(values, actions);
       }}
     >
-      <Form className="form">
-        <label className=" mb-2">نام و نام خانوادگی *</label>
+      <Form>
+        <label className="fw-bold mb-2">نام و نام خانوادگی *</label>
         <Field
           name="userName"
           type="text"
-          className="mb-1 field-input col-12"
+          className="mb-1 col-12 border border-2 border-muted rounded-2 p-1 form-control"
         />
 
         <ErrorMessage
@@ -46,11 +45,11 @@ const ContactUsForm = () => {
           render={(msg) => <div className="text-danger">{msg}</div>}
         />
 
-        <label className="mt-4 mb-2"> تلفن *</label>
+        <label className="fw-bold mt-4 mb-2"> تلفن *</label>
         <Field
           name="phoneNumber"
           type="number"
-          className="mb-1 field-input col-12"
+          className="mb-1 col-12 border border-2 border-muted rounded-2 p-1 form-control"
           placeholder="مثال : ۰۹۱۲۹۹۹۸۸۷۷"
         />
 
@@ -59,13 +58,13 @@ const ContactUsForm = () => {
           render={(msg) => <div className="text-danger">{msg}</div>}
         />
 
-        <label className="mt-4 mb-2"> متن پیام شما *</label>
+        <label className=" fw-bold mt-4 mb-2"> متن پیام شما *</label>
         <Field
           placeholder="بنویسید ..."
           style={{ height: "200px", resize: "none", display: "block" }}
           name="message"
           as="textarea"
-          className="w-100"
+          className="w-100 border border-2 border-muted rounded-2 pt-2 pe-2 "
         />
 
         <ErrorMessage
@@ -73,12 +72,9 @@ const ContactUsForm = () => {
           render={(msg) => <div className="text-danger">{msg}</div>}
         />
 
-        <label className="mb-2 mt-3">کد امنیتی</label>
-        <ReCAPTCHA sitekey="Your client site key" />
-
         <button
           type="submit"
-          style={{ display: "block", marginBottom: "20px" }}
+          className="d-block mb-5 mt-3 py-2 px-3 border-0 fw-bold"
         >
           ارسال
         </button>

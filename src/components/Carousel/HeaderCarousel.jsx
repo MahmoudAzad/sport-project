@@ -21,7 +21,7 @@ const HeaderCarousel = () => {
 
   return (
     <Swiper
-      className="mySwiper header-swiper col-10 mt-5"
+      className="mySwiper header-swiper container mt-5"
       pagination={{
         clickable: true,
       }}

@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Col, Row } from "antd";
 import { Field, Form, Formik } from "formik";
 
 const EditAccountForm = () => {
@@ -28,27 +27,41 @@ const EditAccountForm = () => {
         handleEditAccount(values, actions);
       }}
     >
-      <Form className="edit-account-container">
-        <div className="change-account mr-4">
-          <Row>
-            <Col span={12}>
+      <Form>
+        <div className="me-4">
+          <div className="row">
+            <div className="col-6">
               <p className="mb-2">
                 نام <span className="text-danger">*</span>
               </p>
-              <Field name="name" type="text" style={{ width: "95%" }} />
-            </Col>
-            <Col span={12}>
+              <Field
+                name="name"
+                type="text"
+                className="w-100 p-1 border border-2 border-secondary rounded-2"
+              />
+            </div>
+            <div className="col-6">
               <p className="mb-2">
                 نام خانوادگی <span className="text-danger">*</span>
               </p>
-              <Field name="family" type="text" className="w-100" />
-            </Col>
-          </Row>
+              <Field
+                className="w-100 p-1 border border-2 border-secondary rounded-2"
+                name="family"
+                type="text"
+              />
+            </div>
+          </div>
 
           <p className="mb-2 mt-4">
             نام نمایشی <span className="text-danger">*</span>
           </p>
-          <Field name="showName" type="text" size="100" placeholder={name} />
+          <Field
+            className="w-100 p-1 border border-2 border-secondary rounded-2"
+            name="showName"
+            type="text"
+            size="100"
+            placeholder={name}
+          />
           <p className="mt-1">
             اسم شما به این صورت در حساب کاربری و نظرات دیده خواهد شد.
           </p>
@@ -56,27 +69,47 @@ const EditAccountForm = () => {
           <p className="mb-2 mt-4">
             آدرس ایمیل <span className="text-danger">*</span>
           </p>
-          <Field name="email" type="text" size="100" placeholder={userEmail} />
+          <Field
+            className="w-100 p-1 border border-2 border-secondary rounded-2"
+            name="email"
+            type="text"
+            size="100"
+            placeholder={userEmail}
+          />
         </div>
 
-        <div className="change-password ">
-          <h5 className="mt-3 mb-4 font-weight-bold">تغییر گذرواژه</h5>
+        <div className="border border-2 border-secondary rounded-2 mt-5 me-4 p-2">
+          <h5 className="mt-3 mb-4 fw-bold">تغییر گذرواژه</h5>
 
           <p className="mb-2">
             گذرواژه پیشین (در صورتی که قصد تغییر ندارید خالی بگذارید)
           </p>
-          <Field name="lastPassword" type="text" className="w-100" />
+          <Field
+            className="w-100 p-1 border border-2 border-secondary rounded-2"
+            name="lastPassword"
+            type="text"
+          />
 
           <p className="mb-2 mt-4">
             گذرواژه جدید (در صورتی که قصد تغییر ندارید خالی بگذارید)
           </p>
-          <Field name="newPassword" type="text" className="w-100" />
+          <Field
+            className="w-100 p-1 border border-2 border-secondary rounded-2"
+            name="newPassword"
+            type="text"
+          />
 
           <p className="mb-2 mt-4">تکرار گذرواژه جدید</p>
-          <Field name="repeadPassword" type="text" className="w-100" />
+          <Field
+            className="w-100 p-1 border border-2 border-secondary rounded-2"
+            name="repeadPassword"
+            type="text"
+          />
         </div>
 
-        <button>ذخیره تغییرات</button>
+        <button className="bg-green border-0 text-white py-3 px-4 rounded-4 mt-3 me-4 border-none">
+          ذخیره تغییرات
+        </button>
       </Form>
     </Formik>
   );

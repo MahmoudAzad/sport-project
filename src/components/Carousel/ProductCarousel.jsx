@@ -12,7 +12,7 @@ const ProductCarousel = ({ params }) => {
         clickable: true,
       }}
       modules={[EffectFade, Navigation, Pagination]}
-      className="mySwiper "
+      className="bg-white rounded-4 container"
     >
       {params.state.product.img && (
         <SwiperSlide>

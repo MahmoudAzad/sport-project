@@ -1,13 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import {
-  DownloadOutlined,
-  EnvironmentOutlined,
-  ExportOutlined,
-  HeartOutlined,
-  ScheduleOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+
 import { useSelector } from "react-redux";
 
 const Counter = () => {
@@ -18,10 +11,10 @@ const Counter = () => {
   const name = userEmail.substring(0, userEmail.lastIndexOf("@"));
 
   return (
-    <div className="counter-container container mr-5">
+    <div className="container mr-5">
       <p style={{ fontSize: "18px", marginBottom: "20px" }}>
-        سلام <strong className="font-weight-bold">{name}</strong> (
-        <strong className="font-weight-bold">{name}</strong> نیستید؟ خارج شوید)
+        سلام <strong className="fw-bold">{name}</strong> (
+        <strong className="fw-bold">{name}</strong> نیستید؟ خارج شوید)
       </p>
       <p style={{ fontSize: "18px", marginBottom: "20px", lineHeight: "25px" }}>
         از طریق پیشخوان حساب کاربری‌تان، می‌توانید سفارش‌های اخیرتان را مشاهده،
@@ -29,34 +22,53 @@ const Counter = () => {
         عبور خود را ویرایش کنید.
       </p>
 
-      <div className="counter-items">
-        <Link to={"/profile/order"} className="item">
-          <ScheduleOutlined className="icon" />
+      <div className="row justify-content-around mt-4">
+        <Link
+          to={"/profile/order"}
+          className="counter-link-item col-3 border border-3 rounded-2 text-center py-4 text-decoration-none text-secondary"
+        >
+          <i className="bi bi-card-checklist fs-1 " />
           <p>سفارش</p>
         </Link>
 
-        <Link to={"/profile/downloads"} className="item">
-          <DownloadOutlined className="icon" />
+        <Link
+          to={"/profile/downloads"}
+          className="counter-link-item col-3 border border-3 rounded-2 text-center py-4 text-decoration-none text-secondary"
+        >
+          <i className="bi bi-download fs-1" />
           <p>دانلودها</p>
         </Link>
 
-        <Link to={"/profile/adresses"} className="item">
-          <EnvironmentOutlined className="icon" />
+        <Link
+          className="counter-link-item col-3 border border-3 rounded-2 text-center py-4 text-decoration-none text-secondary"
+          to={"/profile/adresses"}
+        >
+          <i className="bi bi-geo-alt fs-1" />
           <p>آدرس ها</p>
         </Link>
-
-        <Link to={"/profile/edit-account"} className="item">
-          <UserOutlined className="icon" />
+      </div>
+      <div className="row justify-content-around mt-4">
+        <Link
+          to={"/profile/edit-account"}
+          className="counter-link-item col-3 border border-3 rounded-2 text-center py-4 text-decoration-none text-secondary"
+        >
+          <i className="bi bi-person fs-1" />
           <p>جزئیات حساب</p>
         </Link>
 
-        <Link to={"/wish-list"} className="item">
-          <HeartOutlined className="icon" />
+        <Link
+          to={"/wish-list"}
+          className="counter-link-item col-3 border border-3 rounded-2 text-center py-4 text-decoration-none text-secondary"
+        >
+          <i className="bi bi-heart fs-1" />
           <p>علاقه مندی</p>
         </Link>
 
-        <Link to={"/logout"} className="item">
-          <ExportOutlined className="icon text-center" />
+        <Link
+          to={"/logout"}
+          className="counter-link-item col-3 border border-3 rounded-2 text-center py-4 text-decoration-none text-secondary"
+        >
+          <i className="bi bi-box-arrow-left fs-1" />
           <p>خروج</p>
         </Link>
       </div>

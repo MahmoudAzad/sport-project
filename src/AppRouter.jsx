@@ -1,5 +1,3 @@
-import { UpOutlined } from "@ant-design/icons";
-import { BackTop } from "antd";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Product from "./pages/Product";
 import Products from "./pages/Products";
@@ -27,6 +25,7 @@ import MajorShopping from "./pages/MajorShopping";
 import Installment from "./pages/Installment";
 import Wishlist from "./pages/Wishlist";
 import Navbar from "./components/Navbar/Navbar";
+import Test from "./pages/test";
 
 const AppRouter = () => {
   return (
@@ -37,6 +36,8 @@ const AppRouter = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/test" element={<Test />} />
+
         <Route path="/products/:endPath" element={<Products />} />
         <Route path="/product" element={<Product />} />
         <Route path="/contactus" element={<ContactUS />} />
@@ -63,14 +64,6 @@ const AppRouter = () => {
       </Routes>
 
       <Footer />
-
-      <div>
-        <BackTop className="back-top-container">
-          <div className="back-top">
-            <UpOutlined />
-          </div>
-        </BackTop>
-      </div>
     </BrowserRouter>
   );
 };

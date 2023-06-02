@@ -5,8 +5,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { useNavigate } from "react-router";
-import { ShoppingCartOutlined } from "@ant-design/icons";
-import { Tooltip } from "antd";
 import Loading from "../Common/Loading";
 import { getProducts } from "../../services/Services";
 
@@ -37,7 +35,9 @@ const HomeCarousels = ({ endPath, title }) => {
 
   return (
     <div className="mt-4">
-      <h5 className="swiper-container-title container p-2 ">{title}</h5>
+      <h5 className="text-center fw-bold border-bottom border-2 border-muted container p-2 ">
+        {title}
+      </h5>
       <Swiper
         style={{
           "--swiper-navigation-color": "black",
@@ -68,20 +68,23 @@ const HomeCarousels = ({ endPath, title }) => {
           },
         }}
         modules={[Pagination, Navigation]}
-        className="carousel-swiper container"
+        className="bg-white pt-2 pb-5 rounded-4 container"
       >
         {products.map((p) => (
-          <SwiperSlide className="swiper-slide" key={p.id}>
+          <SwiperSlide
+            className="swiper-slide d-flex flex-column justify-content-end"
+            key={p.id}
+          >
             <div>
-              <div className="slide-images row justify-content-center">
+              <div className="slide-images position-relative overflow-hidden row justify-content-center">
                 <img
                   src={`http://localhost:1337${p.img.url}`}
                   alt="گالری تصاویر محصولات"
-                  className="slide-orgImg"
+                  className="w-100 h-100 object-fit-cover d-block"
                 />
                 <div className="overlay">
                   <img
-                    className="slide-hoverImg"
+                    className="slide-hoverImg w-100 h-100 object-fit-cover d-block"
                     src={`http://localhost:1337${
                       p.hoverImg.url || p.hoverImg[0].url
                     }`}
@@ -89,28 +92,25 @@ const HomeCarousels = ({ endPath, title }) => {
                     onClick={() => handleShowDetailProduct(p)}
                   />
                 </div>
-
-                <Tooltip
-                  title="انتخاب گزینه ها"
-                  className="btn"
-                  mouseLeaveDelay={0}
-                  color="black"
-                  onClick={() => handleShowDetailProduct(p)}
+                <button
+                  type="button"
+                  className="btn bg-white col-3 tooltipIcon position-absolute text-center "
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="اطلاعات بیشتر"
                 >
-                  <button className=" col-3" type="button" data-hover="hover">
-                    <ShoppingCartOutlined className="icon" />
-                  </button>
-                </Tooltip>
+                  <i className="bi bi-cart3 icon" />
+                </button>
               </div>
             </div>
 
             <p
-              className="mt-3 title"
+              className="mt-3 lh-base"
               onClick={() => handleShowDetailProduct(p)}
             >
               {p.title}
             </p>
-            <div className="carousel-price ">
+            <div className="d-flex justify-content-center mt-4 ">
               <p className="carousel-orgPrice mr-3 ">{p.price}</p>
             </div>
           </SwiperSlide>
