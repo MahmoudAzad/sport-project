@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SubMenu = () => {
   return (
     <div>
-      <header className="d-none d-lg-block py-2 bg-light-gray">
+      <header className="d-none d-lg-block bg-light-gray">
         <nav className="container">
           <ul className="submenu-items d-flex justify-content-around align-items-center ">
             <li className="submenu-title h-100 list-unstyled">

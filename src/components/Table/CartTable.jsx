@@ -10,7 +10,7 @@ const CartTable = ({ carts }) => {
     <>
       <table className="col-12">
         <thead>
-          <tr className="d-flex align-items-center border-bottom border-2 mt-5 mb-2 pb-3 ">
+          <tr className="d-flex align-items-center border-bottom  mt-5 mb-2 pb-3 ">
             <th className="fw-bold text-center col-1 pb-3"></th>
             <th className="fw-bold text-center col-1"></th>
             <th className="fw-bold text-center col-4">محصول</th>

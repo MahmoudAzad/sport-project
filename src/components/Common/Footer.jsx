@@ -42,7 +42,7 @@ const Footer = () => {
           >
             فروشگاه آنلاین پوشاک و لوازم ورزشی گیشا اسپرت
           </h5>
-          <h6 className="mb-5 lh-lg text-light-emphasis">
+          <p className="mb-5 lh-lg text-light-emphasis description ">
             فروشگاه اینترنتی گیشا اسپرت در سال 1396 کار خود را در زمینه انواع
             لباس ورزشی مردانه و زنانه و همچنین لوازم و تجهیزات ورزشی، با تمرکز
             بیشتر بر رشته‌های ورزشی فیتنس و بدنسازی شروع کرد. در این سال‌ها
@@ -59,10 +59,10 @@ const Footer = () => {
             >
               {showing ? " بستن " : " ادامه ..."}
             </span>
-          </h6>
+          </p>
 
           {showing ? (
-            <h6 className="mb-5 lh-lg text-light-emphasis">
+            <p className="mb-5 lh-lg text-light-emphasis description">
               محصولات ارائه شده در گیشا اسپرت در چند دسته اصلی جای داده می‌شوند،
               پوشاک ورزشی، لوازم و تجهیزات ورزشی و اکسسوری ورزشی. در دسته بندی
               پوشاک ورزشی، تنوع بالای لباس ورزشی مردانه و لباس ورزشی زنانه با
@@ -75,7 +75,7 @@ const Footer = () => {
               کمربند بدنسازی وجود دارد. امیدواریم بتوانیم در کیفیت و سرعت خدمات
               رضایت شما مشتریان عزیز را فراهم کنیم و گامی در راستای ایجاد
               رویکردی جدید در ورزش به خصوص فیتنس و بدنسازی برداریم.
-            </h6>
+            </p>
           ) : null}
 
           <div className="d-flex align-items-center mt-3">
@@ -90,13 +90,13 @@ const Footer = () => {
               <p className="fw-bold">۰۲۱-۲۲۳۳۴۴۵۵</p>
             </div>
           </div>
-
+          {/* 
           <div className="text-center row justify-content-center ">
             <i className="bi bi-twitter mx-2 my-5 border border-2 border-secondary rounded-circle p-3 col-1" />
             <i className="bi bi-instagram mx-2 my-5 border border-2 border-secondary rounded-circle p-3 col-1" />
             <i className="bi bi-whatsapp mx-2 my-5 border border-2 border-secondary rounded-circle p-3 col-1" />
             <i className="bi bi-github mx-2 my-5 border border-2 border-secondary rounded-circle p-3 col-1" />
-          </div>
+          </div> */}
         </div>
 
         <div className="lh-lg col-6 col-lg-3 text-right offset-lg-1 d-flex flex-column  ">

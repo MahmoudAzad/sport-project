@@ -8,6 +8,7 @@ const ContactUS = () => {
       <Helmet>
         <title>تماس با ما</title>
       </Helmet>
+
       <div className="contact-us-container border border-warning border-3  rounded-5 row mt-5 ">
         <div className=" rounded-start rounded-5 col-lg-6 text-right pt-5 bg-orange">
           <h4 className="fw-bold text-white">اطلاعات تماس گیشا اسپرت</h4>
@@ -53,3 +54,17 @@ const ContactUS = () => {
 };
 
 export default ContactUS;
+
+{
+  /* <div class=" input-group d-flex align-items-center justify-content-between border p-2 rounded-3 mt-5 px-3">
+        <div>
+          <i class="bi bi-search " />
+          <input
+            className="border-0 ps-3 form-input"
+            placeholder="search anything..."
+          />
+        </div>
+        <i className="bi bi-mic-fill border-start border-2 ps-2 "></i>
+      </div>
+    </div> */
+}

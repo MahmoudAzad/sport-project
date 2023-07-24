@@ -10,9 +10,9 @@ const Cart = () => {
   const carts = useSelector(selectAllCarts);
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>سبد خرید</title>
-      </Helmet>
+      </Helmet> */}
       {carts.length > 0 ? (
         <div className="col-9 mx-auto ">
           <div className="cart-container row ">

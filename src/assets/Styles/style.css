@@ -30,26 +30,17 @@ body {
 }
 
 .fluid {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .fluid__image-container {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  flex: 0 0 auto;
   margin: 20px auto;
 }
 
 .fluid__instructions {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  flex: 0 0 auto;
   margin: 0 20px;
 }
 
@@ -81,38 +72,37 @@ body {
   font-family: "IRANSans1";
   font-weight: 100;
 }
-
 * {
   font-family: "IRANSans1" !important;
 }
 
 /* ===================================== Customize colors ===================================== */
 .bg-green {
-  background-color: #17eb17;
+  background-color: rgb(23, 235, 23);
 }
 
 .bg-orange {
-  background-color: #fe740b;
+  background-color: rgb(254, 116, 11);
 }
 
 .text-orange {
-  color: #fe740b;
+  color: rgb(254, 116, 11);
 }
 
 .bg-smoke {
-  background-color: #c4c4c4;
+  background-color: rgb(196, 196, 196);
 }
 
 .text-smoke {
-  color: #c4c4c4;
+  color: rgb(196, 196, 196);
 }
 
 .text-gray {
-  color: #4b4b4b;
+  color: rgb(75, 75, 75);
 }
 
 .bg-light-gray {
-  background-color: #f3f3f3;
+  background-color: rgb(243, 243, 243);
 }
 
 .cursor-pointer {
@@ -121,7 +111,7 @@ body {
 
 /* ===================================== SubNavbar ===================================== */
 .top-line {
-  background-color: #fe740b;
+  background-color: rgb(254, 116, 11);
   width: 100%;
   height: 4px;
 }
@@ -129,22 +119,18 @@ body {
 .subNav-icon {
   color: black;
 }
-
 .subNav-icon:hover {
-  color: #595858;
-  -webkit-transition: color 0.3s;
+  color: rgb(89, 88, 88);
   transition: color 0.3s;
 }
 
 .subNavbar-caption a {
   color: black;
 }
-
 .subNavbar-caption a:hover {
-  color: #fe740b;
-  background-color: #e7e7e7;
+  color: rgb(254, 116, 11);
+  background-color: rgb(231, 231, 231);
   border-radius: 20px;
-  -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 
@@ -153,9 +139,8 @@ body {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 3;
 }
 
 .user-dropdown-content a {
@@ -177,53 +162,41 @@ body {
 .mobile-nav-icon {
   cursor: pointer;
 }
-
 .mobile-nav-icon:hover {
-  color: #595858;
-  -webkit-transition: color 0.3s;
+  color: rgb(89, 88, 88);
   transition: color 0.3s;
 }
 
 /* ===================================== submenu ===================================== */
+.submenu-items li {
+  padding: 20px;
+}
 .submenu-items li:hover .fw-dropdown {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: flex-start;
   z-index: 100;
 }
-
 .submenu-items li a {
-  color: #3b3b3b;
+  color: rgb(59, 59, 59);
   margin: auto;
   text-decoration: none;
   font-weight: bold;
 }
-
 .submenu-items .fw-dropdown {
   position: absolute;
-  margin-top: 50px;
+  margin-top: 20px;
   left: 0;
   display: none;
   width: 100%;
   padding: 2em 0;
-  background: white;
-  border-bottom: 1px solid #dddddd;
+  background: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(221, 221, 221);
 }
-
 .submenu-items .fw-dropdown ul {
-  -ms-flex-preferred-size: 15%;
-      flex-basis: 15%;
+  flex-basis: 15%;
 }
-
 .submenu-items .fw-dropdown li {
   height: auto;
   padding: 10px;
@@ -232,27 +205,27 @@ body {
   float: right;
   list-style: none;
 }
-
 .submenu-items .fw-dropdown li a {
-  color: #444444;
+  color: rgb(68, 68, 68);
 }
-
 .submenu-items .fw-dropdown li:hover a {
-  color: gray;
+  color: rgb(128, 128, 128);
 }
-
 .submenu-items .submenu-title .title-link {
   font-size: 14px;
 }
-
 .submenu-items .submenu-title:hover .title-link {
-  color: #fe740b;
+  color: rgb(254, 116, 11);
 }
 
 /* ===================================== headerCarousel ===================================== */
+.header-swiper {
+  z-index: 2;
+}
+
 .header-swiper .swiper-pagination .swiper-pagination-bullet {
   opacity: 0.5;
-  background-color: #aaaaaa;
+  background-color: rgb(170, 170, 170);
   padding: 5px;
   margin: 5px;
 }
@@ -270,22 +243,17 @@ body {
 .slide-images:hover .tooltipIcon {
   bottom: 0;
 }
-
 .slide-images .tooltipIcon {
   bottom: -160px;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-
 .slide-images .tooltipIcon .icon {
   font-size: 25px;
-  color: #444444;
+  color: rgb(68, 68, 68);
 }
-
 .slide-images .tooltipIcon .icon:hover {
   color: #898989;
 }
-
 .slide-images .slide-hoverImg {
   cursor: pointer;
   opacity: 0;
@@ -294,20 +262,15 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transition: opacity 0.3s, -webkit-transform 1.5s;
-  transition: opacity 0.3s, -webkit-transform 1.5s;
   transition: transform 1.5s, opacity 0.3s;
-  transition: transform 1.5s, opacity 0.3s, -webkit-transform 1.5s;
 }
-
 .slide-images:hover .slide-hoverImg {
   opacity: 1;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .carousel-orgPrice {
-  color: #fe740b;
+  color: rgb(254, 116, 11);
   font-weight: bold;
 }
 
@@ -330,126 +293,92 @@ body {
 .footer-container {
   padding: 50px 100px 50px 100px;
 }
-
 .footer-container .link {
   color: black;
 }
-
 .footer-container .link:hover {
-  color: #fe740b;
+  color: rgb(254, 116, 11);
   text-decoration: none;
+}
+.footer-container .description {
+  text-align: justify;
 }
 
 /* ===================================== ProductsCards ===================================== */
 .productsCards-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-
 .productsCards-item:hover .btn {
   bottom: 0;
 }
-
 .productsCards-item .btn {
   bottom: -160px;
   opacity: 0.9;
   height: 40px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: absolute;
   border-radius: 0px 0px 10px 10px;
   display: block;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-
 .productsCards-item .btn span {
-  -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
-
 .productsCards-item .btn:before {
   position: absolute;
   left: 0;
   width: 100%;
   text-align: center;
   opacity: 0;
-  -webkit-transition: 0.4s, opacity 0.6s;
   transition: 0.4s, opacity 0.6s;
 }
-
 .productsCards-item .btn:before {
   content: attr(data-hover);
-  -webkit-transform: translate(0, 150%);
-          transform: translate(0, 150%);
+  transform: translate(0, 150%);
 }
-
 .productsCards-item .btn:hover span {
   opacity: 0;
-  -webkit-transform: scale(0.3);
-          transform: scale(0.3);
+  transform: scale(0.3);
 }
-
 .productsCards-item .btn:hover:before {
   opacity: 1;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
+  transform: translate(0, 0);
+  transition-delay: 0.1s;
 }
-
 .productsCards-item .title {
   cursor: pointer;
   text-align: center;
   margin-top: 5px;
 }
-
 .productsCards-item .title:hover {
-  color: #817f7f;
+  color: rgb(129, 127, 127);
 }
-
 .productsCards-item .price {
   color: #fe5304;
   font-weight: bold;
 }
-
 .productsCards-item .images {
   position: relative;
   cursor: pointer;
   overflow: hidden;
 }
-
 .productsCards-item .images .org-img-showpro-helper {
   display: block;
 }
-
 .productsCards-item .images .overlay {
   position: absolute;
   top: 0;
   right: 0;
   opacity: 0;
-  -webkit-transition: opacity 0.3s, -webkit-transform 1.5s;
-  transition: opacity 0.3s, -webkit-transform 1.5s;
   transition: transform 1.5s, opacity 0.3s;
-  transition: transform 1.5s, opacity 0.3s, -webkit-transform 1.5s;
 }
-
 .productsCards-item .images:hover .overlay {
-  -webkit-transform: scale(1.06);
-          transform: scale(1.06);
+  transform: scale(1.06);
   opacity: 1;
 }
-
 .productsCards-item .images .hover-img-showpro-helper {
   position: absolute;
 }
@@ -458,125 +387,93 @@ body {
 .wishList-item:hover .btn {
   bottom: 0;
 }
-
 .wishList-item .btn {
   bottom: -160px;
   opacity: 0.9;
   height: 40px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: absolute;
   border-radius: 0px 0px 10px 10px;
   display: block;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-
 .wishList-item .btn span {
-  -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
-
 .wishList-item .btn:before {
   position: absolute;
   left: 0;
   width: 100%;
   text-align: center;
   opacity: 0;
-  -webkit-transition: 0.4s, opacity 0.6s;
   transition: 0.4s, opacity 0.6s;
 }
-
 .wishList-item .btn:before {
   content: attr(data-hover);
-  -webkit-transform: translate(0, 150%);
-          transform: translate(0, 150%);
+  transform: translate(0, 150%);
 }
-
 .wishList-item .btn:hover span {
   opacity: 0;
-  -webkit-transform: scale(0.3);
-          transform: scale(0.3);
+  transform: scale(0.3);
 }
-
 .wishList-item .btn:hover:before {
   opacity: 1;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
+  transform: translate(0, 0);
+  transition-delay: 0.1s;
 }
-
 .wishList-item .title {
   cursor: pointer;
   text-align: center;
   margin-top: 5px;
 }
-
 .wishList-item .title:hover {
-  color: #817f7f;
+  color: rgb(129, 127, 127);
 }
-
 .wishList-item .price {
   color: #fe5304;
   font-weight: bold;
 }
-
 .wishList-item .images {
   position: relative;
   cursor: pointer;
   overflow: hidden;
 }
-
 .wishList-item .images .org-img-showpro-helper {
   display: block;
 }
-
 .wishList-item .images .overlay {
   position: absolute;
   top: 0;
   right: 0;
   opacity: 0;
-  -webkit-transition: opacity 0.3s, -webkit-transform 1.5s;
-  transition: opacity 0.3s, -webkit-transform 1.5s;
   transition: transform 1.5s, opacity 0.3s;
-  transition: transform 1.5s, opacity 0.3s, -webkit-transform 1.5s;
 }
-
 .wishList-item .images:hover .overlay {
-  -webkit-transform: scale(1.06);
-          transform: scale(1.06);
+  transform: scale(1.06);
   opacity: 1;
 }
-
 .wishList-item .images .hover-img-showpro-helper {
   position: absolute;
 }
 
 /* ===================================== profileList ===================================== */
 .profileList-link:hover {
-  background-color: #f3f3f3;
-  -webkit-transition: 0.09s;
+  background-color: rgb(243, 243, 243);
   transition: 0.09s;
 }
 
 /* ===================================== counter ===================================== */
 .counter-link-item:hover {
-  -webkit-transition: 0.3s;
   transition: 0.3s;
-  background-color: #f5f6f6;
+  background-color: rgb(245, 246, 246);
   text-decoration: none;
   color: black;
 }
-
 .counter-link-item:hover i {
-  -webkit-transition: 0.3s;
   transition: 0.3s;
-  color: #fe740b !important;
+  color: rgb(254, 116, 11) !important;
 }
-
 .counter-link-item:hover p {
   color: black;
   font-weight: bold;
@@ -586,58 +483,47 @@ body {
 .cart-drawer-items {
   cursor: pointer;
 }
-
 .cart-drawer-items .price {
-  color: #f87910;
+  color: rgb(248, 121, 16);
 }
-
 .cart-drawer-items:hover {
-  -webkit-transition: 0.3s;
   transition: 0.3s;
-  background-color: #f6f6f6;
+  background-color: rgb(246, 246, 246);
 }
-
 .cart-drawer-items:hover h6 {
-  color: #7b7b7b;
-  color: #4b4b4b;
+  color: rgb(123, 123, 123);
+  color: rgb(75, 75, 75);
 }
 
 /* ===================================== cooperation ===================================== */
 .item-link:hover {
-  color: #fe740b;
-  -webkit-transition: 0.2s;
+  color: rgb(254, 116, 11);
   transition: 0.2s;
 }
 
 #item-1 .contact-box,
 #item-2 .contact-box,
 #item-3 .contact-box {
-  background-color: #e8e8e8;
+  background-color: rgb(232, 232, 232);
 }
 
 /* ===================================== MajorShopping ===================================== */
 .major-shopping-container #item-1 {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(125, 192, 210, 0)), to(#cee6f1));
-  background-image: linear-gradient(to right, rgba(125, 192, 210, 0), #cee6f1);
+  background-image: linear-gradient(to right, rgba(125, 192, 210, 0), rgb(206, 230, 241));
 }
 
 .major-shopping-container #item-2 {
-  background-image: -webkit-gradient(linear, right top, left top, from(rgba(249, 14, 14, 0)), to(#f8cfcf));
-  background-image: linear-gradient(to left, rgba(249, 14, 14, 0), #f8cfcf);
+  background-image: linear-gradient(to left, rgba(249, 14, 14, 0), rgb(248, 207, 207));
 }
 
 .major-shopping-container #item-3 {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(133, 193, 133, 0)), to(#8ded95));
-  background-image: linear-gradient(to right, rgba(133, 193, 133, 0), #8ded95);
+  background-image: linear-gradient(to right, rgba(133, 193, 133, 0), rgb(141, 237, 149));
 }
 
 .major-shopping-container #item-4 {
-  background-image: -webkit-gradient(linear, right top, left top, from(rgba(209, 207, 132, 0)), to(#f9ee73));
-  background-image: linear-gradient(to left, rgba(209, 207, 132, 0), #f9ee73);
+  background-image: linear-gradient(to left, rgba(209, 207, 132, 0), rgb(249, 238, 115));
 }
 
 .major-shopping-container #item-5 {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(236, 180, 155, 0)), to(#f68a6c));
-  background-image: linear-gradient(to right, rgba(236, 180, 155, 0), #f68a6c);
-}
-/*# sourceMappingURL=style.css.map */
+  background-image: linear-gradient(to right, rgba(236, 180, 155, 0), rgb(246, 138, 108));
+}/*# sourceMappingURL=style.css.map */

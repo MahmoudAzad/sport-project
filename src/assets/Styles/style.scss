@@ -140,7 +140,7 @@ $ORANGE: rgb(254, 116, 11);
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 3;
 }
 
 .user-dropdown-content a {
@@ -170,6 +170,7 @@ $ORANGE: rgb(254, 116, 11);
 /* ===================================== submenu ===================================== */
 .submenu-items {
   li {
+    padding: 20px;
     &:hover .fw-dropdown {
       display: flex;
       flex-direction: row-reverse;
@@ -188,7 +189,7 @@ $ORANGE: rgb(254, 116, 11);
 
   .fw-dropdown {
     position: absolute;
-    margin-top: 50px;
+    margin-top: 20px;
     left: 0;
     display: none;
     width: 100%;
@@ -229,6 +230,9 @@ $ORANGE: rgb(254, 116, 11);
 }
 
 /* ===================================== headerCarousel ===================================== */
+.header-swiper {
+  z-index: 2;
+}
 .header-swiper .swiper-pagination .swiper-pagination-bullet {
   opacity: 0.5;
   background-color: rgb(170, 170, 170);
@@ -311,6 +315,9 @@ $ORANGE: rgb(254, 116, 11);
       color: $ORANGE;
       text-decoration: none;
     }
+  }
+  .description {
+    text-align: justify;
   }
 }
 

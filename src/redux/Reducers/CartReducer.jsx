@@ -1,4 +1,5 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
+import AddToCartModal from "../../components/Modal/AddToCartModal";
 
 const cartAdapter = createEntityAdapter();
 const initialState = cartAdapter.getInitialState({
@@ -18,6 +19,7 @@ const CartReducer = createSlice({
           quantity: repeatedItem.quantity + 1,
         };
       } else {
+        <AddToCartModal />;
         const newItem = { ...action.payload, quantity: 1 };
         cartAdapter.addOne(state, newItem);
       }

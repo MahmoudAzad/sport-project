@@ -7,16 +7,17 @@ import { addToCart, changeShowCartDrawer } from "../redux/Reducers/CartReducer";
 import { addToWishlist } from "../redux/Reducers/WishListReducer";
 import ProductCarousel from "../components/Carousel/ProductCarousel";
 import { Helmet } from "react-helmet";
+import AddToCartModal from "../components/Modal/AddToCartModal";
 
 const Product = () => {
   const params = useLocation();
   const dispatch = useDispatch();
   const [loadings, setLoadings] = useState();
 
-  const addToCartHandler = (params) => {
-    dispatch(addToCart(params));
-    dispatch(changeShowCartDrawer(true));
-  };
+  // const addToCartHandler = (params) => {
+  //   dispatch(addToCart(params));
+  //   dispatch(changeShowCartDrawer(true));
+  // };
 
   return (
     <>
@@ -75,10 +76,7 @@ const Product = () => {
               </div>
             </div>
 
-            <button className="btn btn-success mt-3 me-3 ">
-              افزودن به سبد خرید
-            </button>
-
+            <AddToCartModal params={params} />
             <p
               className="m-3 cursor-pointer"
               onClick={() => dispatch(addToWishlist(params.state.product))}
