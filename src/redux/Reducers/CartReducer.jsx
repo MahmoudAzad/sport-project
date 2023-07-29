@@ -19,7 +19,6 @@ const CartReducer = createSlice({
           quantity: repeatedItem.quantity + 1,
         };
       } else {
-        <AddToCartModal />;
         const newItem = { ...action.payload, quantity: 1 };
         cartAdapter.addOne(state, newItem);
       }

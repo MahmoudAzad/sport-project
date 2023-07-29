@@ -1,9 +1,9 @@
 import React from "react";
 import { removedFromCart } from "../../redux/Reducers/CartReducer";
 import { useDispatch } from "react-redux";
+import ConvertPersianDigitsToEnglish from "../Function/ConvertPersianDigitsToEnglish";
 
 const CartTable = ({ carts }) => {
-  console.log("carts in cart table =>", carts);
   const dispatch = useDispatch();
 
   return (
@@ -62,10 +62,16 @@ const CartTable = ({ carts }) => {
               )}
               <td className="text-center mx-3 lh-sm">{p.title}</td>
               <td className="text-center col-3">{p.price || p.orginalPrice}</td>
-              <td className="text-center col-1">{p.quantify}</td>
+              <td className="text-center col-1">{p.quantity}</td>
 
               <td className="col-2 fw-bold text-center text-orange">
-                {p.price || p.orginalPrice}
+                {p.quantity *
+                  parseInt(
+                    ConvertPersianDigitsToEnglish(
+                      p.price.replace(/[, تومان]/g, "")
+                    )
+                  )}
+                {" تومان"}
               </td>
             </tr>
           </tbody>

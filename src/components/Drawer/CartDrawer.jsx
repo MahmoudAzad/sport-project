@@ -12,6 +12,7 @@ const CartDrawer = () => {
   const dispatch = useDispatch();
 
   const carts = useSelector(selectAllCarts);
+  console.log("cart in cart drawer => ", carts);
   const cartDrawer = useSelector(
     (state) => state.persistedReducer.cart.cartDrawer
   );
@@ -100,7 +101,7 @@ const CartDrawer = () => {
                         {p.title}
                       </p>
                       <div className="d-flex align-items-center mt-2">
-                        {p.quantify} <i className="bi bi-x" />{" "}
+                        {p.quantity} <i className="bi bi-x" />{" "}
                         <p className="price"> {p.price} </p>
                       </div>
                     </div>
