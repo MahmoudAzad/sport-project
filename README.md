@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+<div id='top' align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An E-commerce site template, implemented with **React.js** and Styled with **Bootstrap**. This is one of my portfolios, but I would be pleased if these codes helped others, so I published it as an open-source project. feel free to explore it, and if you need help, ask me. I would respond as soon as possible.
+<p>To support me, please create <strong>Pull request</strong> and give <strong>star⭐</strong> to this repository.<br/>
+   I appreciate your support in advance. ❤</p>
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
+## ✨Demo
+<table>
+  <tr>
+    <td valign="top"><img src="public/images/banner1.png"/></td>
+    <td valign="top"><img src="public/images/banner2.png"/></td>
+  </tr>
+</table>
 
-### `npm start`
+<table>
+  <tr>
+    <td valign="top"><img src="public/images/banner3.png"/></td>
+    <td valign="top"><img src="public/images/banner4.png"/></td>
+  </tr>
+</table>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<table>
+  <tr>
+    <td valign="top"><img src="public/images/banner5.png"/></td>
+    <td valign="top"><img src="public/images/banner6.png"/></td>
+  </tr>
+</table>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<table>
+  <tr>
+    <td valign="top"><img src="public/images/banner7.png"/></td>
+    <td valign="top"><img src="public/images/banner8.png"/></td>
+  </tr>
+</table>
 
-### `npm test`
+## 🔧Technologies
+* React.js
+* Bootstrap 
+* Redux Toolkit
+* Swiper 
+* Formik
+* Yup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔥Features
+* Using Redux toolkit as state manager
+* Using Strapi headless CMS as database
+* Fully responsive
+* authentication vs authorization
+* Diverse sliders
 
-### `npm run build`
+## 📃Pages
+* Main (index)
+* Products List
+* Product Details
+* Cart
+* Favorites
+* Profile
+* Contact us
+* Cooperation
+* Help
+* Installment
+* MajorShopping
+* Privacy
+* ShakerPrinting
+* Terms
+* TrackOrder
+* 404 Error(not found)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀Getting Started
+1. Clone the project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ```bash
+  git clone https://github.com/MahmoudAzad/sports-shop-ReactJs.git
+  ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies
+  ```bash
+  npm install
+  ```
 
-### `npm run eject`
+3. start development server
+  ```bash
+  npm start
+  ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🤝Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 💬Contact Me
+  <p>
+    <a href="https://linkedin.com/in/mahmoud-azad"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=Linkedin&logoColor=white"/></a>
+    <a href="mailto:azadmilad1993@gmail.com"><img src="https://img.shields.io/badge/-Gmail-D14836?style=flat&logo=Gmail&logoColor=white"/></a>
+  </p>
+  
+  <hr/>
+  
+  <p align="right">(<a href="#top">BACK TO TOP🔝</a>)</p>
