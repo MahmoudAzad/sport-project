@@ -44,7 +44,7 @@ const LoginForm = () => {
         handleLogin(values, actions);
       }}
     >
-      <Form className="border-start border-2">
+      <Form className=" border-2">
         <h4 className="fw-bold mb-4">ورود</h4>
         <label className="mb-2 fw-bold ">
           نام کاربری یا آدرس ایمیل <span className="text-danger">*</span>
